@@ -1,0 +1,14 @@
+//
+// Created by cappe on 22/09/23.
+//
+
+#ifndef TODOLIST_TASKLISTLISTCONTROLLER_H
+#define TODOLIST_TASKLISTLISTCONTROLLER_H
+
+
+class TaskListListController {
+
+};
+
+
+#endif //TODOLIST_TASKLISTLISTCONTROLLER_H

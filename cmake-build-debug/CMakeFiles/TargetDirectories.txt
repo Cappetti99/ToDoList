@@ -1,0 +1,3 @@
+/home/cappe/CLionProjects/ToDoList/cmake-build-debug/CMakeFiles/ToDoList.dir
+/home/cappe/CLionProjects/ToDoList/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/cappe/CLionProjects/ToDoList/cmake-build-debug/CMakeFiles/rebuild_cache.dir
