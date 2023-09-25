@@ -3,3 +3,7 @@
 //
 
 #include "TaskListListController.h"
+
+TaskListListController::TaskListListController() {
+
+}

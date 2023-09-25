@@ -17,8 +17,27 @@
 
 
 class TaskList {
+public:
+    TaskList();
 
 private:
+    //funzioni
+    void addTask();
+    void removeTask();
+    void sortTask();
+    std::vector<Task> searchTask();
+    void swapTask();
+    void addList();
+    void removeList();
+    void searchList(); //non dovrebbe ritornare una stringa?
+    void renameList();
+
+
+
+
+
+
+    //variabili
     std::vector<Task> tasks;
 
 };
