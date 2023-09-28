@@ -1,4 +1,4 @@
 /snap/clion/250/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/250/bin/ninja/linux/x64/ninja -G Ninja -S /home/cappe/CLionProjects/ToDoList -B /home/cappe/CLionProjects/ToDoList/cmake-build-debug
--- Configuring done (3.8s)
+-- Configuring done (1.4s)
 -- Generating done (0.0s)
 -- Build files have been written to: /home/cappe/CLionProjects/ToDoList/cmake-build-debug

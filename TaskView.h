@@ -14,12 +14,13 @@
 #include <wx/textctrl.h>
 
 #include "Task.h"
+#include "CustomWindow.h"
+
 
 class TaskView : public wxFrame {
 
 public:
     TaskView(const wxString& title, const wxPoint& pos, const wxSize& size); //costruttore
-    ~TaskView(); //distruttore, ci serve?
 
 private:
     //funzioni

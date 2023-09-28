@@ -12,6 +12,10 @@
 #include <wx/richtext/richtextctrl.h>
 #include <wx/colour.h>
 #include <wx/textctrl.h>
+#include <wx/dateevt.h>
+#include <wx/textdlg.h>
+#include <wx/arrstr.h>
+
 
 #include "Task.h"
 
@@ -33,14 +37,26 @@ private:
     void renameList();
 
 
-
-
-
-
     //variabili
     std::vector<Task> tasks;
 
+    wxTextCtrl* taskTextCtrl;
+    wxTextCtrl* searchInput;
+    wxCheckListBox* taskCheckBox;
+    wxCheckListBox* searchCheckBox;
+
+
 };
+
+
+enum {
+    ID_AddTask = wxID_HIGHEST + 1,
+    ID_EditTask,
+    ID_DeleteTask,
+    ID_Check,
+    ID_Search
+};
+
 
 //todo aggiunta dei bottoni
 

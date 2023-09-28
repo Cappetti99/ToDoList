@@ -22,7 +22,9 @@ add_executable(ToDoList main.cpp
         TaskListController.cpp
         TaskListController.h
         TaskListListController.cpp
-        TaskListListController.h)
+        TaskListListController.h
+        CustomWindow.cpp
+        CustomWindow.h)
 
 # Include wxWidgets headers
 target_include_directories(ToDoList PRIVATE ${wxWidgets_INCLUDE_DIRS})
