@@ -4,46 +4,31 @@
 
 #include "TaskListController.h"
 
-TaskListController::TaskListController() {
+TaskListController::TaskListController(TaskList& model, TaskListView& view)
+        : model(model), view(view) {}
 
+void TaskListController::addTask(const Task& task) {
+    model.addTask(task);
+    // Update the view to reflect the changes
+    // For example, refresh the task list box in the view.
 }
 
-void TaskListController::addTask() {
-
+void TaskListController::removeTask(size_t index) {
+    model.removeTask(index);
+    // Update the view to reflect the changes
 }
 
-void TaskListController::removeTask() {
-
+void TaskListController::sortTasks() {
+    model.sortTasks();
+    // Update the view to reflect the changes
 }
 
-std::vector<Task> TaskListController::searchTask() {
-    return std::vector<Task>();
+void TaskListController::searchTasks(const wxString& searchTerm) {
+    std::vector<Task> result = model.searchTasks(searchTerm);
+    // Update the view to display the search results
 }
 
-void TaskListController::sortTask() {
-
-}
-
-void TaskListController::swapTask() {
-
-}
-
-void TaskListController::swapList() {
-
-}
-
-void TaskListController::addList() {
-
-}
-
-void TaskListController::removeList() {
-
-}
-
-void TaskListController::searchList() {
-
-}
-
-void TaskListController::renameList() {
-
+void TaskListController::renameList(const wxString& newName) {
+    model.setName(newName);
+    // Update the view to reflect the changes
 }

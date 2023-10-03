@@ -2,105 +2,56 @@
 // Created by cappe on 22/09/23.
 //
 
-#include <wx/datectrl.h>
-#include <wx/wx.h>
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <vector>
-#include <string>
-#include <wx/textctrl.h>
-#include <wx/font.h>
-#include <wx/image.h>
-
 #include "TaskList.h"
 
-TaskList::TaskList() {
+TaskList::TaskList(const wxString& name)
+        : name(name) {}
 
+const wxString& TaskList::getName() const {
+    return name;
 }
 
-void TaskList::addTask() {
-    wxString task = taskTextCtrl->GetValue();
+void TaskList::setName(const wxString& name) {
+    this->name = name;
+}
 
-    if (!task.IsEmpty()) {
-        // Date Selection
-        wxDialog dateDialog(reinterpret_cast<wxWindow *>(this), wxID_ANY, "Select expiration date:"); //todo va inserita la finestra
-        wxDatePickerCtrl* datePicker = new wxDatePickerCtrl(&dateDialog, wxID_ANY, wxDefaultDateTime, wxDefaultPosition, wxDefaultSize, wxDP_DEFAULT);
-        wxBoxSizer* dateSizer = new wxBoxSizer(wxVERTICAL);
-        dateSizer->Add(datePicker, 0, wxALL | wxEXPAND, 5);
-        dateDialog.SetSizerAndFit(dateSizer);
+const std::vector<Task>& TaskList::getTasks() const {
+    return tasks;
+}
 
-        if (dateDialog.ShowModal() == wxID_OK) {
-            wxDateTime expirationDate = datePicker->GetValue();
-            wxString expirationDateStr = expirationDate.Format("%d %B, %Y");
+void TaskList::addTask(const Task& task) {
+    tasks.push_back(task);
+}
 
-            // Priority Selection
-            wxArrayString priorityChoices;
-            priorityChoices.Add("High");
-            priorityChoices.Add("Medium");
-            priorityChoices.Add("Low");
-
-            int selectedPriorityIndex = wxGetSingleChoiceIndex("Select priority:", "Priority Selection", priorityChoices);
-
-            if (selectedPriorityIndex != wxNOT_FOUND) {
-                wxString selectedPriority = priorityChoices[selectedPriorityIndex];
-
-                Task newTask;
-                newTask.setTitle(task);
-                newTask.setExpirationDate(expirationDate);
-                newTask.setPriority(selectedPriority);
-                newTask.setCompleted(false);
-                tasks.push_back(newTask);
-
-                // RefreshTaskList(); // Refresh the task list to include the new task
-                taskTextCtrl->Clear();
-            }
-        }
+void TaskList::removeTask(size_t index) {
+    if (index < tasks.size()) {
+        tasks.erase(tasks.begin() + index);
     }
 }
 
-void TaskList::removeTask() {
-    int selectedIndex = taskCheckBox->GetSelection();
-    if (selectedIndex != wxNOT_FOUND) {
-        wxMessageDialog confirmDialog(reinterpret_cast<wxWindow *>(this),
-                                      "Are you sure you want to delete this task?", "Confirm Deletion",
-                                      wxYES_NO | wxICON_QUESTION); //todo inserire window
 
-        int response = confirmDialog.ShowModal();
+void TaskList::sortTasks() {
+    std::sort(tasks.begin(), tasks.end(), [](const Task& a, const Task& b) {
+        // Implement your comparison logic here
+        // For example, you can compare tasks based on their attributes like priority, expiration date, etc.
+        // Return true if 'a' should come before 'b' in the sorted order.
+        return a.getPriority() < b.getPriority(); // Sort by priority for example
+    });
 
-        if (response == wxID_YES) {
-            tasks.erase(tasks.begin() + selectedIndex);
-            //RefreshTaskList();
-            taskTextCtrl->Clear();
+    // Set the tasksSorted flag to true after sorting
+    tasksSorted = true;
+}
+
+// Implement the searchTasks function in TaskList.cpp
+std::vector<Task> TaskList::searchTasks(const wxString& keyword) const {
+    std::vector<Task> searchResults;
+
+    for (const Task& task : tasks) {
+        // Customize the search logic here based on your criteria
+        if (task.getTitle().Lower().Contains(keyword.Lower())) {
+            searchResults.push_back(task);
         }
     }
 
-}
-
-void TaskList::sortTask() {
-
-}
-
-std::vector<Task> TaskList::searchTask() {
-    return std::vector<Task>();
-}
-
-void TaskList::swapTask() {
-
-}
-
-void TaskList::addList() {
-
-}
-
-void TaskList::removeList() {
-
-}
-
-void TaskList::searchList() {
-
-}
-
-void TaskList::renameList() {
-
+    return searchResults;
 }

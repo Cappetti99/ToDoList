@@ -22,33 +22,25 @@
 
 class TaskList {
 public:
-    TaskList();
+    TaskList(const wxString& name = "");
+
+    const wxString& getName() const;
+    void setName(const wxString& name);
+
+    const std::vector<Task>& getTasks() const;
+    void addTask(const Task& task);
+    void removeTask(size_t index);
+
+    void sortTasks();
+    std::vector<Task> searchTasks(const wxString& keyword) const;
 
 private:
-    //funzioni
-    void addTask();
-    void removeTask();
-    void sortTask();
-    std::vector<Task> searchTask();
-    void swapTask();
-    void addList();
-    void removeList();
-    void searchList(); //non dovrebbe ritornare una stringa?
-    void renameList();
-
-
-    //variabili
+    wxString name;
     std::vector<Task> tasks;
-
-    wxTextCtrl* taskTextCtrl;
-    wxTextCtrl* searchInput;
-    wxCheckListBox* taskCheckBox;
-    wxCheckListBox* searchCheckBox;
-
-
+    bool tasksSorted;
 };
 
-
+/*
 enum {
     ID_AddTask = wxID_HIGHEST + 1,
     ID_EditTask,
@@ -56,7 +48,7 @@ enum {
     ID_Check,
     ID_Search
 };
-
+*/
 
 //todo aggiunta dei bottoni
 

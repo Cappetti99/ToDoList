@@ -15,6 +15,7 @@
 
 #include "Task.h"
 #include "CustomWindow.h"
+#include "TaskList.h"
 
 
 class TaskListView : public wxFrame {
@@ -25,11 +26,22 @@ public:
 private:
     //funzioni
 
-    void addTaskButton(wxCommandEvent& event);
+    //fixme
+    
+   /* void addTaskButton(wxCommandEvent& event);
     void removeTaskButton(wxCommandEvent& event);
     void searchTaskButton(wxCommandEvent& event);
     void moveTaskToAnotherList(wxCommandEvent& event);
-    void sortButton(wxCommandEvent& event);
+    void sortButton(wxCommandEvent& event); */
+
+   //ci servono funzioni o possiamo farli così?:
+
+   /* TaskList taskList;
+    wxListBox* taskListBox;
+    wxButton* addButton;
+    wxButton* removeButton;
+    wxButton* sortButton;
+    wxButton* searchButton; */
 
     //variabili
     wxFrame frameList;

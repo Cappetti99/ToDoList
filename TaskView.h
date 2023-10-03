@@ -20,19 +20,19 @@
 class TaskView : public wxFrame {
 
 public:
-    TaskView(const wxString& title, const wxPoint& pos, const wxSize& size); //costruttore
+    TaskView(const wxString& title, const Task& task);
 
 private:
     //funzioni
-    void editButton(wxCommandEvent& event);
+    //void editButton(wxCommandEvent& event);
 
     //variabili
     wxFrame frameTask;
-    wxListBox task;
-
+    Task task;
+    wxListBox* taskListBox;
+    wxButton* editButton;
 };
 
-//todo da implementare tutte le funzioni
 
 
 #endif //TODOLIST_TASKVIEW_H

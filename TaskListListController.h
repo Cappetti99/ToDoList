@@ -15,14 +15,22 @@
 #include <wx/textctrl.h>
 
 #include "Task.h"
+#include "TaskListListView.h"
 
 class TaskListListController {
 
 public:
-    TaskListListController();
+    TaskListListController(std::vector<TaskList>& models, TaskListListView& view);
+
+    void addList(const TaskList& taskList);
+    void removeList(size_t index);
+    void searchList(const wxString& searchTerm);
+    void renameList(const wxString& newName);
 
 private:
     std::vector<Task> tasks;
+    std::vector<TaskList>& models;
+    TaskListListView& view;
 
 };
 

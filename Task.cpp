@@ -1,25 +1,15 @@
-//
-// Created by cappe on 22/09/23.
-//
-
 #include "Task.h"
 
-Task::Task() : priority(Priority::Low){}
+Task::Task(const wxString& title, Priority priority, bool completed, const wxDateTime& expirationDate)
+        : title(title), priority(priority), completed(completed), expirationDate(expirationDate) {}
 
-const wxDateTime &Task::getExpirationDate() const {
-    return expirationDate;
-}
-
-void Task::setExpirationDate(const wxDateTime &expirationDate) {
-    Task::expirationDate = expirationDate;
-}
-
-const wxString &Task::getTitle() const {
+// Implement getter and setter methods for Task attributes
+const wxString& Task::getTitle() const {
     return title;
 }
 
-void Task::setTitle(const wxString &title) {
-    Task::title = title;
+void Task::setTitle(const wxString& title) {
+    this->title = title;
 }
 
 Priority Task::getPriority() const {
@@ -27,7 +17,7 @@ Priority Task::getPriority() const {
 }
 
 void Task::setPriority(Priority priority) {
-    Task::priority = priority;
+    this->priority = priority;
 }
 
 bool Task::isCompleted() const {
@@ -35,6 +25,27 @@ bool Task::isCompleted() const {
 }
 
 void Task::setCompleted(bool completed) {
-    Task::completed = completed;
+    this->completed = completed;
 }
 
+const wxDateTime& Task::getExpirationDate() const {
+    return expirationDate;
+}
+
+void Task::setExpirationDate(const wxDateTime& expirationDate) {
+    this->expirationDate = expirationDate;
+}
+
+// Static method to convert Priority enum to string
+wxString Task::PriorityToString(Priority priority) {
+    switch (priority) {
+        case Priority::Low:
+            return "Low";
+        case Priority::Medium:
+            return "Medium";
+        case Priority::High:
+            return "High";
+        default:
+            return "";
+    }
+}

@@ -13,18 +13,23 @@
 #include <wx/colour.h>
 #include <wx/textctrl.h>
 
-#include "Task.h"
 #include "TaskList.h"
-#include "TaskView.h"
+#include "TaskListView.h"
 
 class TaskListController {
 
 public:
-    TaskListController();
+    TaskListController(TaskList& model, TaskListView& view);
+
+    void addTask(const Task& task);
+    void removeTask(size_t index);
+    void sortTasks();
+    void searchTasks(const wxString& searchTerm);
+    void renameList(const wxString& newName);
 
 private:
     //funzioni
-    void addTask();
+/*    void addTask();
     void removeTask();
     std::vector<Task> searchTask();
     void sortTask();
@@ -33,10 +38,11 @@ private:
     void removeList();
     void searchList();
     void renameList();
+    */
 
     //variabili
-    TaskList model;  //non ricordo a che serve
-    TaskView view;  //non ricordo a che serve
+    TaskList& model;  //non ricordo a che serve
+    TaskListView& view;  //non ricordo a che serve
 
 };
 
