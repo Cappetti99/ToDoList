@@ -4,11 +4,12 @@
 
 #include "TaskListView.h"
 
+/*
 TaskListView::TaskListView(const wxString &title, const wxPoint &pos, const wxSize &size) {
 
 }
 
-/*
+
 void TaskListView::addTaskButton(wxCommandEvent &event) {
 
 }
@@ -31,9 +32,9 @@ void TaskListView::sortButton(wxCommandEvent &event) {
 */
 
 //fixme questo oppure questo dopo
-/*
- TaskListView::TaskListView(const wxString& title, const TaskList& taskList)
-    : wxFrame(NULL, wxID_ANY, title, wxDefaultPosition, wxSize(800, 600)), taskList(taskList) {
+
+ TaskListView::TaskListView(const wxString& title, const wxPoint& pos, const wxSize& size)
+: wxFrame(NULL, wxID_ANY, title, wxDefaultPosition, wxSize(800, 600)), taskList(taskList) {
 
     // Create UI elements
     taskListBox = new wxListBox(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, nullptr, wxLB_SINGLE);
@@ -41,6 +42,13 @@ void TaskListView::sortButton(wxCommandEvent &event) {
     removeButton = new wxButton(this, wxID_ANY, "Remove Task");
     sortButton = new wxButton(this, wxID_ANY, "Sort Tasks");
     searchButton = new wxButton(this, wxID_ANY, "Search Tasks");
+
+    auto* buttonsSizer = new wxBoxSizer(wxHORIZONTAL);
+    buttonsSizer->Add(addButton, 0, wxALL, 10);
+    buttonsSizer->Add(removeButton, 0, wxALL, 10);
+    buttonsSizer->Add(sortButton, 0, wxALL, 10);
+    buttonsSizer->Add(searchButton, 0, wxALL, 10);
+    
 
     // Set up event handlers for buttons
     // Connect addButton, removeButton, sortButton, and searchButton to respective event handlers.
@@ -50,4 +58,3 @@ void TaskListView::sortButton(wxCommandEvent &event) {
         taskListBox->Append(task.getTitle());
     }
 }
- */

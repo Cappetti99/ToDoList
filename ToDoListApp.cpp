@@ -4,27 +4,29 @@
 
 #include "ToDoListApp.h"
 
-ToDoListApp::ToDoListApp() {}
-
 
 bool ToDoListApp::OnInit() {
-        // Create TaskList objects and TaskListListView
-        std::vector<TaskList> taskLists;
-        TaskListListView* listListView = new TaskListListView("ToDo Lists", taskLists);
+    // Create the main application frame
+    frame = new wxFrame(nullptr, wxID_ANY, "To-Do List App", wxDefaultPosition, wxSize(600, 400));
 
-        // Create controllers for task lists
-        TaskListListController listListController(taskLists, *listListView);
+    // Create a button to open the CustomWindow
+    wxButton* openButton = new wxButton(frame, wxID_ANY, "Open Second Window", wxDefaultPosition, wxDefaultSize);
 
-        // Create a sample task list and TaskListView
-        TaskList sampleList("Sample List");
-        TaskListView* taskListView = new TaskListView("Tasks in Sample List", wxPoint(100, 100), wxSize(400, 300));
+    // Bind an event handler for the button click event
+    openButton->Bind(wxEVT_BUTTON, &ToDoListApp::OnOpenButtonClick, this);
 
-        // Create controllers for tasks within the sample list
-        TaskListController taskListController(sampleList, *taskListView);
+    frame->Show(true);
 
-        listListView->Show(true);
-        taskListView->Show(true);
+    return true;
+}
 
-        return true;
-    }
+void ToDoListApp::OnOpenButtonClick(wxCommandEvent& event) {
+    // Create and show the CustomWindow
+    CustomWindow* taskListView = new CustomWindow(frame, "Tasks in Sample List", wxDefaultPosition, wxSize(400, 300));
+    taskListView->Show(true);
+}
+
+
+wxIMPLEMENT_APP(ToDoListApp);
+
 

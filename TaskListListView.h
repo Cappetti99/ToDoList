@@ -12,6 +12,7 @@
 #include <wx/richtext/richtextctrl.h>
 #include <wx/colour.h>
 #include <wx/textctrl.h>
+#include <wx/listbox.h>
 
 #include "CustomWindow.h"
 #include "TaskList.h"

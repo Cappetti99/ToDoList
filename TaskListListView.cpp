@@ -14,6 +14,12 @@ TaskListListView::TaskListListView(const wxString& title, const std::vector<Task
     searchListButton = new wxButton(this, wxID_ANY, "Search List");
     renameListButton = new wxButton(this, wxID_ANY, "Rename List");
 
+    auto* buttonsSizer = new wxBoxSizer(wxHORIZONTAL);
+    buttonsSizer->Add(addListButton, 0, wxALL, 10);
+    buttonsSizer->Add(removeListButton, 0, wxALL, 10);
+    buttonsSizer->Add(searchListButton, 0, wxALL, 10);
+    buttonsSizer->Add(renameListButton, 0, wxALL, 10);
+
     // Set up event handlers for buttons
     // Connect addListButton, removeListButton, searchListButton, and renameListButton to respective event handlers.
 
@@ -23,21 +29,3 @@ TaskListListView::TaskListListView(const wxString& title, const std::vector<Task
     }
 }
 
-/*
-void TaskListListView::addListButton(wxCommandEvent &event) {
-
-}
-
-void TaskListListView::removeListButton(wxCommandEvent &event) {
-
-}
-
-void TaskListListView::searchListButton(wxCommandEvent &event) {
-
-}
-
-void TaskListListView::renameListButton(wxCommandEvent &event) {
-
-}
-
- */

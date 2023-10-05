@@ -3,11 +3,13 @@
 //
 
 #include "CustomWindow.h"
+#include "TaskListView.h"
+#include "TaskListListView.h"
 
-CustomWindow::CustomWindow(wxWindow* parent, const wxString& title)
-        : wxFrame(parent, wxID_ANY, title, wxDefaultPosition, wxSize(400, 200)) {
+CustomWindow::CustomWindow(wxWindow* parent, const wxString& title, const wxPoint& pos, const wxSize& size)
+        : wxFrame(parent, wxID_ANY, title, pos, size) {
 
-    wxBoxSizer* mainSizer = new wxBoxSizer(wxVERTICAL);
+    mainSizer = new wxBoxSizer(wxVERTICAL);
     wxStaticText* label = new wxStaticText(this, wxID_ANY, "This is a custom window.");
     mainSizer->Add(label, 0, wxALIGN_CENTER | wxALL, 10);
 

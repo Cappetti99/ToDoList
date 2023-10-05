@@ -12,12 +12,12 @@
 #include "TaskListListController.h"
 
 class ToDoListApp : public wxApp {
-
 public:
-    ToDoListApp();
-
     virtual bool OnInit();
+    void OnOpenButtonClick(wxCommandEvent& event);
 
+private:
+    wxFrame* frame;
 };
 
 

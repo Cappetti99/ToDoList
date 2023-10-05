@@ -36,16 +36,16 @@ private:
 
    //ci servono funzioni o possiamo farli così?:
 
-   /* TaskList taskList;
+    TaskList taskList;
     wxListBox* taskListBox;
     wxButton* addButton;
     wxButton* removeButton;
     wxButton* sortButton;
-    wxButton* searchButton; */
+    wxButton* searchButton;
 
     //variabili
     wxFrame frameList;
-    wxListBox taskList;
+    //wxListBox taskList;
 
 };
 
