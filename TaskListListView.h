@@ -16,6 +16,7 @@
 
 #include "CustomWindow.h"
 #include "TaskList.h"
+#include "ToDoListApp.h"
 
 
 class TaskListListView : public wxFrame {
@@ -30,6 +31,7 @@ private:
     void removeListButton(wxCommandEvent& event);
     void searchListButton(wxCommandEvent& event);
     void renameListButton(wxCommandEvent& event);
+    void openListButton(wxCommandEvent& event);
 */
 
     //variabili
@@ -39,7 +41,6 @@ private:
     std::vector<TaskList> taskLists;
     wxListBox* taskListListBox;
 
-
     //bottoni
     wxButton* addListButton;
     wxButton* removeListButton;
@@ -48,7 +49,7 @@ private:
 
 };
 
-//todo da implementare tutte le funzioni
+//todo quando premo un tasto deve andare da qualche parte, da fare questo
 
 
 #endif //TODOLIST_TASKLISTLISTVIEW_H

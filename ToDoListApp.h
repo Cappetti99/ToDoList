@@ -10,11 +10,14 @@
 #include "TaskListListView.h"
 #include "TaskListController.h"
 #include "TaskListListController.h"
+#include "CustomWindow.h"
+
 
 class ToDoListApp : public wxApp {
 public:
+    ToDoListApp();
     virtual bool OnInit();
-    void OnOpenButtonClick(wxCommandEvent& event);
+//    void OnOpenButtonClick(wxCommandEvent& event);
 
 private:
     wxFrame* frame;

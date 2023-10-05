@@ -3,8 +3,7 @@
 //
 
 #include "CustomWindow.h"
-#include "TaskListView.h"
-#include "TaskListListView.h"
+
 
 CustomWindow::CustomWindow(wxWindow* parent, const wxString& title, const wxPoint& pos, const wxSize& size)
         : wxFrame(parent, wxID_ANY, title, pos, size) {

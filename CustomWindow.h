@@ -6,10 +6,6 @@
 #define TODOLIST_CUSTOMWINDOW_H
 
 #include <wx/wx.h>
-#include "TaskListView.h"
-#include "TaskListListView.h"
-#include "TaskList.h"
-
 
 class CustomWindow : public wxFrame {
 public:
