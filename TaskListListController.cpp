@@ -4,8 +4,8 @@
 
 #include "TaskListListController.h"
 
-TaskListListController::TaskListListController(std::vector<TaskList>& models, TaskListListView& view)
-        : models(models), view(view) {}
+TaskListListController::TaskListListController(const std::vector<Task> &tasks, std::vector<TaskList> &models)
+: tasks(tasks), models(models) {}
 
 void TaskListListController::addList(const TaskList& taskList) {
     models.push_back(taskList);
@@ -29,3 +29,5 @@ void TaskListListController::renameList(const wxString& newName) {
     // Implement logic to rename a list and update the view.
     // You may need to find the correct list by index and update its name.
 }
+
+

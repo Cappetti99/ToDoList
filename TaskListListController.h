@@ -17,11 +17,12 @@
 #include "Task.h"
 #include "TaskListListView.h"
 
-class TaskListListController {
+class TaskListListController : public wxFrame{
 
 public:
-    TaskListListController(std::vector<TaskList>& models, TaskListListView& view);
+    TaskListListController(const std::vector<Task> &tasks, std::vector<TaskList> &models);
 
+    //c'era anche TaskListListView& view; nel costruttore ma dava problemi dicendo che non era dichiarato
     void addList(const TaskList& taskList);
     void removeList(size_t index);
     void searchList(const wxString& searchTerm);
@@ -30,7 +31,7 @@ public:
 private:
     std::vector<Task> tasks;
     std::vector<TaskList>& models;
-    TaskListListView& view;
+    //TaskListListView& view;
 
 };
 
