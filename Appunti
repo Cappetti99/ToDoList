@@ -1,0 +1,37 @@
+Task.h e .cpp sono complete
+Inserite le variabili e i metodi, che sono da implementare, di tutto
+
+
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+codice per il main se si vuole inserire delle task già impostate
+#include "Task.h"
+#include "TaskList.h"
+
+int main() {
+    // Create a TaskList object and add tasks to it
+    TaskList myTaskList("My List");
+
+    Task task1("Task 1", Priority::Low, false, wxDateTime::Now());
+    Task task2("Task 2", Priority::Medium, false, wxDateTime::Now());
+    Task task3("Task 3", Priority::High, false, wxDateTime::Now());
+
+    myTaskList.addTask(task1);
+    myTaskList.addTask(task2);
+    myTaskList.addTask(task3);
+
+    // Search for tasks within myTaskList
+    wxString searchKeyword = "Task"; // Replace with the keyword you want to search for
+    std::vector<Task> searchResults = myTaskList.searchTasks(searchKeyword);
+
+    // Now searchResults contains the tasks that match the search criteria
+    // You can iterate through searchResults and do something with the matching tasks
+
+    // For example, print the titles of matching tasks
+    for (const Task& task : searchResults) {
+        wxPrintf("Matching Task: %s\n", task.getTitle());
+    }
+
+    return 0;
+}
+
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°˚

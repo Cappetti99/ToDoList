@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="ToDoList" targetName="ToDoList" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e9b41efa-221c-4013-a5f1-1cb88893e44b" name="Changes" comment="gitignore">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2023" />
+    <option name="minorVersion" value="2.2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2VkSJ7FtoIv7aV0c3IdgdNJ52MV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="CMake Application.ToDoList">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ToDoList" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory" temporary="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="ToDoList" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ToDoList" TARGET_NAME="ToDoList" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ToDoList" RUN_TARGET_NAME="ToDoList">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.ToDoList" />
+      <item itemvalue="CMake Debug.ToDoList" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="CMake Debug.ToDoList" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e9b41efa-221c-4013-a5f1-1cb88893e44b" name="Changes" comment="" />
+      <created>1695378511702</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1695378511702</updated>
+      <workItem from="1695378516464" duration="1332000" />
+      <workItem from="1695387467353" duration="1056000" />
+      <workItem from="1695647653667" duration="3116000" />
+      <workItem from="1695721114891" duration="2058000" />
+      <workItem from="1695731894089" duration="1357000" />
+      <workItem from="1695818119062" duration="6660000" />
+      <workItem from="1695891450472" duration="349000" />
+      <workItem from="1695910971155" duration="1589000" />
+      <workItem from="1696247145318" duration="1862000" />
+      <workItem from="1696326316422" duration="4031000" />
+      <workItem from="1696336196069" duration="7962000" />
+      <workItem from="1696403443244" duration="3982000" />
+      <workItem from="1696410489774" duration="2000" />
+      <workItem from="1696410844872" duration="3848000" />
+      <workItem from="1696427155352" duration="1419000" />
+      <workItem from="1696429298138" duration="444000" />
+      <workItem from="1696491248171" duration="13608000" />
+      <workItem from="1696839311644" duration="7253000" />
+    </task>
+    <task id="LOCAL-00001" summary="add things">
+      <option name="closed" value="true" />
+      <created>1695378896361</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695378896361</updated>
+    </task>
+    <task id="LOCAL-00002" summary="aggiunta attributi su Task">
+      <option name="closed" value="true" />
+      <created>1695388447498</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695388447498</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Task.h e .cpp sono complete&#10;Inserite le variabili e i metodi, che sono da implementare, di tutto&#10;Ho aggiunto anche il pdf dell'uml e un file di testo dove segnare la roba">
+      <option name="closed" value="true" />
+      <created>1695650681436</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1695650681436</updated>
+    </task>
+    <task id="LOCAL-00004" summary="aggiunta della classe CustomWindow per creare le finestre e dell'add, che sono da finire">
+      <option name="closed" value="true" />
+      <created>1695891569065</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1695891569065</updated>
+    </task>
+    <task id="LOCAL-00005" summary="ho fatto un monte di roba:&#10;-class ToDoListApp non so se servirà, al momento il suo contenuto è nel main&#10;-ho aggiunto tutti i metodi alle classi e implementato alcuni di essi che vanno complatati&#10;-ho tolto quello che avevo fatto fino ad adesso perchè non mi piaceva&#10;-negli appunti c'è un simil main che puo' essere usato se si vuole mettere delle task al codice iniziale che consiglio per far vedere le schermate&#10;-quando si fa il run ci comparirà solo la prima schermata che è da sistemare, poi fatta quella c'è da sistemare le successive">
+      <option name="closed" value="true" />
+      <created>1696342624594</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696342624594</updated>
+    </task>
+    <task id="LOCAL-00006" summary="ho cambiato le finestre in ToDoListApp">
+      <option name="closed" value="true" />
+      <created>1696493261853</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696493261853</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fixato la finestra nel ToDoListApp e anche nel CustomWindow">
+      <option name="closed" value="true" />
+      <created>1696515728760</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696515728760</updated>
+    </task>
+    <task id="LOCAL-00008" summary="gitignore">
+      <option name="closed" value="true" />
+      <created>1696844722747</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1696844722747</updated>
+    </task>
+    <task id="LOCAL-00009" summary="gitignore">
+      <option name="closed" value="true" />
+      <created>1696844875133</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1696844875133</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticEditVcpkgJson value="false" />
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticFoundErrors value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="add things" />
+    <MESSAGE value="aggiunta attributi su Task" />
+    <MESSAGE value="Task.h e .cpp sono complete&#10;Inserite le variabili e i metodi, che sono da implementare, di tutto&#10;Ho aggiunto anche il pdf dell'uml e un file di testo dove segnare la roba" />
+    <MESSAGE value="aggiunta della classe CustomWindow per creare le finestre e dell'add, che sono da finire" />
+    <MESSAGE value="ho fatto un monte di roba:&#10;-class ToDoListApp non so se servirà, al momento il suo contenuto è nel main&#10;-ho aggiunto tutti i metodi alle classi e implementato alcuni di essi che vanno complatati&#10;-ho tolto quello che avevo fatto fino ad adesso perchè non mi piaceva&#10;-negli appunti c'è un simil main che puo' essere usato se si vuole mettere delle task al codice iniziale che consiglio per far vedere le schermate&#10;-quando si fa il run ci comparirà solo la prima schermata che è da sistemare, poi fatta quella c'è da sistemare le successive" />
+    <MESSAGE value="ho cambiato le finestre in ToDoListApp" />
+    <MESSAGE value="fixato la finestra nel ToDoListApp e anche nel CustomWindow" />
+    <MESSAGE value="gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore" />
+  </component>
+</project>

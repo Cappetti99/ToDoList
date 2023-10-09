@@ -1,0 +1,28 @@
+Index: cmake-build-debug/.ninja_log
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># ninja log v5\n10\t442\t1696492255713213297\tCMakeFiles/ToDoList.dir/main.cpp.o\t97d9d970e2ad5e3e\n11041\t16882\t1696492272148970352\tCMakeFiles/ToDoList.dir/TaskListListView.cpp.o\td580ef8e37c0f0e\n3\t4821\t1696498988380101851\tCMakeFiles/ToDoList.dir/ToDoListApp.cpp.o\te8b614c86e7bf17e\n6872\t13458\t1696340307241243142\tCMakeFiles/ToDoList.dir/TaskList.cpp.o\tff8617ea464c5838\n442\t5981\t1696492261249131601\tCMakeFiles/ToDoList.dir/TaskView.cpp.o\t2832bd1c841018b8\n7828\t14063\t1696337897441319543\tCMakeFiles/ToDoList.dir/Task.cpp.o\t44b77e7e19ba41da\n5981\t11040\t1696492266309056810\tCMakeFiles/ToDoList.dir/TaskListView.cpp.o\tbf921d25849b9e07\n21476\t26782\t1696492282048823472\tCMakeFiles/ToDoList.dir/TaskListListController.cpp.o\tb67145417f4dbb51\n26782\t31473\t1696492286740753728\tCMakeFiles/ToDoList.dir/CustomWindow.cpp.o\td83e753fb8985943\n16883\t21476\t1696492276744902212\tCMakeFiles/ToDoList.dir/TaskListController.cpp.o\tdb0146b824f97b91\n4821\t6309\t1696498989860183887\tToDoList\tdf455d6731022ff3\n3\t4921\t1696499115822482528\tCMakeFiles/ToDoList.dir/ToDoListApp.cpp.o\te8b614c86e7bf17e\n4921\t6351\t1696499117242546462\tToDoList\tdf455d6731022ff3\n3\t4763\t1696499171756895148\tCMakeFiles/ToDoList.dir/ToDoListApp.cpp.o\te8b614c86e7bf17e\n4763\t6215\t1696499173196954500\tToDoList\tdf455d6731022ff3\n3\t4673\t1696500168707604441\tCMakeFiles/ToDoList.dir/ToDoListApp.cpp.o\te8b614c86e7bf17e\n4673\t6121\t1696500170143623038\tToDoList\tdf455d6731022ff3\n3\t5182\t1696500208104107941\tCMakeFiles/ToDoList.dir/ToDoListApp.cpp.o\te8b614c86e7bf17e\n5183\t6637\t1696500209548126138\tToDoList\tdf455d6731022ff3\n4\t5231\t1696500674241287781\tCMakeFiles/ToDoList.dir/ToDoListApp.cpp.o\te8b614c86e7bf17e\n5231\t6757\t1696500675753302905\tToDoList\tdf455d6731022ff3\n4\t7068\t1696513899324896383\tCMakeFiles/ToDoList.dir/ToDoListApp.cpp.o\te8b614c86e7bf17e\n7069\t9080\t1696513901324868639\tToDoList\tdf455d6731022ff3\n4\t7309\t1696514048937644892\tCMakeFiles/ToDoList.dir/TaskView.cpp.o\t2832bd1c841018b8\n7310\t13712\t1696514055341695984\tCMakeFiles/ToDoList.dir/TaskListView.cpp.o\tbf921d25849b9e07\n13712\t18458\t1696514060085730347\tCMakeFiles/ToDoList.dir/TaskListListView.cpp.o\td580ef8e37c0f0e\n18458\t23380\t1696514065009763112\tCMakeFiles/ToDoList.dir/TaskListController.cpp.o\tdb0146b824f97b91\n23380\t28052\t1696514069681791654\tCMakeFiles/ToDoList.dir/TaskListListController.cpp.o\tb67145417f4dbb51\n28052\t31610\t1696514073237811849\tCMakeFiles/ToDoList.dir/CustomWindow.cpp.o\td83e753fb8985943\n31610\t36166\t1696514077793835899\tCMakeFiles/ToDoList.dir/ToDoListApp.cpp.o\te8b614c86e7bf17e\n36166\t37896\t1696514079513844471\tToDoList\tdf455d6731022ff3\n4\t6337\t1696839541195247987\tCMakeFiles/ToDoList.dir/TaskView.cpp.o\t2832bd1c841018b8\n6338\t11677\t1696839546539248141\tCMakeFiles/ToDoList.dir/TaskListView.cpp.o\tbf921d25849b9e07\n5\t7423\t1696841150271294307\tCMakeFiles/ToDoList.dir/TaskListListView.cpp.o\td580ef8e37c0f0e\n7426\t14293\t1696841157143294505\tCMakeFiles/ToDoList.dir/TaskListController.cpp.o\tdb0146b824f97b91\n3\t7265\t1696841180735295184\tCMakeFiles/ToDoList.dir/TaskListListController.cpp.o\tb67145417f4dbb51\n7265\t11388\t1696841184859295303\tCMakeFiles/ToDoList.dir/CustomWindow.cpp.o\td83e753fb8985943\n11388\t15816\t1696841189287295430\tCMakeFiles/ToDoList.dir/ToDoListApp.cpp.o\te8b614c86e7bf17e\n15816\t18936\t1696841192399295520\tToDoList\tdf455d6731022ff3\n
+===================================================================
+diff --git a/cmake-build-debug/.ninja_log b/cmake-build-debug/.ninja_log
+--- a/cmake-build-debug/.ninja_log	
++++ b/cmake-build-debug/.ninja_log	
+@@ -38,3 +38,5 @@
+ 7265	11388	1696841184859295303	CMakeFiles/ToDoList.dir/CustomWindow.cpp.o	d83e753fb8985943
+ 11388	15816	1696841189287295430	CMakeFiles/ToDoList.dir/ToDoListApp.cpp.o	e8b614c86e7bf17e
+ 15816	18936	1696841192399295520	ToDoList	df455d6731022ff3
++4	7932	1696845173611410126	CMakeFiles/ToDoList.dir/TaskListListView.cpp.o	d580ef8e37c0f0e
++7932	9929	1696845175599410183	ToDoList	df455d6731022ff3
+Index: cmake-build-debug/Testing/Temporary/LastTest.log
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>Start testing: Oct 09 10:46 CEST\n----------------------------------------------------------\nEnd testing: Oct 09 10:46 CEST\n
+===================================================================
+diff --git a/cmake-build-debug/Testing/Temporary/LastTest.log b/cmake-build-debug/Testing/Temporary/LastTest.log
+--- a/cmake-build-debug/Testing/Temporary/LastTest.log	
++++ b/cmake-build-debug/Testing/Temporary/LastTest.log	
+@@ -1,3 +1,3 @@
+-Start testing: Oct 09 10:46 CEST
++Start testing: Oct 09 11:59 CEST
+ ----------------------------------------------------------
+-End testing: Oct 09 10:46 CEST
++End testing: Oct 09 11:59 CEST
