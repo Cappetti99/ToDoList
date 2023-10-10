@@ -11,7 +11,7 @@ CustomWindow::CustomWindow(wxWindow* parent, const wxString& title, const wxPoin
     Windows1();
 
 }
-
+// questa diventa finestra principale con sopra edit
 void CustomWindow::Windows1() {
 
     mainSizer = new wxBoxSizer(wxVERTICAL);
@@ -31,9 +31,9 @@ void CustomWindow::Windows1() {
 }
 
 void CustomWindow::Windows2() {
-    mainSizer = new wxBoxSizer(wxVERTICAL);
-    SetSizerAndFit(mainSizer);
-    taskListListView->Show();
+   // mainSizer = new wxBoxSizer(wxVERTICAL);
+    //SetSizerAndFit(mainSizer);
+    //taskListListView->Show();
 
 
 //todo implementare tutta la seconda finestra

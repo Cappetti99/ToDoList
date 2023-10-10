@@ -15,10 +15,10 @@
 
     auto* buttonsSizer = new wxBoxSizer(wxHORIZONTAL);
 
-    buttonsSizer->Add(addListButton, 0, wxALL, 10);
-    buttonsSizer->Add(removeListButton, 0, wxALL, 10);
-    buttonsSizer->Add(searchListButton, 0, wxALL, 10);
-    buttonsSizer->Add(renameListButton, 0, wxALL, 10);
+    buttonsSizer->Add(addListButton, 2, wxALL, 10);
+    buttonsSizer->Add(removeListButton, 2, wxALL, 10);
+    buttonsSizer->Add(searchListButton, 2, wxALL, 10);
+    buttonsSizer->Add(renameListButton, 2, wxALL, 10);
 
     this->SetSizer(buttonsSizer);
 
