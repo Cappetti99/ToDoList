@@ -9,18 +9,18 @@
 
     // Create UI elements
     //taskListListBox = new wxListBox(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, nullptr, wxLB_SINGLE);
-    addListButton = new wxButton(this, wxID_ANY, "Add List");
-    removeListButton = new wxButton(this, wxID_ANY, "Remove List");
-    searchListButton = new wxButton(this, wxID_ANY, "Search List");
-    renameListButton = new wxButton(this, wxID_ANY, "Rename List");
+    auto* addListButton = new wxButton(this, wxID_ANY, "Add List");
+    auto* removeListButton = new wxButton(this, wxID_ANY, "Remove List");
+    auto* searchListButton = new wxButton(this, wxID_ANY, "Search List");
+    auto* renameListButton = new wxButton(this, wxID_ANY, "Rename List");
 
     auto* buttonsSizer = new wxBoxSizer(wxHORIZONTAL);
-        wxButton* openCustomWindowButton = new wxButton(this, wxID_ANY, "Open Custom Window");
-        buttonsSizer->Add(openCustomWindowButton, 0, wxALIGN_CENTER | wxALL, 10);
+//        wxButton* openCustomWindowButton = new wxButton(this, wxID_ANY, "Open Custom Window");
+//        buttonsSizer->Add(openCustomWindowButton, 0, wxALIGN_CENTER | wxALL, 10);
+//
+//        openCustomWindowButton->Bind(wxEVT_BUTTON, &TaskListListView::OnOpenCustomWindow, this);
 
-        openCustomWindowButton->Bind(wxEVT_BUTTON, &TaskListListView::OnOpenCustomWindow, this);
-
-        buttonsSizer->Add(addListButton, 0, wxALL, 10);
+    buttonsSizer->Add(addListButton, 0, wxALL, 10);
     buttonsSizer->Add(removeListButton, 0, wxALL, 10);
     buttonsSizer->Add(searchListButton, 0, wxALL, 10);
     buttonsSizer->Add(renameListButton, 0, wxALL, 10);

@@ -9,6 +9,7 @@
 #include <wx/textctrl.h>
 
 #include "TaskListListView.h"
+#include "TaskList.h"
 
 
 class CustomWindow : public wxFrame {
@@ -19,6 +20,7 @@ public:
 
 private:
     wxBoxSizer* mainSizer;
+    std::vector<TaskList> taskLists;
 };
 
 #endif //TODOLIST_CUSTOMWINDOW_H

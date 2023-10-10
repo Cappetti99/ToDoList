@@ -18,13 +18,20 @@ void CustomWindow::Windows1() {
     wxStaticText* label = new wxStaticText(this, wxID_ANY, "This is a custom window."); //va cambiata questa
     mainSizer->Add(label, 0, wxALIGN_CENTER | wxALL, 10);
 
+    auto* taskListListView = new TaskListListView("Tasks in Sample List", taskLists);
+    mainSizer->Add(taskListListView, 0, wxALIGN_CENTER | wxALL, 10);
     SetSizerAndFit(mainSizer);
+
 
     //todo implementare tutta la prima finestra e una condizione per andare sulla seconda
 
 }
 
 void CustomWindow::Windows2() {
+    mainSizer = new wxBoxSizer(wxVERTICAL);
+    SetSizerAndFit(mainSizer);
+
+
 //todo implementare tutta la seconda finestra
 }
 
