@@ -20,7 +20,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9b41efa-221c-4013-a5f1-1cb88893e44b" name="Changes" comment="tolto cose inutili" />
+    <list default="true" id="e9b41efa-221c-4013-a5f1-1cb88893e44b" name="Changes" comment="fixato la view della finestra esterna">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -244,7 +246,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696958724347</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fixato la view della finestra esterna">
+      <option name="closed" value="true" />
+      <created>1696958791046</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1696958791046</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,6 +292,7 @@
     <MESSAGE value="prova push" />
     <MESSAGE value="Fix view finestra più esterna" />
     <MESSAGE value="tolto cose inutili" />
-    <option name="LAST_COMMIT_MESSAGE" value="tolto cose inutili" />
+    <MESSAGE value="fixato la view della finestra esterna" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixato la view della finestra esterna" />
   </component>
 </project>
