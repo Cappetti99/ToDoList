@@ -39,7 +39,7 @@ private:
 
     //variabili
     wxFrame frameListList;
-    wxListBox taskListList;
+    wxListBox* taskListList;
 
     std::vector<TaskList> taskLists;
     wxListBox* taskListListBox;

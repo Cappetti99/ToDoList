@@ -20,14 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9b41efa-221c-4013-a5f1-1cb88893e44b" name="Changes" comment=".">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CustomWindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskListListView.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/TaskListListView.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskListListView.h" beforeDir="false" afterPath="$PROJECT_DIR$/TaskListListView.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDoListApp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ToDoListApp.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDoListApp.h" beforeDir="false" afterPath="$PROJECT_DIR$/ToDoListApp.h" afterDir="false" />
-    </list>
+    <list default="true" id="e9b41efa-221c-4013-a5f1-1cb88893e44b" name="Changes" comment="tolto cose inutili" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +31,11 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="mariavittoria &lt;mvcollini@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -82,7 +80,7 @@
     <configuration name="ToDoList" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory" temporary="true">
       <method v="2" />
     </configuration>
-    <configuration name="ToDoList" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ToDoList" TARGET_NAME="ToDoList" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ToDoList" RUN_TARGET_NAME="ToDoList">
+    <configuration name="ToDoList" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ToDoList" TARGET_NAME="ToDoList" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ToDoList" RUN_TARGET_NAME="ToDoList">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -222,7 +220,31 @@
       <option name="project" value="LOCAL" />
       <updated>1696929023049</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="prova push">
+      <option name="closed" value="true" />
+      <created>1696944000732</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1696944000732</updated>
+    </task>
+    <task id="LOCAL-00014" summary="tolto cose inutili">
+      <option name="closed" value="true" />
+      <created>1696945299533</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1696945299533</updated>
+    </task>
+    <task id="LOCAL-00015" summary="tolto cose inutili">
+      <option name="closed" value="true" />
+      <created>1696958724347</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1696958724347</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,6 +279,9 @@
     <MESSAGE value="gitignore" />
     <MESSAGE value="corretta CustomWindow" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="prova push" />
+    <MESSAGE value="Fix view finestra più esterna" />
+    <MESSAGE value="tolto cose inutili" />
+    <option name="LAST_COMMIT_MESSAGE" value="tolto cose inutili" />
   </component>
 </project>
