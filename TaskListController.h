@@ -19,7 +19,7 @@
 class TaskListController {
 
 public:
-    TaskListController(TaskList& model);
+    TaskListController(TaskList* model,TaskListListView* view);
 
     void addTask(const Task& task);
     void removeTask(size_t index);

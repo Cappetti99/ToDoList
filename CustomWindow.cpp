@@ -33,6 +33,7 @@ void CustomWindow::Windows1() {
 void CustomWindow::Windows2() {
     mainSizer = new wxBoxSizer(wxVERTICAL);
     SetSizerAndFit(mainSizer);
+    taskListListView->Show();
 
 
 //todo implementare tutta la seconda finestra

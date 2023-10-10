@@ -4,8 +4,8 @@
 
 #include "TaskListController.h"
 
-TaskListController::TaskListController(TaskList& model)
-        : model(model) {}
+TaskListController::TaskListController(TaskList* model, TaskListListView* view)
+        : model(model), view(view) {}
 
 void TaskListController::addTask(const Task& task) {
     model.addTask(task);
