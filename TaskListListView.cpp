@@ -15,7 +15,12 @@
     renameListButton = new wxButton(this, wxID_ANY, "Rename List");
 
     auto* buttonsSizer = new wxBoxSizer(wxHORIZONTAL);
-    buttonsSizer->Add(addListButton, 0, wxALL, 10);
+        wxButton* openCustomWindowButton = new wxButton(this, wxID_ANY, "Open Custom Window");
+        buttonsSizer->Add(openCustomWindowButton, 0, wxALIGN_CENTER | wxALL, 10);
+
+        openCustomWindowButton->Bind(wxEVT_BUTTON, &TaskListListView::OnOpenCustomWindow, this);
+
+        buttonsSizer->Add(addListButton, 0, wxALL, 10);
     buttonsSizer->Add(removeListButton, 0, wxALL, 10);
     buttonsSizer->Add(searchListButton, 0, wxALL, 10);
     buttonsSizer->Add(renameListButton, 0, wxALL, 10);
@@ -29,3 +34,10 @@
     //}
 }
 
+void TaskListListView::OnOpenCustomWindow(wxCommandEvent& event) {
+
+
+}
+
+//void TaskListListView::SetCustomWindow(CustomWindow* customWindow) {
+//}

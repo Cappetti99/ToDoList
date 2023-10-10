@@ -19,10 +19,14 @@
 #include "ToDoListApp.h"
 
 
+
 class TaskListListView : public wxFrame {
 
 public:
     TaskListListView(const wxString& title, const std::vector<TaskList>& taskLists);
+
+    void OnOpenCustomWindow(wxCommandEvent& event);
+//    void SetCustomWindow(CustomWindow* customWindow);
 
 private:
     /*
@@ -33,6 +37,7 @@ private:
     void renameListButton(wxCommandEvent& event);
     void openListButton(wxCommandEvent& event);
 */
+
 
     //variabili
     wxFrame frameListList;
@@ -46,6 +51,8 @@ private:
     wxButton* removeListButton;
     wxButton* searchListButton;
     wxButton* renameListButton;
+
+    //CustomWindow* customWindow;
 
 };
 

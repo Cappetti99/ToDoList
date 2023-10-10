@@ -19,7 +19,7 @@
 class TaskListController {
 
 public:
-    TaskListController(TaskList& model, TaskListView& view);
+    TaskListController(TaskList& model);
 
     void addTask(const Task& task);
     void removeTask(size_t index);
@@ -42,7 +42,7 @@ private:
 
     //variabili
     TaskList& model;  //non ricordo a che serve
-    TaskListView& view;  //non ricordo a che serve
+    //TaskListView& view;  //non ricordo a che serve
 
 };
 
