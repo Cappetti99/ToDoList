@@ -34,3 +34,4 @@
     this->SetSizer(mainSizer);
 }
 
+//sistemato finestra e aggiunto listbox
