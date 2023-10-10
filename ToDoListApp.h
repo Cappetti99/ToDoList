@@ -6,6 +6,7 @@
 #define TODOLIST_TODOLISTAPP_H
 
 #include <wx/wx.h>
+
 #include "TaskListView.h"
 #include "TaskListListView.h"
 #include "TaskListController.h"
@@ -17,7 +18,6 @@ class ToDoListApp : public wxApp {
 public:
     ToDoListApp();
     virtual bool OnInit();
-//    void OnOpenButtonClick(wxCommandEvent& event);
 
 private:
     wxFrame* frame;

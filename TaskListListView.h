@@ -20,13 +20,11 @@
 
 
 
-class TaskListListView : public wxFrame {
+class TaskListListView : public wxPanel {
 
 public:
-    TaskListListView(const wxString& title, const std::vector<TaskList>& taskLists);
+    TaskListListView(wxWindow* parent, const wxString& title, const std::vector<TaskList>& taskLists);
 
-    void OnOpenCustomWindow(wxCommandEvent& event);
-//    void SetCustomWindow(CustomWindow* customWindow);
 
 private:
     /*
@@ -51,8 +49,6 @@ private:
     wxButton* removeListButton;
     wxButton* searchListButton;
     wxButton* renameListButton;
-
-    //CustomWindow* customWindow;
 
 };
 

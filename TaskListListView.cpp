@@ -3,41 +3,24 @@
 //
 
 #include "TaskListListView.h"
+//    void OnOpenButtonClick(wxCommandEvent& event);
 
-    TaskListListView::TaskListListView(const wxString& title, const std::vector<TaskList>& taskLists)
-        : wxFrame(NULL, wxID_ANY, title, wxDefaultPosition, wxSize(800, 600)), taskLists(taskLists) {
+    TaskListListView::TaskListListView(wxWindow* parent, const wxString& title, const std::vector<TaskList>& taskLists)
+        : wxPanel(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize), taskLists(taskLists) {
 
-    // Create UI elements
-    //taskListListBox = new wxListBox(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, nullptr, wxLB_SINGLE);
     auto* addListButton = new wxButton(this, wxID_ANY, "Add List");
     auto* removeListButton = new wxButton(this, wxID_ANY, "Remove List");
     auto* searchListButton = new wxButton(this, wxID_ANY, "Search List");
     auto* renameListButton = new wxButton(this, wxID_ANY, "Rename List");
 
     auto* buttonsSizer = new wxBoxSizer(wxHORIZONTAL);
-//        wxButton* openCustomWindowButton = new wxButton(this, wxID_ANY, "Open Custom Window");
-//        buttonsSizer->Add(openCustomWindowButton, 0, wxALIGN_CENTER | wxALL, 10);
-//
-//        openCustomWindowButton->Bind(wxEVT_BUTTON, &TaskListListView::OnOpenCustomWindow, this);
 
     buttonsSizer->Add(addListButton, 0, wxALL, 10);
     buttonsSizer->Add(removeListButton, 0, wxALL, 10);
     buttonsSizer->Add(searchListButton, 0, wxALL, 10);
     buttonsSizer->Add(renameListButton, 0, wxALL, 10);
 
-    // Set up event handlers for buttons
-    // Connect addListButton, removeListButton, searchListButton, and renameListButton to respective event handlers.
-
-    // Populate the taskListListBox with list names from the taskLists
-//    for (const TaskList& taskList : taskLists) {
-//        taskListListBox->Append(taskList.getName());
-    //}
-}
-
-void TaskListListView::OnOpenCustomWindow(wxCommandEvent& event) {
-
+    this->SetSizer(buttonsSizer);
 
 }
 
-//void TaskListListView::SetCustomWindow(CustomWindow* customWindow) {
-//}

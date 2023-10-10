@@ -22,13 +22,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e9b41efa-221c-4013-a5f1-1cb88893e44b" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Appunti" beforeDir="false" afterPath="$PROJECT_DIR$/Appunti" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CustomWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CustomWindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/CustomWindow.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskListController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/TaskListController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskListController.h" beforeDir="false" afterPath="$PROJECT_DIR$/TaskListController.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TaskListListView.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/TaskListListView.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TaskListListView.h" beforeDir="false" afterPath="$PROJECT_DIR$/TaskListListView.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDoListApp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ToDoListApp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDoListApp.h" beforeDir="false" afterPath="$PROJECT_DIR$/ToDoListApp.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,11 +87,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="CMake Application.ToDoList" />
       <item itemvalue="CMake Debug.ToDoList" />
@@ -130,7 +123,8 @@
       <workItem from="1696429298138" duration="444000" />
       <workItem from="1696491248171" duration="13608000" />
       <workItem from="1696839311644" duration="13839000" />
-      <workItem from="1696920214669" duration="2551000" />
+      <workItem from="1696920214669" duration="8370000" />
+      <workItem from="1696940040297" duration="2863000" />
     </task>
     <task id="LOCAL-00001" summary="add things">
       <option name="closed" value="true" />
@@ -212,7 +206,23 @@
       <option name="project" value="LOCAL" />
       <updated>1696847089359</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="corretta CustomWindow">
+      <option name="closed" value="true" />
+      <created>1696922809158</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1696922809158</updated>
+    </task>
+    <task id="LOCAL-00012" summary=".">
+      <option name="closed" value="true" />
+      <created>1696929023049</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1696929023049</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,6 +255,7 @@
     <MESSAGE value="ho cambiato le finestre in ToDoListApp" />
     <MESSAGE value="fixato la finestra nel ToDoListApp e anche nel CustomWindow" />
     <MESSAGE value="gitignore" />
+    <MESSAGE value="corretta CustomWindow" />
     <MESSAGE value="." />
     <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
