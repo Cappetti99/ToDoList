@@ -40,6 +40,12 @@ private:
     //variabili
     wxFrame frameListList;
     wxListBox* taskListList;
+public:
+    wxTextCtrl *getTaskTextCtrl() const;
+
+    void setTaskTextCtrl(wxTextCtrl *taskTextCtrl);
+
+private:
 
     std::vector<TaskList> taskLists;
     wxListBox* taskListListBox;

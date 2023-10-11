@@ -3,31 +3,37 @@
 //
 
 #include "TaskListListController.h"
+#include "Task.h"
+#include "TaskListListView.h"
 
-TaskListListController::TaskListListController(const std::vector<Task> &tasks, std::vector<TaskList> &models)
-: tasks(tasks), models(models) {}
-
-void TaskListListController::addList(const TaskList& taskList) {
-    models.push_back(taskList);
-    // Update the view to reflect the changes
-    // For example, refresh the task list box in the view.
-}
-
-void TaskListListController::removeList(size_t index) {
-    if (index < models.size()) {
-        models.erase(models.begin() + index);
-        // Update the view to reflect the changes
-    }
-}
-
-void TaskListListController::searchList(const wxString& searchTerm) {
-    // Implement search logic here, based on list names or other criteria.
-    // Create a vector of matching lists and update the view.
-}
-
-void TaskListListController::renameList(const wxString& newName) {
-    // Implement logic to rename a list and update the view.
-    // You may need to find the correct list by index and update its name.
+TaskListListController::TaskListListController(TaskList * model, TaskListListView * view) : model(model), view(view) {
+    view->Bind(wxEVT_BUTTON, &TaskListListController::OnAddListButtonClick,this,wxID_ANY);
+    view->Bind(wxEVT_BUTTON, &TaskListListController::OnEditListButtonClick,this,wxID_ANY);
+    view->Bind(wxEVT_BUTTON, &TaskListListController::OnRemoveListButtonClick,this,wxID_ANY);
+    view->Bind(wxEVT_BUTTON, &TaskListListController::OnSearchListButtonClick,this,wxID_ANY);
 }
 
 
+void TaskListListController::Run() {
+    CustomWindow* toDoFrame = new CustomWindow(frame, "My Todo list by Cappetti e Collini", wxPoint(50, 50), wxSize(400, 300));
+    toDoFrame->SetClientSize(800,600);
+    toDoFrame->Center();
+    toDoFrame->Show(true);
+}
+
+void TaskListListController::OnAddListButtonClick(wxCommandEvent &event) {
+    wxString taskName = (view->getTaskTextCtrl())->GetValue();
+    model->addList(taskName);
+}
+
+void TaskListListController::OnSearchListButtonClick(wxCommandEvent &event) {
+
+}
+
+void TaskListListController::OnRemoveListButtonClick(wxCommandEvent &event) {
+
+}
+
+void TaskListListController::OnEditListButtonClick(wxCommandEvent &event) {
+
+}

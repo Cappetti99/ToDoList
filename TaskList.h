@@ -28,7 +28,7 @@ public:
     void setName(const wxString& name);
 
     const std::vector<Task>& getTasks() const;
-    void addTask(const Task& task);
+    void addList(const Task& task);
     void removeTask(size_t index);
 
     void sortTasks();

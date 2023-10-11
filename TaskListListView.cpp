@@ -28,7 +28,7 @@
     mainSizer->Add(taskTextCtrl, 0, wxALL | wxEXPAND, 5);
 
 
-    wxBoxSizer* listBoxSizer = new wxBoxSizer(wxVERTICAL);
+    auto listBoxSizer = new wxBoxSizer(wxVERTICAL);
 
     taskListList = new wxListBox(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, nullptr, wxLB_SINGLE);
     listBoxSizer->Add(taskListList, 1, wxEXPAND | wxALL, 10);
@@ -37,5 +37,13 @@
 
     this->SetSizer(mainSizer);
 
+}
+
+wxTextCtrl *TaskListListView::getTaskTextCtrl() const {
+    return taskTextCtrl;
+}
+
+void TaskListListView::setTaskTextCtrl(wxTextCtrl *taskTextCtrl) {
+    TaskListListView::taskTextCtrl = taskTextCtrl;
 }
 

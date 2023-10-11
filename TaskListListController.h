@@ -14,25 +14,34 @@
 #include <wx/colour.h>
 #include <wx/textctrl.h>
 
+#include "TaskList.h"
+#include "TaskListListView.h"
+
 #include "Task.h"
 #include "TaskListListView.h"
 
-class TaskListListController : public wxFrame{
+//QUESTA CONTROLLA LA CLASSE PIU' ESTERNA
+
+class TaskListListController {
 
 public:
-    TaskListListController(const std::vector<Task> &tasks, std::vector<TaskList> &models);
-
+    TaskListListController(TaskList * model, TaskListListView * view);
+    void Run();
     //c'era anche TaskListListView& view; nel costruttore ma dava problemi dicendo che non era dichiarato
-    void addList(const TaskList& taskList);
+   /* void addList(const TaskList& taskList);
     void removeList(size_t index);
     void searchList(const wxString& searchTerm);
-    void renameList(const wxString& newName);
+    void renameList(const wxString& newName);*/
 
 private:
-    std::vector<Task> tasks;
-    std::vector<TaskList>& models;
-    //TaskListListView& view;
+    TaskList* model;
+    TaskListListView* view;
 
+    void OnAddListButtonClick(wxCommandEvent& event);
+    void OnRemoveListButtonClick(wxCommandEvent& event);
+    void OnSearchListButtonClick(wxCommandEvent& event);
+    void OnEditListButtonClick(wxCommandEvent& event);
+    wxFrame* frame;
 };
 
 //todo c'è da implementare il costruttore?

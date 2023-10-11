@@ -7,7 +7,7 @@
 ToDoListApp::ToDoListApp() {}
 
 bool ToDoListApp::OnInit() {
-
+//FORSE QUESTA ROBA VA TOLTA SE METTO DENTRO CONTROLLER
     CustomWindow* toDoFrame = new CustomWindow(frame, "My Todo list by Cappetti e Collini", wxPoint(50, 50), wxSize(400, 300));
     toDoFrame->SetClientSize(800,600);
     toDoFrame->Center();
