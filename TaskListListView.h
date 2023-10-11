@@ -43,12 +43,14 @@ private:
 
     std::vector<TaskList> taskLists;
     wxListBox* taskListListBox;
+    wxTextCtrl* taskTextCtrl;
 
     //bottoni
     wxButton* addListButton;
     wxButton* removeListButton;
     wxButton* searchListButton;
     wxButton* renameListButton;
+
 
 };
 
