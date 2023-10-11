@@ -20,6 +20,9 @@ const std::vector<Task>& TaskList::getTasks() const {
 }
 
 void TaskList::addTask(const Task& task) {
+    //devo aggiungere data, priorità, nome
+
+
     tasks.push_back(task);
 }
 

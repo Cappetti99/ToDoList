@@ -5,7 +5,7 @@
 #include "TaskListController.h"
 
 TaskListController::TaskListController(TaskList& model)
-        : model(model){}
+        : model(model) {}
 
 void TaskListController::addTask(const Task& task) {
     model.addTask(task);
