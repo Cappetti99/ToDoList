@@ -14,7 +14,7 @@
 #include <wx/textctrl.h>
 #include <wx/listbox.h>
 
-#include "CustomWindow.h"
+
 #include "TaskList.h"
 #include "ToDoListApp.h"
 
@@ -25,6 +25,9 @@ class TaskListListView : public wxPanel {
 public:
     TaskListListView(wxWindow* parent, const wxString& title, const std::vector<TaskList>& taskLists);
 
+    wxTextCtrl *getTaskTextCtrl() const;
+
+    void setTaskTextCtrl(wxTextCtrl *taskTextCtrl);
 
 private:
     /*
@@ -40,12 +43,6 @@ private:
     //variabili
     wxFrame frameListList;
     wxListBox* taskListList;
-public:
-    wxTextCtrl *getTaskTextCtrl() const;
-
-    void setTaskTextCtrl(wxTextCtrl *taskTextCtrl);
-
-private:
 
     std::vector<TaskList> taskLists;
     wxListBox* taskListListBox;
@@ -56,6 +53,10 @@ private:
     wxButton* removeListButton;
     wxButton* searchListButton;
     wxButton* renameListButton;
+
+
+
+
 
 
 };

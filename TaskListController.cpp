@@ -3,7 +3,7 @@
 //
 
 #include "TaskListController.h"
-
+/*
 TaskListController::TaskListController(TaskList& model)
         : model(model) {}
 
@@ -32,3 +32,4 @@ void TaskListController::renameList(const wxString& newName) {
     model.setName(newName);
     // Update the view to reflect the changes
 }
+*/

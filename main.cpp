@@ -11,9 +11,17 @@ int main(){
 /*class ToDoListApp : public wxApp {
 public:
 
-    }*/
+    */
+wxApp::SetInstance(new wxApp);
+wxApp::GetInstance()->OnInit();
+TaskList model;
+TaskListListView();
+TaskListListController controller(&model, &view);
+
+view.Show(true);
+controller.Run();
 
 
 
 };
-*/
+
