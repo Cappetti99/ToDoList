@@ -34,6 +34,7 @@ public:
     void sortTasks();
     std::vector<Task> searchTasks(const wxString& keyword) const;
 
+
 private:
     wxString name;
     std::vector<Task> tasks;

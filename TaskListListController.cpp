@@ -14,7 +14,7 @@ TaskListListController::TaskListListController(TaskList * model, TaskListListVie
 
 
    void TaskListListController::Run() {
-       CustomWindow* toDoFrame = new CustomWindow(frame, "My Todo list by Cappetti e Collini", wxPoint(50, 50), wxSize(400, 300));
+       TaskListListView* toDoFrame  = new TaskListListView(frame, "My Todo list by Cappetti e Collini", wxPoint(50, 50), wxSize(400, 300));
        toDoFrame->SetClientSize(800,600);
        toDoFrame->Center();
        toDoFrame->Show(true);

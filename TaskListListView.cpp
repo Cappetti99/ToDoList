@@ -4,8 +4,8 @@
 
 #include "TaskListListView.h"
 
-    TaskListListView::TaskListListView(wxWindow* parent, const wxString& title, const std::vector<TaskList>& taskLists)
-        : wxPanel(parent, wxID_ANY, wxDefaultPosition, wxDefaultSize), taskLists(taskLists) {
+    TaskListListView::TaskListListView(wxWindow* parent, const wxString& title, const wxPoint& pos, const wxSize& size)
+        : wxFrame(parent, wxID_ANY, title, wxDefaultPosition, wxDefaultSize){
 
     auto mainSizer = new wxBoxSizer(wxVERTICAL);
 

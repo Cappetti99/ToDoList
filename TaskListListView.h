@@ -20,10 +20,10 @@
 
 
 
-class TaskListListView : public wxPanel {
+class TaskListListView : public wxFrame {
 
 public:
-    TaskListListView(wxWindow* parent, const wxString& title, const std::vector<TaskList>& taskLists);
+    TaskListListView(wxWindow* parent, const wxString& title, const wxPoint& pos, const wxSize& size);
 
     wxTextCtrl *getTaskTextCtrl() const;
 
@@ -44,7 +44,7 @@ private:
     wxFrame frameListList;
     wxListBox* taskListList;
 
-    std::vector<TaskList> taskLists;
+    //std::vector<TaskList> taskLists;
     wxListBox* taskListListBox;
     wxTextCtrl* taskTextCtrl;
 
@@ -53,11 +53,6 @@ private:
     wxButton* removeListButton;
     wxButton* searchListButton;
     wxButton* renameListButton;
-
-
-
-
-
 
 };
 
