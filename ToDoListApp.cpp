@@ -6,7 +6,7 @@
 
 ToDoListApp::ToDoListApp() {}
 
-bool ToDoListApp::OnInit() {
+//bool ToDoListApp::OnInit() {
 //FORSE QUESTA ROBA VA TOLTA SE METTO DENTRO CONTROLLER
   /*  TaskListListView* toDoFrame = new TaskListListView(frame, "My Todo list by Cappetti e Collini", wxPoint(50, 50), wxSize(400, 300),);
     toDoFrame->SetClientSize(800,600);
@@ -14,7 +14,7 @@ bool ToDoListApp::OnInit() {
     toDoFrame->Show(true);
 
     return true;*/
-}
+//}
 
 //void ToDoListApp::OnOpenButtonClick(wxCommandEvent& event) {
 //    // Create and show the CustomWindow
