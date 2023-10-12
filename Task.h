@@ -14,6 +14,11 @@
 #include <algorithm>
 #include <wx/datetime.h>
 
+#include "DateSelectionDialog.h"
+#include "PrioritySelectionDialog.h"
+#include "TaskListListView.h"   //mi serve per il taskTextCtrl
+
+
 enum class Priority{
     Low,
     Medium,
@@ -43,12 +48,20 @@ public:
     // Static method to convert Priority enum to string
     static wxString PriorityToString(Priority priority);
 
+    void addTask();
+    void removeTask(size_t index);
+    void sortTask();
+    std::vector<Task> searchTasks();
+
 
 private:
     wxDateTime expirationDate;
     wxString title;
     Priority priority;
     bool completed;
+
+    wxTextCtrl* taskTextCtrl;
+
 
 };
 #endif //TODOLIST_TASK_H

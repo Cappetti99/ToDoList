@@ -49,3 +49,27 @@ wxString Task::PriorityToString(Priority priority) {
             return "";
     }
 }
+
+void Task::addTask() {
+
+    wxString task = taskTextCtrl->GetValue(); //credo sia sbagliato e si debba prendere da TaskListListView con un get invece di dichiararlo nel .h
+    if (!task.IsEmpty()) {
+        //DateSelectionDialog dateDialog = new DateSelectionDialog(this, "Select expiration date:");   //fixme da capire cosa scrivere al posto di this
+        //PrioritySelectionDialog priorityDialog = new PrioritySelectionDialog(this, "Select priority:");
+
+
+
+    }
+}
+
+void Task::removeTask(size_t index) {
+
+}
+
+void Task::sortTask() {
+
+}
+
+std::vector<Task> Task::searchTasks() {
+    return std::vector<Task>();
+}
