@@ -52,7 +52,7 @@ std::vector<Task> TaskList::searchTasks(const wxString& keyword) const {
     for (const Task& task : tasks) {
         // Customize the search logic here based on your criteria
         if (task.getTitle().Lower().Contains(keyword.Lower())) {
-            searchResults.push_back(task);
+            //searchResults.push_back(tasks);
         }
     }
 

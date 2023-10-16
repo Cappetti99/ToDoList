@@ -7,7 +7,12 @@
 
 
 #include <wx/wx.h>
-#include "Task.h"
+
+enum class Priority{
+    Low,
+    Medium,
+    High
+};
 
 class PrioritySelectionDialog : public wxDialog {
 public:

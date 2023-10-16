@@ -7,11 +7,13 @@
 #include "TaskListListController.h"
 #include "CustomWindow.h"
 //E' TUTTO DA SISTEMARE
+
+/*
 int main(){
-/*class ToDoListApp : public wxApp {
+class ToDoListApp : public wxApp {
 public:
  = new TaskList("");
-    */
+
 wxFrame* frame;
 wxApp::SetInstance(new wxApp);
 wxApp::GetInstance()->OnInit();
@@ -26,4 +28,4 @@ return 0;
 
 
 };
-
+*/

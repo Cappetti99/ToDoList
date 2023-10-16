@@ -13,7 +13,6 @@
 #include <wx/colour.h>
 #include <wx/textctrl.h>
 
-#include "TaskList.h"
 #include "TaskListView.h"
 
 class TaskListController {

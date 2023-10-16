@@ -8,7 +8,6 @@
 #include <wx/wx.h>
 #include <wx/textctrl.h>
 
-#include "TaskListListView.h"
 #include "TaskList.h"
 
 

@@ -7,14 +7,14 @@
 
 #include <wx/wx.h>
 
-
+#include "TaskListListView.h"
 #include "CustomWindow.h"
 
 
 class ToDoListApp : public wxApp {
 public:
-      ToDoListApp();
-//    virtual bool OnInit();
+    ToDoListApp();
+    virtual bool OnInit();
 
 private:
     wxFrame* frame;

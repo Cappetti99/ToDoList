@@ -13,9 +13,9 @@
 #include <wx/colour.h>
 #include <wx/textctrl.h>
 #include <wx/listbox.h>
+#include <wx/checklst.h>
 
 
-#include "TaskList.h"
 #include "ToDoListApp.h"
 
 
@@ -28,6 +28,10 @@ public:
     wxTextCtrl *getTaskTextCtrl() const;
 
     void setTaskTextCtrl(wxTextCtrl *taskTextCtrl);
+
+    void OnAddListButtonClick(wxCommandEvent& event);
+
+
 
 private:
     /*
@@ -44,9 +48,14 @@ private:
     wxFrame frameListList;
     wxListBox* taskListList;
 
+    //Task* task;
+
+private:
+
     //std::vector<TaskList> taskLists;
     wxListBox* taskListListBox;
     wxTextCtrl* taskTextCtrl;
+    wxCheckListBox* taskCheckBox;
 
     //bottoni
     wxButton* addListButton;

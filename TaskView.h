@@ -13,7 +13,7 @@
 #include <wx/colour.h>
 #include <wx/textctrl.h>
 
-#include "Task.h"
+
 #include "CustomWindow.h"
 
 

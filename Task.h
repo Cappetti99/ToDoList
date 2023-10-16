@@ -13,17 +13,11 @@
 #include <fstream>
 #include <algorithm>
 #include <wx/datetime.h>
+#include <wx/datectrl.h>
 
 #include "DateSelectionDialog.h"
-#include "PrioritySelectionDialog.h"
-#include "TaskListListView.h"   //mi serve per il taskTextCtrl
-
-
-enum class Priority{
-    Low,
-    Medium,
-    High
-};
+#include "PrioritySelectionDialog.h"  //probabilmente da errore perchè chiama Task.h
+//#include "TaskListListView.h"
 
 
 class Task {
@@ -49,19 +43,18 @@ public:
     static wxString PriorityToString(Priority priority);
 
     void addTask();
-    void removeTask(size_t index);
+    void removeTask();
     void sortTask();
-    std::vector<Task> searchTasks();
-
+    std::vector<Task> searchTask();
+    void swapTask();
+    void refreshTask();
 
 private:
     wxDateTime expirationDate;
     wxString title;
     Priority priority;
     bool completed;
-
-    wxTextCtrl* taskTextCtrl;
-
+    std::vector<Task> taskList;
 
 };
 #endif //TODOLIST_TASK_H

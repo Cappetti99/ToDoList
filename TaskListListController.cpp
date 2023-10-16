@@ -21,10 +21,8 @@ TaskListListController::TaskListListController(TaskList * model, TaskListListVie
    }
 
    void TaskListListController::OnAddListButtonClick(wxCommandEvent &event) {
-//       wxString taskName = (view->getTaskTextCtrl())->GetValue();
-//       model->addList(taskName);
-//non va bene perchè stiamo passando un nome al posto di una task
-
+       wxString taskName = (view->getTaskTextCtrl())->GetValue();
+       model->addList(taskName);
    }
 
    void TaskListListController::OnSearchListButtonClick(wxCommandEvent &event) {

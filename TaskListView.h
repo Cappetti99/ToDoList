@@ -13,9 +13,8 @@
 #include <wx/colour.h>
 #include <wx/textctrl.h>
 
-#include "Task.h"
 #include "CustomWindow.h"
-#include "TaskList.h"
+
 
 
 class TaskListView : public wxFrame {
