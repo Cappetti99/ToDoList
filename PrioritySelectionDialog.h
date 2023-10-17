@@ -8,11 +8,9 @@
 
 #include <wx/wx.h>
 
-enum class Priority{
-    Low,
-    Medium,
-    High
-};
+#include "Priority.h"
+
+
 
 class PrioritySelectionDialog : public wxDialog {
 public:

@@ -50,6 +50,23 @@ wxString Task::PriorityToString(Priority priority) {
     }
 }
 
+void Task::addTask(wxDateTime expirationDate, wxString title, Priority selectedPriority) {
+
+    Task newTask;
+    newTask.setTitle(title);
+    newTask.setCompleted(false);
+    newTask.setExpirationDate(expirationDate);
+    newTask.setPriority(selectedPriority);
+
+    taskList.push_back(newTask);
+
+
+
+
+
+}
+
+/*
 void Task::addTask() {
 
     printf("jj");
@@ -86,6 +103,7 @@ void Task::addTask() {
 
     }
 }
+*/
 
 void Task::removeTask() {
 

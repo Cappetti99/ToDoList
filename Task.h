@@ -15,10 +15,11 @@
 #include <wx/datetime.h>
 #include <wx/datectrl.h>
 
-#include "DateSelectionDialog.h"
-#include "PrioritySelectionDialog.h"  //probabilmente da errore perchè chiama Task.h
+//#include "DateSelectionDialog.h"
+//#include "PrioritySelectionDialog.h"
 //#include "TaskListListView.h"
 
+#include "Priority.h"
 
 class Task {
 
@@ -42,7 +43,7 @@ public:
     // Static method to convert Priority enum to string
     static wxString PriorityToString(Priority priority);
 
-    void addTask();
+    void addTask(wxDateTime expirationDate, wxString title, Priority selectedPriority);
     void removeTask();
     void sortTask();
     std::vector<Task> searchTask();

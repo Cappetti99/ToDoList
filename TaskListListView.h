@@ -17,6 +17,8 @@
 
 
 #include "ToDoListApp.h"
+#include "DateSelectionDialog.h"
+#include "PrioritySelectionDialog.h"
 
 
 
