@@ -4,17 +4,26 @@
 
 #include "ToDoListApp.h"
 
+
 ToDoListApp::ToDoListApp() {}
 
 bool ToDoListApp::OnInit() {
 //FORSE QUESTA ROBA VA TOLTA SE METTO DENTRO CONTROLLER
-    TaskListListView* toDoFrame = new TaskListListView(frame, "My Todo list by Cappetti e Collini", wxPoint(50, 50), wxSize(400, 300));
-    toDoFrame->SetClientSize(800,600);
-    toDoFrame->Center();
-    toDoFrame->Show(true);
 
-    return true;
-}
+    TaskList model;
+    TaskListListView* view= new TaskListListView(frame,"My Todo list by Cappetti e Collini", wxDefaultPosition, wxDefaultSize);
+    TaskListListController controller (&model, view);
+    view->SetClientSize(800,600);
+    view->Center();
+    view->Show(true);
+
+     /*TaskListListView* toDoFrame = new TaskListListView(frame, "My Todo list by Cappetti e Collini", wxPoint(50, 50), wxSize(400, 300));
+      toDoFrame->SetClientSize(800,600);
+      toDoFrame->Center();
+      toDoFrame->Show(true);
+*/
+      return true;
+  }
 
 /*
 void ToDoListApp::OnOpenButtonClick(wxCommandEvent& event) {
@@ -47,8 +56,9 @@ bool ToDoListApp::OnInit() {
     frame->Show(true);
 
     return true;
-}
-*/
+    */
+
+
 
 wxIMPLEMENT_APP(ToDoListApp);
 

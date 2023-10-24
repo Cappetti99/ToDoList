@@ -3,9 +3,18 @@
 //
 
 #include "TaskListListView.h"
+#include "Task.h"
 
-TaskListListView::TaskListListView(wxWindow *parent, const wxString &title, const wxPoint &pos, const wxSize &size)
-        : wxFrame(parent, wxID_ANY, title, wxDefaultPosition, wxDefaultSize) {
+/*
+wxBEGIN_EVENT_TABLE(TaskListListView, wxFrame)
+        EVT_BUTTON(ID_AddList ,TaskListListController::OnAddListButtonClick);
+        EVT_BUTTON(ID_RenameList ,TaskListListController::OnEditListButtonClick);
+        EVT_BUTTON(ID_RemoveList,TaskListListController::OnRemoveListButtonClick);
+        EVT_BUTTON(ID_SearchList, TaskListListController::OnSearchListButtonClick);
+wxEND_EVENT_TABLE()
+*/
+    TaskListListView::TaskListListView(wxWindow* parent, const wxString& title, const wxPoint& pos, const wxSize& size)
+        : wxFrame(parent, wxID_ANY, title, wxDefaultPosition, wxDefaultSize){
 
     auto mainSizer = new wxBoxSizer(wxVERTICAL);
 
@@ -13,12 +22,12 @@ TaskListListView::TaskListListView(wxWindow *parent, const wxString &title, cons
                                        wxTE_PROCESS_ENTER);
     //mainSizer->Add(taskTextCtrl, 0, wxEXPAND | wxALL, 5);
 
-    auto addListButton = new wxButton(this, wxID_ANY, "Add List");
-    auto removeListButton = new wxButton(this, wxID_ANY, "Remove List");
-    auto searchListButton = new wxButton(this, wxID_ANY, "Search List");
-    auto renameListButton = new wxButton(this, wxID_ANY, "Rename List");
+    wxButton* addListButton = new wxButton(this, ID_AddList, "Add List");
+    auto removeListButton = new wxButton(this, ID_RemoveList, "Remove List");
+    auto searchListButton = new wxButton(this, ID_SearchList, "Search List");
+    auto renameListButton = new wxButton(this, ID_RenameList, "Rename List");
 
-    addListButton->Bind(wxEVT_BUTTON, &TaskListListView::OnAddListButtonClick, this, wxID_ANY);
+    //addListButton->Bind(wxEVT_BUTTON, &TaskListListView::OnAddListButtonClick, this, ID_AddList);
 
     auto buttonsSizer = new wxBoxSizer(wxHORIZONTAL);
 
@@ -51,8 +60,9 @@ void TaskListListView::setTaskTextCtrl(wxTextCtrl *taskTextCtrl) {
 }
 
 
-void TaskListListView::OnAddListButtonClick(wxCommandEvent &event) {
 
+
+std::tuple<wxDateTime,wxString,Priority> TaskListListView::OnAddListButtonClick() {
 
     Task* task = new Task;
     wxString title = wxGetTextFromUser("Enter title:");
@@ -68,15 +78,20 @@ void TaskListListView::OnAddListButtonClick(wxCommandEvent &event) {
         if (priorityDialog.ShowModal() == wxID_OK) {
             Priority selectedPriority = priorityDialog.getSelectedPriority();
 
-            task->addTask(expirationDate, title, selectedPriority);
+            //task->addTask(expirationDate, title, selectedPriority);
+            return std::make_tuple(expirationDate, title, selectedPriority);
         }
 
 
     }
 
+    //return std::make_tuple(expirationDate, title, selectedPriority) ;
 
 
+}
 
+wxButton *TaskListListView::getAddListButton() const {
+    return addListButton;
 }
 
 

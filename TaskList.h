@@ -33,9 +33,13 @@ public:
 
     void sortTasks();
     std::vector<Task> searchTasks(const wxString& keyword) const;
-
+//SOLO PER PROVARE SE FUNZIONA
+    void addTask1(wxDateTime expirationDate, wxString title, Priority selectedPriority);
 
 private:
+    //PER PROVA
+    std::vector<Task> taskList;
+
     wxString name;
     std::vector<Task> tasks;
     bool tasksSorted;

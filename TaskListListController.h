@@ -9,27 +9,32 @@
 #include <wx/wx.h>
 
 #include "TaskListListView.h"
+#include "TaskList.h"
 
 
 //QUESTA CONTROLLA LA CLASSE PIU' ESTERNA
-
-class TaskListListController {
+//non so se ok dichiararlo come object
+class TaskListListController : public wxObject {
 
 public:
     TaskListListController(TaskList *model, TaskListListView *view);
 
-    void Run();
+
 
 
 private:
     TaskList *model;
     TaskListListView * view;
 
-    void OnAddListButtonClick(wxCommandEvent& event);
-    void OnRemoveListButtonClick(wxCommandEvent& event);
-    void OnSearchListButtonClick(wxCommandEvent& event);
-    void OnEditListButtonClick(wxCommandEvent& event);
+    void AddListButton(wxCommandEvent &event);
+    void OnRemoveListButtonClick(wxCommandEvent &event);
+    void OnSearchListButtonClick(wxCommandEvent &event);
+    void OnEditListButtonClick(wxCommandEvent &event);
+
+
     wxFrame* frame;
+
+    //wxDECLARE_EVENT_TABLE();
 };
 
 //todo c'è da implementare il costruttore?

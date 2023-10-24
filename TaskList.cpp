@@ -26,6 +26,18 @@ void TaskList::addList(const Task& task) {
     tasks.push_back(task);
 }
 
+//SOLO PER PROVARE SE FUNZIONA
+void TaskList::addTask1(wxDateTime expirationDate, wxString title, Priority selectedPriority) {
+
+    Task newTask;
+    newTask.setTitle(title);
+    newTask.setCompleted(false);
+    newTask.setExpirationDate(expirationDate);
+    newTask.setPriority(selectedPriority);
+
+    taskList.push_back(newTask);
+}
+
 void TaskList::removeTask(size_t index) {
     if (index < tasks.size()) {
         tasks.erase(tasks.begin() + index);

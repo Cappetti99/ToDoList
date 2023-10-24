@@ -16,7 +16,7 @@
 #include <wx/checklst.h>
 
 
-#include "ToDoListApp.h"
+//#include "ToDoListApp.h"
 #include "DateSelectionDialog.h"
 #include "PrioritySelectionDialog.h"
 
@@ -31,11 +31,19 @@ public:
 
     void setTaskTextCtrl(wxTextCtrl *taskTextCtrl);
 
-    void OnAddListButtonClick(wxCommandEvent& event);
+    std::tuple<wxDateTime,wxString,Priority> OnAddListButtonClick();
 
+    wxButton *getAddListButton() const;
 
-
+    enum {
+        ID_AddList = wxID_HIGHEST + 1,
+        ID_RenameList,
+        ID_RemoveList,
+        ID_SearchList
+    };
 private:
+
+
     /*
     //funzioni
     void addListButton(wxCommandEvent& event);
@@ -47,12 +55,11 @@ private:
 
 
     //variabili
+    //TaskListListController controller;
     wxFrame frameListList;
     wxListBox* taskListList;
 
     //Task* task;
-
-private:
 
     //std::vector<TaskList> taskLists;
     wxListBox* taskListListBox;
@@ -61,9 +68,14 @@ private:
 
     //bottoni
     wxButton* addListButton;
+
+
     wxButton* removeListButton;
     wxButton* searchListButton;
     wxButton* renameListButton;
+
+ //wxDECLARE_EVENT_TABLE();
+
 
 };
 
