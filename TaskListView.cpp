@@ -58,3 +58,28 @@ void TaskListView::sortButton(wxCommandEvent &event) {
         taskListBox->Append(task.getTitle());
     }
 }
+
+/*QUESTO VA QUI
+std::tuple<wxDateTime,wxString,Priority> TaskListListView::OnAddTaskButtonClick() {
+
+    Task* task = new Task;
+    wxString title = wxGetTextFromUser("Enter title:");
+    DateSelectionDialog dateDialog(nullptr, "Select expiration date:");
+
+    if (dateDialog.ShowModal() == wxID_OK) {
+        wxDatePickerCtrl *datePicker = dateDialog.getDatePicker();
+        wxDateTime expirationDate = datePicker->GetValue();
+        wxString expirationDateStr = expirationDate.Format("%d %B, %Y");
+
+        PrioritySelectionDialog priorityDialog(nullptr, "Select priority:");
+
+        if (priorityDialog.ShowModal() == wxID_OK) {
+            Priority selectedPriority = priorityDialog.getSelectedPriority();
+
+
+            return std::make_tuple(expirationDate, title, selectedPriority);
+        }
+
+
+    }
+*/

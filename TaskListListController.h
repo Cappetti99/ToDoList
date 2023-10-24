@@ -27,9 +27,9 @@ private:
     TaskListListView * view;
 
     void AddListButton(wxCommandEvent &event);
-    void OnRemoveListButtonClick(wxCommandEvent &event);
-    void OnSearchListButtonClick(wxCommandEvent &event);
-    void OnEditListButtonClick(wxCommandEvent &event);
+    void RemoveListButton(wxCommandEvent &event);
+    void SearchListButton(wxCommandEvent &event);
+    void RenameListButton(wxCommandEvent &event);
 
 
     wxFrame* frame;

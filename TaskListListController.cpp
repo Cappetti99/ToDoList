@@ -14,30 +14,29 @@ wxEND_EVENT_TABLE()
 TaskListListController::TaskListListController(TaskList * model, TaskListListView * view){
 
     view->Bind(wxEVT_BUTTON, &TaskListListController::AddListButton, this, TaskListListView::ID_AddList);
+    view->Bind(wxEVT_BUTTON, &TaskListListController::SearchListButton, this, TaskListListView::ID_SearchList);
+    view->Bind(wxEVT_BUTTON, &TaskListListController::RemoveListButton, this, TaskListListView::ID_RemoveList);
+    view->Bind(wxEVT_BUTTON, &TaskListListController::RenameListButton, this, TaskListListView::ID_RenameList);
 }
 
 
 
+
    void TaskListListController::AddListButton(wxCommandEvent& event) {
-       //wxString taskName = (view->getTaskTextCtrl())->GetValue();
-        auto values =view->OnAddListButtonClick();
-       wxDateTime a = std::get<0>(values);
-       wxString b =std::get<1>(values);
-       Priority c =std::get<2>(values);
-
-       //model->addList();
-       model->addTask1(a,b,c);
+       wxString taskName = (view->getTaskTextCtrl())->GetValue();
+        view->OnAddListButtonClick();
+       model->addList(taskName);
    }
 
-   void TaskListListController::OnSearchListButtonClick(wxCommandEvent &event) {
+   void TaskListListController::SearchListButton(wxCommandEvent &event) {
 
    }
 
-   void TaskListListController::OnRemoveListButtonClick(wxCommandEvent &event) {
+   void TaskListListController::RemoveListButton(wxCommandEvent &event) {
 
    }
 
-   void TaskListListController::OnEditListButtonClick(wxCommandEvent &event) {
+   void TaskListListController::RenameListButton(wxCommandEvent &event) {
 
 }
 

@@ -31,7 +31,7 @@ public:
 
     void setTaskTextCtrl(wxTextCtrl *taskTextCtrl);
 
-    std::tuple<wxDateTime,wxString,Priority> OnAddListButtonClick();
+    void OnAddListButtonClick();
 
     wxButton *getAddListButton() const;
 

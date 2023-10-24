@@ -20,11 +20,11 @@ class TaskListController {
 public:
     TaskListController(TaskList& model);
 
-    void addTask(const Task& task);
-    void removeTask(size_t index);
-    void sortTasks();
-    void searchTasks(const wxString& searchTerm);
-    void renameList(const wxString& newName);
+    void addTaskButton(wxCommandEvent& event);
+    void removeTaskButton(size_t index);
+    void sortTaskButton();
+    void searchTaskButton(const wxString& searchTerm);
+    //void renameListButton(const wxString& newName);
 
 private:
     //funzioni

@@ -7,27 +7,33 @@
 TaskListController::TaskListController(TaskList& model)
         : model(model) {}
 
-void TaskListController::addTask(const Task& task) {
-    model.addTask(task);
-    // Update the view to reflect the changes
-    // For example, refresh the task list box in the view.
+
+ //questo così dovrebbe funzionare sistemando per bene view e model
+
+void TaskListController::addTaskButton(wxCommandEvent& event) {
+    auto values =view->OnAddListButtonClick();
+wxDateTime a = std::get<0>(values);
+wxString b =std::get<1>(values);
+Priority c =std::get<2>(values);
+
+       model->addTask(a,b,c);
 }
 
-void TaskListController::removeTask(size_t index) {
+void TaskListController::removeTaskButton(size_t index) {
     model.removeTask(index);
     // Update the view to reflect the changes
 }
 
-void TaskListController::sortTasks() {
+void TaskListController::sortTaskButton() {
     model.sortTasks();
     // Update the view to reflect the changes
 }
 
-void TaskListController::searchTasks(const wxString& searchTerm) {
+void TaskListController::searchTaskButton(const wxString& searchTerm) {
     std::vector<Task> result = model.searchTasks(searchTerm);
     // Update the view to display the search results
 }
-
+NON VA QUI QUESTO
 void TaskListController::renameList(const wxString& newName) {
     model.setName(newName);
     // Update the view to reflect the changes

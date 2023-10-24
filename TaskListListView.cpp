@@ -62,7 +62,8 @@ void TaskListListView::setTaskTextCtrl(wxTextCtrl *taskTextCtrl) {
 
 
 
-std::tuple<wxDateTime,wxString,Priority> TaskListListView::OnAddListButtonClick() {
+void TaskListListView::OnAddListButtonClick() {
+        /* QUESTA ROBA VA SU TASKLISTVIEW
 
     Task* task = new Task;
     wxString title = wxGetTextFromUser("Enter title:");
@@ -78,17 +79,15 @@ std::tuple<wxDateTime,wxString,Priority> TaskListListView::OnAddListButtonClick(
         if (priorityDialog.ShowModal() == wxID_OK) {
             Priority selectedPriority = priorityDialog.getSelectedPriority();
 
-            //task->addTask(expirationDate, title, selectedPriority);
+
             return std::make_tuple(expirationDate, title, selectedPriority);
         }
 
 
     }
-
-    //return std::make_tuple(expirationDate, title, selectedPriority) ;
-
-
+         */
 }
+
 
 wxButton *TaskListListView::getAddListButton() const {
     return addListButton;

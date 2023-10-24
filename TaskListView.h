@@ -22,6 +22,8 @@ class TaskListView : public wxFrame {
 public:
     TaskListView(const wxString& title, const wxPoint& pos, const wxSize& size);
 
+    std::tuple<wxDateTime,wxString,Priority> OnAddTaskButtonClick();
+
 private:
     //funzioni
 
