@@ -31,9 +31,14 @@ public:
 
     void setTaskTextCtrl(wxTextCtrl *taskTextCtrl);
 
-    void OnAddListButtonClick();
+    wxString OnAddListButtonClick();
 
     wxButton *getAddListButton() const;
+
+    const wxString &getTitle() const;
+
+    void setTitle(const wxString &title);
+
 
     enum {
         ID_AddList = wxID_HIGHEST + 1,
@@ -68,11 +73,11 @@ private:
 
     //bottoni
     wxButton* addListButton;
-
-
     wxButton* removeListButton;
     wxButton* searchListButton;
     wxButton* renameListButton;
+
+    wxString title;
 
  //wxDECLARE_EVENT_TABLE();
 

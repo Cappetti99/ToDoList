@@ -5,7 +5,9 @@
 #include "TaskList.h"
 
 TaskList::TaskList(const wxString& name)
-        : name(name) {}
+        : name(name) {
+
+}
 
 const wxString& TaskList::getName() const {
     return name;
@@ -19,11 +21,13 @@ const std::vector<Task>& TaskList::getTasks() const {
     return tasks;
 }
 
-void TaskList::addList(const Task& task) {
-    //devo aggiungere data, priorità, nome
+void TaskList::addList(const wxString& name) {
 
 
-    tasks.push_back(task);
+
+    TaskList newList(name);
+
+    
 }
 
 void TaskList::removeTask(size_t index) {

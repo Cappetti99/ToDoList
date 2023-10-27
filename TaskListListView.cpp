@@ -22,7 +22,7 @@ wxEND_EVENT_TABLE()
                                        wxTE_PROCESS_ENTER);
     //mainSizer->Add(taskTextCtrl, 0, wxEXPAND | wxALL, 5);
 
-    wxButton* addListButton = new wxButton(this, ID_AddList, "Add List");
+    auto addListButton = new wxButton(this, ID_AddList, "Add List");
     auto removeListButton = new wxButton(this, ID_RemoveList, "Remove List");
     auto searchListButton = new wxButton(this, ID_SearchList, "Search List");
     auto renameListButton = new wxButton(this, ID_RenameList, "Rename List");
@@ -60,37 +60,27 @@ void TaskListListView::setTaskTextCtrl(wxTextCtrl *taskTextCtrl) {
 }
 
 
+wxString TaskListListView::OnAddListButtonClick() {
 
 
-void TaskListListView::OnAddListButtonClick() {
-        /* QUESTA ROBA VA SU TASKLISTVIEW
+    wxString name = wxGetTextFromUser("Enter title of the list:"); //serve per mettere il nome direttamente da qui
+    //data e priorità qui non servono perche è un vettore di task quindi ha solo il nome
 
-    Task* task = new Task;
-    wxString title = wxGetTextFromUser("Enter title:");
-    DateSelectionDialog dateDialog(nullptr, "Select expiration date:");
+    return name;
 
-    if (dateDialog.ShowModal() == wxID_OK) {
-        wxDatePickerCtrl *datePicker = dateDialog.getDatePicker();
-        wxDateTime expirationDate = datePicker->GetValue();
-        wxString expirationDateStr = expirationDate.Format("%d %B, %Y");
-
-        PrioritySelectionDialog priorityDialog(nullptr, "Select priority:");
-
-        if (priorityDialog.ShowModal() == wxID_OK) {
-            Priority selectedPriority = priorityDialog.getSelectedPriority();
-
-
-            return std::make_tuple(expirationDate, title, selectedPriority);
-        }
-
-
-    }
-         */
 }
 
 
 wxButton *TaskListListView::getAddListButton() const {
     return addListButton;
+}
+
+const wxString &TaskListListView::getTitle() const {
+    return title;
+}
+
+void TaskListListView::setTitle(const wxString &title) {
+    TaskListListView::title = title;
 }
 
 

@@ -28,7 +28,7 @@ public:
     void setName(const wxString& name);
 
     const std::vector<Task>& getTasks() const;
-    void addList(const Task& task);
+    void addList(const wxString& name);
     void removeTask(size_t index);
 
     void sortTasks();
@@ -37,6 +37,7 @@ public:
 
 private:
     wxString name;
+    std::vector<TaskList> lists; //elenco delle liste di task
     std::vector<Task> tasks;
     bool tasksSorted;
 };

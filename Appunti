@@ -35,3 +35,6 @@ int main() {
 }
 
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°˚
+
+dobbiamo modificare il contrioller in modo che passi i parametri alle varie funzioni,
+ per esempio dobbiamo passare i parametri per una funzione all'interno della view che aggiorna i valori della view stessa

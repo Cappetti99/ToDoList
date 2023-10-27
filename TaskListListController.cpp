@@ -3,6 +3,7 @@
 //
 
 #include "TaskListListController.h"
+
 /*
 wxBEGIN_EVENT_TABLE(TaskListListView, wxFrame)
         EVT_BUTTON(ID_AddList ,TaskListListController::AddListButton);
@@ -11,7 +12,7 @@ wxBEGIN_EVENT_TABLE(TaskListListView, wxFrame)
 wxEND_EVENT_TABLE()
  ;*/
 
-TaskListListController::TaskListListController(TaskList * model, TaskListListView * view){
+TaskListListController::TaskListListController(TaskList *model, TaskListListView *view) {
 
     view->Bind(wxEVT_BUTTON, &TaskListListController::AddListButton, this, TaskListListView::ID_AddList);
     view->Bind(wxEVT_BUTTON, &TaskListListController::SearchListButton, this, TaskListListView::ID_SearchList);
@@ -19,24 +20,22 @@ TaskListListController::TaskListListController(TaskList * model, TaskListListVie
     view->Bind(wxEVT_BUTTON, &TaskListListController::RenameListButton, this, TaskListListView::ID_RenameList);
 }
 
+void TaskListListController::AddListButton(wxCommandEvent &event) {
 
+    wxString title = (view->OnAddListButtonClick());
+    model->addList(title);
+    //fa tutto qui, non toccare
+}
 
+void TaskListListController::SearchListButton(wxCommandEvent &event) {
 
-   void TaskListListController::AddListButton(wxCommandEvent& event) {
-       wxString taskName = (view->getTaskTextCtrl())->GetValue();
-        view->OnAddListButtonClick();
-       model->addList(taskName);
-   }
+}
 
-   void TaskListListController::SearchListButton(wxCommandEvent &event) {
+void TaskListListController::RemoveListButton(wxCommandEvent &event) {
 
-   }
+}
 
-   void TaskListListController::RemoveListButton(wxCommandEvent &event) {
-
-   }
-
-   void TaskListListController::RenameListButton(wxCommandEvent &event) {
+void TaskListListController::RenameListButton(wxCommandEvent &event) {
 
 }
 
