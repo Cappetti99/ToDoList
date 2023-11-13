@@ -7,6 +7,7 @@
 TaskList::TaskList(const wxString& name)
         : name(name) {
 
+
 }
 
 const wxString& TaskList::getName() const {
@@ -18,27 +19,33 @@ void TaskList::setName(const wxString& name) {
 }
 
 const std::vector<Task>& TaskList::getTasks() const {
-    return tasks;
+    return listTasks;
 }
 
 void TaskList::addList(const wxString& name) {
 
 
+//    std::vector<std::vector<Task>> listLists; //elenco delle liste di task
+//    std::vector<Task> listTasks;
+    TaskList newList;
+    newList.setName(name);
 
-    TaskList newList(name);
+    //come si stampano le liste di task? un'altra lista?
 
-    
+
+    //bool sortLists(); //todo da implementare? ci serve qualcosa che le metta in ordine?
+
 }
 
 void TaskList::removeTask(size_t index) {
-    if (index < tasks.size()) {
-        tasks.erase(tasks.begin() + index);
+    if (index < listTasks.size()) {
+        listTasks.erase(listTasks.begin() + index);
     }
 }
 
 
-void TaskList::sortTasks() {
-    std::sort(tasks.begin(), tasks.end(), [](const Task& a, const Task& b) {
+void TaskList::sortLists() {
+    std::sort(listTasks.begin(), listTasks.end(), [](const Task& a, const Task& b) {
         // Implement your comparison logic here
         // For example, you can compare tasks based on their attributes like priority, expiration date, etc.
         // Return true if 'a' should come before 'b' in the sorted order.
@@ -53,7 +60,7 @@ void TaskList::sortTasks() {
 std::vector<Task> TaskList::searchTasks(const wxString& keyword) const {
     std::vector<Task> searchResults;
 
-    for (const Task& task : tasks) {
+    for (const Task& task : listTasks) {
         // Customize the search logic here based on your criteria
         if (task.getTitle().Lower().Contains(keyword.Lower())) {
             //searchResults.push_back(tasks);

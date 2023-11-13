@@ -31,7 +31,9 @@ add_executable(ToDoList main.cpp
         PrioritySelectionDialog.h
         DateSelectionDialog.cpp
         DateSelectionDialog.h
-        Priority.h)
+        Priority.h
+        TaskListList.cpp
+        TaskListList.h)
 
 # Include wxWidgets headers
 target_include_directories(ToDoList PRIVATE ${wxWidgets_INCLUDE_DIRS})

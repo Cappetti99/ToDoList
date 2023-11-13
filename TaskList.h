@@ -31,14 +31,14 @@ public:
     void addList(const wxString& name);
     void removeTask(size_t index);
 
-    void sortTasks();
+    void sortLists();
     std::vector<Task> searchTasks(const wxString& keyword) const;
 
 
 private:
     wxString name;
-    std::vector<TaskList> lists; //elenco delle liste di task
-    std::vector<Task> tasks;
+    //std::vector<TaskList> listLists; //elenco delle liste di task
+    std::vector<Task> listTasks;
     bool tasksSorted;
 };
 
