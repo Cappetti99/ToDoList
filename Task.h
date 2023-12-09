@@ -43,7 +43,7 @@ public:
     // Static method to convert Priority enum to string
     static wxString PriorityToString(Priority priority);
 
-    void addTask(wxDateTime expirationDate, wxString title, Priority selectedPriority);
+
     void removeTask();
     void sortTask();
     std::vector<Task> searchTask();

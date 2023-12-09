@@ -9,7 +9,7 @@
 #include <wx/wx.h>
 
 #include "TaskListListView.h"
-#include "TaskList.h"
+//#include "TaskList.h"
 
 
 //QUESTA CONTROLLA LA CLASSE PIU' ESTERNA
@@ -17,22 +17,18 @@
 class TaskListListController : public wxObject {
 
 public:
-    TaskListListController(TaskList *model, TaskListListView *view);
-
-
+    TaskListListController(TaskListList *model1, TaskListListView *view1);
 
 
 private:
-    TaskList *model;
+    TaskListList *model;
     TaskListListView * view;
-
     void AddListButton(wxCommandEvent &event);
     void RemoveListButton(wxCommandEvent &event);
     void SearchListButton(wxCommandEvent &event);
     void RenameListButton(wxCommandEvent &event);
 
 
-    wxFrame* frame;
 
     //wxDECLARE_EVENT_TABLE();
 };

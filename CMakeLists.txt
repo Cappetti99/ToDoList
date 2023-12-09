@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.25)
 project(ToDoList)
 
 set(CMAKE_CXX_STANDARD 17)
-
+set( CMAKE_BUILD_TYPE Debug )
 # Find wxWidgets package
 find_package(wxWidgets REQUIRED COMPONENTS core base)
 include(${wxWidgets_USE_FILE})

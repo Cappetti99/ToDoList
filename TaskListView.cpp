@@ -50,13 +50,11 @@ void TaskListView::sortButton(wxCommandEvent &event) {
     buttonsSizer->Add(searchButton, 0, wxALL, 10);
     
 
-    // Set up event handlers for buttons
-    // Connect addButton, removeButton, sortButton, and searchButton to respective event handlers.
 
     // Populate the taskListBox with tasks from the taskList
-    for (const Task& task : taskList.getTasks()) {
+    /*for (const Task& task : taskList.getTasks()) {
         taskListBox->Append(task.getTitle());
-    }
+    }*/
 }
 
 /*QUESTO VA QUI

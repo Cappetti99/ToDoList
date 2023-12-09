@@ -1,3 +1,4 @@
+
 //
 // Created by cappe on 30/10/23.
 //
@@ -6,11 +7,21 @@
 
 
 TaskListList::TaskListList() {
-
+    //listLists = std::vector<TaskList>();
+    a=new std::vector<int>();
+    int b =9;
+    a->push_back(b);
+    listLists = new std::vector<TaskList>();
 }
 
-void TaskListList::addToList(const TaskList list) {
+std::vector<TaskList>* &TaskListList:: addList( wxString& name) {
 
-    listLists.push_back(list);
+    //listLists= std::vector<TaskList *> listLists;
+    TaskList newlist(name);
+
+    listLists->push_back(newlist);
+    return listLists;
 }
+//non  credo serva il get
 
+//listLists.push_back(*new TaskList(name));

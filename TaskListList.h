@@ -12,12 +12,11 @@ class TaskListList {
 
 public:
     TaskListList();
-
-    void addToList(const TaskList list);
+    std::vector<TaskList>* & addList( wxString& name);
 
 private:
-    std::vector<TaskList> listLists; //elenco delle liste di task
-
+    std::vector<TaskList>* listLists;
+    std::vector<int>* a;
 };
 
 

@@ -19,6 +19,7 @@
 //#include "ToDoListApp.h"
 #include "DateSelectionDialog.h"
 #include "PrioritySelectionDialog.h"
+#include "TaskListList.h"
 
 
 
@@ -31,7 +32,9 @@ public:
 
     void setTaskTextCtrl(wxTextCtrl *taskTextCtrl);
 
-    wxString OnAddListButtonClick();
+    wxString & OnAddListButtonClick();
+
+    void RefreshTaskList(std::vector<TaskList>* vector);
 
     wxButton *getAddListButton() const;
 
@@ -48,7 +51,7 @@ public:
     };
 private:
 
-
+    //TaskList *model;
     /*
     //funzioni
     void addListButton(wxCommandEvent& event);
@@ -64,12 +67,11 @@ private:
     wxFrame frameListList;
     wxListBox* taskListList;
 
-    //Task* task;
 
-    //std::vector<TaskList> taskLists;
-    wxListBox* taskListListBox;
+
+    std::vector<TaskList> lists;
     wxTextCtrl* taskTextCtrl;
-    wxCheckListBox* taskCheckBox;
+
 
     //bottoni
     wxButton* addListButton;
@@ -79,7 +81,7 @@ private:
 
     wxString title;
 
- //wxDECLARE_EVENT_TABLE();
+
 
 
 };

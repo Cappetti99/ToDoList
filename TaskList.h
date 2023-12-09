@@ -22,13 +22,12 @@
 
 class TaskList {
 public:
-    TaskList(const wxString& name = "");
+    TaskList( wxString& name);
 
-    const wxString& getName() const;
-    void setName(const wxString& name);
+    wxString getName() const;
 
-    const std::vector<Task>& getTasks() const;
-    void addList(const wxString& name);
+
+    std::vector<Task> &addTask(wxDateTime expirationDate, wxString title, Priority selectedPriority);
     void removeTask(size_t index);
 
     void sortLists();
@@ -36,10 +35,11 @@ public:
 
 
 private:
-    wxString name;
+    wxString title;
     //std::vector<TaskList> listLists; //elenco delle liste di task
     std::vector<Task> listTasks;
-    bool tasksSorted;
+
+    //bool tasksSorted;
 };
 
 /*

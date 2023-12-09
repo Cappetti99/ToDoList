@@ -50,21 +50,7 @@ wxString Task::PriorityToString(Priority priority) {
     }
 }
 
-void Task::addTask(wxDateTime expirationDate, wxString title, Priority selectedPriority) {
 
-    Task newTask;
-    newTask.setTitle(title);
-    newTask.setCompleted(false);
-    newTask.setExpirationDate(expirationDate);
-    newTask.setPriority(selectedPriority);
-
-    taskList.push_back(newTask);
-
-
-
-
-
-}
 
 /*
 void Task::addTask() {
@@ -122,6 +108,8 @@ void Task::swapTask() {
 }
 
 void Task::refreshTask() {
+  /*
+
     for (const Task &task: taskList) {
         wxString priorityStr;
 
@@ -160,5 +148,5 @@ void Task::refreshTask() {
 //            taskCheckBox->Check(index,true);
 
     }
-
+*/
 }

@@ -8,11 +8,11 @@
 ToDoListApp::ToDoListApp() {}
 
 bool ToDoListApp::OnInit() {
-//FORSE QUESTA ROBA VA TOLTA SE METTO DENTRO CONTROLLER
 
-    TaskList model;
-    TaskListListView* view= new TaskListListView(frame,"My Todo list by Cappetti e Collini", wxDefaultPosition, wxDefaultSize);
-    TaskListListController controller (&model, view);
+
+    auto model=new TaskListList();
+    auto view= new TaskListListView(frame,"My Todo list by Cappetti e Collini", wxDefaultPosition, wxDefaultSize);
+    TaskListListController controller (model, view);
     view->SetClientSize(800,600);
     view->Center();
     view->Show(true);

@@ -3,7 +3,7 @@
 //
 
 #include "TaskListListView.h"
-#include "Task.h"
+//#include "Task.h"
 
 /*
 wxBEGIN_EVENT_TABLE(TaskListListView, wxFrame)
@@ -18,14 +18,14 @@ wxEND_EVENT_TABLE()
 
     auto mainSizer = new wxBoxSizer(wxVERTICAL);
 
-    auto taskTextCtrl = new wxTextCtrl(this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize,
+    taskTextCtrl = new wxTextCtrl(this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize,
                                        wxTE_PROCESS_ENTER);
     //mainSizer->Add(taskTextCtrl, 0, wxEXPAND | wxALL, 5);
 
-    auto addListButton = new wxButton(this, ID_AddList, "Add List");
-    auto removeListButton = new wxButton(this, ID_RemoveList, "Remove List");
-    auto searchListButton = new wxButton(this, ID_SearchList, "Search List");
-    auto renameListButton = new wxButton(this, ID_RenameList, "Rename List");
+     addListButton = new wxButton(this, ID_AddList, "Add List");
+     removeListButton = new wxButton(this, ID_RemoveList, "Remove List");
+     searchListButton = new wxButton(this, ID_SearchList, "Search List");
+     renameListButton = new wxButton(this, ID_RenameList, "Rename List");
 
     //addListButton->Bind(wxEVT_BUTTON, &TaskListListView::OnAddListButtonClick, this, ID_AddList);
 
@@ -60,15 +60,26 @@ void TaskListListView::setTaskTextCtrl(wxTextCtrl *taskTextCtrl) {
 }
 
 
-wxString TaskListListView::OnAddListButtonClick() {
+wxString & TaskListListView::OnAddListButtonClick() {
 
 
     wxString name = wxGetTextFromUser("Enter title of the list:"); //serve per mettere il nome direttamente da qui
-    //data e priorità qui non servono perche è un vettore di task quindi ha solo il nome
 
     return name;
 
 }
+
+void TaskListListView::RefreshTaskList(std::vector<TaskList> *vector){
+
+    this->lists=*vector;
+
+    //riordina in ordine alfabetico
+    for (const auto& task: lists){
+        wxString taskString = task.getName();
+        taskListList->Append(taskString);
+    }
+}
+
 
 
 wxButton *TaskListListView::getAddListButton() const {

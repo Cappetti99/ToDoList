@@ -12,7 +12,10 @@ wxBEGIN_EVENT_TABLE(TaskListListView, wxFrame)
 wxEND_EVENT_TABLE()
  ;*/
 
-TaskListListController::TaskListListController(TaskList *model, TaskListListView *view) {
+TaskListListController::TaskListListController(TaskListList *model1, TaskListListView *view1) {
+
+    this->view=view1;
+    this->model=model1;
 
     view->Bind(wxEVT_BUTTON, &TaskListListController::AddListButton, this, TaskListListView::ID_AddList);
     view->Bind(wxEVT_BUTTON, &TaskListListController::SearchListButton, this, TaskListListView::ID_SearchList);
@@ -22,8 +25,8 @@ TaskListListController::TaskListListController(TaskList *model, TaskListListView
 
 void TaskListListController::AddListButton(wxCommandEvent &event) {
 
-    wxString title = (view->OnAddListButtonClick());
-    model->addList(title);
+    wxString& title = (view->OnAddListButtonClick());
+    view->RefreshTaskList((model->addList(title)));
     //fa tutto qui, non toccare
 }
 
