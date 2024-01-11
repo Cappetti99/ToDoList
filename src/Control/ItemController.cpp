@@ -7,7 +7,7 @@
 
 ItemController::ItemController() {
 
-    frame = new Frame("ToDoList", wxPoint(800, 600), wxSize(450, 340), this);
+    frame = new Frame("ToDoList", wxDefaultPosition, wxSize(450, 340), this);
     frame->Show(true);
 
     item = new ToDoItem();
@@ -18,7 +18,7 @@ void ItemController::onAddTaskButtonClicked() {
 
     //std::cout << "ItemController::onAddTaskButtonClicked()" << std::endl;
 
-    addItem(frame->getNames(), frame->getDates(), frame->getPriorities());
+    addItem(frame->getNome(), frame->getData(), frame->getPriorità());
     //probabilmente potremmo fare tutto qui, senza passare da un'altra funzione
 
 }
@@ -27,14 +27,28 @@ void ItemController::addItem(wxString name, wxDateTime date, Priority priority) 
 
     //std::cout << "ItemController::addItem()" << std::endl;
     item->addTask(name, date, priority);
+    std::vector<Task> temp =item->getVector();
+    std::sort(temp.begin(), temp.end(),
+              [](const Task &a, const Task &b) {
+                  return a.getExpirationDate() < b.getExpirationDate();
+              });
+    std::sort(temp.begin(), temp.end(),
+              [](const Task &a, const Task &b) {
+                  return a.getPriority() > b.getPriority();
+              });
+    item->tasks=temp;
+    showTask(temp);
 
-    showTask(name, date, priority);
 }
 
-void ItemController::showTask(wxString name, wxDateTime date, Priority priority) {
+void ItemController::showTask(std::vector<Task> pippo) {
+    frame->ClearFrame();
+    for (int i=0; i<pippo.size(); i++){
 
+    frame->showTaskFrame(item->getName(i), item->getDate(i), item->getPriority(i));
+}
     //farla vedere sul frame
-    frame->showTaskFrame(name, date, priority);
+
 
 }
 
@@ -51,13 +65,14 @@ void ItemController::removeItem(int index) {
     //std::cout << "ItemController::removeItem()" << std::endl;
     //wxString name = item->getName(index);
     item->removeTask(index); //todo da cambiare perchè elimina per indice e non per nome
+    showTask(item->getVector());
 
-    removeFrame(index);
+    //removeFrame(index);
 }
 
 void ItemController::removeFrame(int index) {
 
-    frame->removeTaskFrame(index);
+   // showTask(item->getVector());
 }
 
 void ItemController::onSearchTaskButtonClicked(wxString searchKeyword) {

@@ -16,11 +16,6 @@ class Frame : public wxFrame {
 public:
     Frame(const wxString &title, const wxPoint &pos, const wxSize &size, ItemControllerObserver *observer);
 
-    wxString getNames();
-
-    wxDateTime getDates();
-
-    Priority getPriorities();
 
     ItemControllerObserver *observer;
 
@@ -29,14 +24,15 @@ public:
     void showSearchFrame(std::vector<wxString> namesSearch, std::vector<wxDateTime> datesSearch,
                          std::vector<Priority> prioritiesSearch);
 
-    void removeTaskFrame(int index);
-
-    void refreshTaskFrame();
 
     void ClearFrame();
 
 
     void CloseRefresh(wxCloseEvent& event);
+
+    const wxString &getNome() const;
+    const wxDateTime &getData() const;
+    Priority getPriorità() const;
 
 wxDECLARE_EVENT_TABLE();
 
@@ -51,6 +47,10 @@ private:
 
 
     wxTextCtrl *taskTextCtrl;
+    wxString Nome;
+    wxDateTime Data;
+    Priority Priorità;
+
     std::vector<wxString> names;
     std::vector<wxDateTime> dates;
     std::vector<Priority> priorities;

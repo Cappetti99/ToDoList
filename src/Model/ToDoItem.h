@@ -17,6 +17,7 @@ private:
 
 
 public:
+    // todo vector task privato?
     ToDoItem();
 
     void addTask(wxString name, wxDateTime date, Priority priority);

@@ -75,22 +75,27 @@ void Frame::addTaskButton(wxCommandEvent &event) { //fixme c'è da sistemare del
             PrioritySelection prioritySelection(this, "Select priority:");
             if (prioritySelection.ShowModal() == wxID_OK) {
                 Priority priority = prioritySelection.getSelectedPriority();
-                if (priority == Priority::None) {
+                if (priority != Priority::Low and priority !=Priority::Medium and priority !=Priority::High) {
                     wxMessageBox("Inserisci una priorità!");
+
                     return;
                 }
 
-                names.push_back(name);
-                dates.push_back(dateTime);
-                priorities.push_back(priority);
+                Nome=name;
+                Data=dateTime;
+                Priorità=priority;
+
                 taskTextCtrl->Clear();
+
+
+                if (observer) {
+                    observer->onAddTaskButtonClicked();
+                }
             }
         }
     }
 
-    if (observer) {
-        observer->onAddTaskButtonClicked();
-    }
+
 }
 
 
@@ -136,32 +141,9 @@ void Frame::searchTaskButton(wxCommandEvent &event) {
 
 }
 
-wxString Frame::getNames() {
-
-    wxString name;
-    if (!names.empty()) {
-        name = names.back();
-    }
-    return name;
-}
-
-wxDateTime Frame::getDates() {
-    wxDateTime date;
-    if (!dates.empty()) {
-        date = dates.back();
-    }
-    return date;
-}
-
-Priority Frame::getPriorities() {
-    Priority priority;
-    if (!priorities.empty()) {
-        priority = priorities.back();
-    }
-    return priority;
-}
 
 void Frame::showTaskFrame(wxString name, wxDateTime date, Priority priority) {
+
 
     wxString priorityString;
 
@@ -177,12 +159,12 @@ void Frame::showTaskFrame(wxString name, wxDateTime date, Priority priority) {
                           " - " + date.Format("%d %B, %Y");
 
     taskListBox->Append(taskString);
-
 }
+
 
 void Frame::ClearFrame() {
 std::cout << "Frame::ClearFrame()" << std::endl;
-//    taskListBox->Clear();
+    taskListBox->Clear();
 }
 
 void Frame::showSearchFrame(std::vector<wxString> namesSearch, std::vector<wxDateTime> datesSearch,
@@ -256,35 +238,21 @@ void Frame::showSearchFrame(std::vector<wxString> namesSearch, std::vector<wxDat
 //
 //}
 
-void Frame::removeTaskFrame(int index) {
-
-//    std::cout << "Frame::removeTaskFrame()" << std::endl;
-
-    names.erase(names.begin() + index);
-    dates.erase(dates.begin() + index);
-    priorities.erase(priorities.begin() + index);
-
-//    std::cout << "names.size() = " << names.size() << std::endl;
-
-
-    refreshTaskFrame();
-
-}
-
-void Frame::refreshTaskFrame() {
-
-//    std::cout << "Frame::refreshTaskFrame()" << std::endl;
-
-    ClearFrame();
-    for (int i = 0; i < names.size(); i++) {
-        showTaskFrame(names[i], dates[i], priorities[i]);
-    }
-}
-
-
 
 void Frame::CloseRefresh(wxCloseEvent& event) {
     //qui ci va cosa succede quando chiudo la finestra del search
     //RefreshTaskList();
     event.Skip();
+}
+
+const wxString &Frame::getNome() const {
+    return Nome;
+}
+
+const wxDateTime &Frame::getData() const {
+    return Data;
+}
+
+Priority Frame::getPriorità() const {
+    return Priorità;
 }
