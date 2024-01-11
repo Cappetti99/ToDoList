@@ -1,0 +1,22 @@
+[] cominciare con i test
+[] ho passato le task e aggiunte al vettore ma devo collegare la cosa alla view
+    per quando le rimuovo e poi le modificherò
+[]
+[]
+[]
+[] rimodificare e togliere il fatto del index
+[]
+[]
+[]
+[]
+[] Serve un frame anche per le liste?
+
+
+l'idea è che il controller gestisca view e model e che quindi per chiamare tutto si passi da lui
+
+
+
+
+cose che possono servire:
+
+                wxMessageBox(name);
