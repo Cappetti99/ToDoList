@@ -21,6 +21,10 @@ public:
 
     const wxDateTime getExpirationDate() const;
 
+    const bool isCompleted() const;
+
+    void setCompleted(bool completed);
+
 
 
 

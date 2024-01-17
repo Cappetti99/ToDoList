@@ -32,7 +32,9 @@ public:
 
     virtual void onSearchTaskButtonClicked(wxString searchKeyword) override;
 
-    void showTask(std::vector<Task> pippo );
+    virtual void onCheckTaskButtonClicked(int index) override;
+
+    void showTask(std::vector<Task> vettore );
 
     void removeFrame(int index);
 

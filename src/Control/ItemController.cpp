@@ -41,14 +41,12 @@ void ItemController::addItem(wxString name, wxDateTime date, Priority priority) 
 
 }
 
-void ItemController::showTask(std::vector<Task> pippo) {
+void ItemController::showTask(std::vector<Task> vettore) {
     frame->ClearFrame();
-    for (int i=0; i<pippo.size(); i++){
+    for (int i=0; i<vettore.size(); i++){
 
     frame->showTaskFrame(item->getName(i), item->getDate(i), item->getPriority(i));
 }
-    //farla vedere sul frame
-
 
 }
 
@@ -95,7 +93,7 @@ void ItemController::searchItem(wxString searchKeyword) {
     std::vector<wxDateTime> datesSearch;
     std::vector<Priority> prioritiesSearch;
 
-    for(int i = 0; i < item->getVector().size(); i++) {
+    for (int i = 0; i < item->getVector().size(); i++) {
         wxString taskName = item->getName(i);
         if (taskName.Find(searchKeyword) != wxNOT_FOUND) {
             tasks.push_back(&item->tasks[i]);
@@ -105,7 +103,7 @@ void ItemController::searchItem(wxString searchKeyword) {
 //            frame->showSearchFrame(item->getName(i), item->getDate(i), item->getPriority(i));
         }
     }
-    if(tasks.size() > 0) {
+    if (tasks.size() > 0) {
         frame->showSearchFrame(namesSearch, datesSearch, prioritiesSearch);
     } //gestire il caso in cui non ci siano task che contengono la keyword
 
@@ -119,6 +117,17 @@ void ItemController::searchItem(wxString searchKeyword) {
 //            frame->showSearchFrame(taskName, taskDate, taskPriority);
 //        }
 //    }
+}
+
+void ItemController::onCheckTaskButtonClicked(int index) {
+
+    //con un set si mette a true se era false e viceversa
+
+    std::cout << "ItemController::onCheckTaskButtonClicked()" << std::endl;
+
+    item->setTaskAsCompleted(index);
+
+    std::cout << "ItemController::onCheckTaskButtonClicked() - item->tasks[index].isCompleted() = " << item->tasks[index].isCompleted() << std::endl;
 }
 
 

@@ -28,4 +28,12 @@ const wxDateTime Task::getExpirationDate() const {
     return expirationDate;
 }
 
+const bool Task::isCompleted() const {
+    return completed;
+}
+
+void Task::setCompleted(bool completed) {
+    this->completed = completed;
+}
+
 

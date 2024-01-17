@@ -32,9 +32,11 @@ public:
 
     Priority getPriority(int index);
 
+    void setTaskAsCompleted(int index);
+
     std::vector<Task> tasks;
 
-
+    bool getCompleted(int index);
 };
 
 

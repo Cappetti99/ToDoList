@@ -45,6 +45,8 @@ private:
 
     void searchTaskButton(wxCommandEvent &event);
 
+    void checkTaskButton(wxCommandEvent &event);
+
 
     wxTextCtrl *taskTextCtrl;
     wxString Nome;
@@ -54,7 +56,7 @@ private:
     std::vector<wxString> names;
     std::vector<wxDateTime> dates;
     std::vector<Priority> priorities;
-    wxListBox *taskListBox;
+    wxCheckListBox *taskListBox;
     wxTextCtrl *searchInput;
     wxWindow *frame;
 
@@ -69,7 +71,8 @@ enum {
     ID_AddTaskButton = 1,
     ID_RemoveTaskButton = 2,
     ID_SearchTaskButton = 3,
-    ID_SortTaskButton = 4
+    ID_SortTaskButton = 4,
+    ID_Check = 5
 };
 
 #endif //LOLLO_FRAME_H

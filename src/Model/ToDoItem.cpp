@@ -50,3 +50,16 @@ wxDateTime ToDoItem::getDate(int index) {
 Priority ToDoItem::getPriority(int index) {
     return tasks[index].getPriority();
 }
+
+void ToDoItem::setTaskAsCompleted(int index) {
+    if(tasks[index].isCompleted() == false) {
+        tasks[index].setCompleted(true);
+    } else {
+        tasks[index].setCompleted(false);
+    }
+    //se io ritornassi un bool, potrei fare un if e dire che se è true allora metto il check, altrimenti no
+}
+
+bool ToDoItem::getCompleted(int index) {
+    return tasks[index].isCompleted();
+}
