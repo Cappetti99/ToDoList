@@ -45,7 +45,7 @@ void ItemController::showTask(std::vector<Task> vettore) {
     frame->ClearFrame();
     for (int i=0; i<vettore.size(); i++){
 
-    frame->showTaskFrame(item->getName(i), item->getDate(i), item->getPriority(i));
+    frame->showTaskFrame(item->getName(i), item->getDate(i), item->getPriority(i),item->getCompleted(i),i);
 }
 
 }
@@ -128,6 +128,9 @@ void ItemController::onCheckTaskButtonClicked(int index) {
     item->setTaskAsCompleted(index);
 
     std::cout << "ItemController::onCheckTaskButtonClicked() - item->tasks[index].isCompleted() = " << item->tasks[index].isCompleted() << std::endl;
+
+
+    showTask(item->getVector());
 }
 
 

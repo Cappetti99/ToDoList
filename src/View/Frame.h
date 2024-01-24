@@ -19,7 +19,7 @@ public:
 
     ItemControllerObserver *observer;
 
-    void showTaskFrame(wxString name, wxDateTime date, Priority priority);
+    void showTaskFrame(wxString name, wxDateTime date, Priority priority ,bool completed, int index);
 
     void showSearchFrame(std::vector<wxString> namesSearch, std::vector<wxDateTime> datesSearch,
                          std::vector<Priority> prioritiesSearch);

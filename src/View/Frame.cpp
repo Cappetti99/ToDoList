@@ -164,7 +164,7 @@ void Frame::searchTaskButton(wxCommandEvent &event) {
 //    return priority;
 //}
 
-void Frame::showTaskFrame(wxString name, wxDateTime date, Priority priority) {
+void Frame::showTaskFrame(wxString name, wxDateTime date, Priority priority, bool completed,int index) {
 
 
     wxString priorityString;
@@ -180,7 +180,14 @@ void Frame::showTaskFrame(wxString name, wxDateTime date, Priority priority) {
     wxString taskString = name + " - Priority: " + priorityString +
                           " - " + date.Format("%d %B, %Y");
 
+
     taskListBox->Append(taskString);
+
+    if(completed== true) {
+        taskListBox->Check(index,true);
+
+        taskListBox->SetForegroundColour("#7d7d7d");
+    }
 }
 
 
