@@ -13,6 +13,7 @@ public:
     virtual void onRemoveTaskButtonClicked(int index) = 0;
     virtual void onSearchTaskButtonClicked(wxString searchKeyword) = 0;
     virtual void onCheckTaskButtonClicked(int index) = 0;
+//    virtual void onCheckSearchButtonClicked(int index) = 0;
     //virtual void onEditTaskButtonClicked() = 0;
 
 };

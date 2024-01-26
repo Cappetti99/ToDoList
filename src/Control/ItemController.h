@@ -38,6 +38,8 @@ public:
 
     void removeFrame(int index);
 
+//    void onCheckSearchButtonClicked(int index) override;
+
 private:
     Frame *frame;
     ToDoItem *item;

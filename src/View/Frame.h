@@ -22,11 +22,11 @@ public:
     void showTaskFrame(wxString name, wxDateTime date, Priority priority ,bool completed, int index);
 
     void showSearchFrame(std::vector<wxString> namesSearch, std::vector<wxDateTime> datesSearch,
-                         std::vector<Priority> prioritiesSearch);
+                         std::vector<Priority> prioritiesSearch, std::vector<bool> completedSearch, std::vector<wxString> allNames,
+                         std::vector<wxDateTime> allDates, std::vector<Priority> allPriorities, std::vector<bool> allCompleted);
 
 
     void ClearFrame();
-
 
     void CloseRefresh(wxCloseEvent& event);
 
@@ -47,6 +47,8 @@ private:
 
     void checkTaskButton(wxCommandEvent &event);
 
+    void checkSearch(wxCommandEvent &event);
+
 
     wxTextCtrl *taskTextCtrl;
     wxString Nome;
@@ -56,6 +58,7 @@ private:
     std::vector<wxString> names;
     std::vector<wxDateTime> dates;
     std::vector<Priority> priorities;
+    std::vector<bool> completed;
     wxCheckListBox *taskListBox;
     wxTextCtrl *searchInput;
     wxWindow *frame;
@@ -63,6 +66,13 @@ private:
     std::vector<wxString> namesSearch;
     std::vector<wxDateTime> datesSearch;
     std::vector<Priority> prioritiesSearch;
+    std::vector<bool> completedSearch;
+
+    std::vector<wxString> allTask;
+
+    wxCheckListBox *searchBox;
+
+    int count = 0;
 
 };
 
@@ -72,7 +82,8 @@ enum {
     ID_RemoveTaskButton = 2,
     ID_SearchTaskButton = 3,
     ID_SortTaskButton = 4,
-    ID_Check = 5
+    ID_Check = 5,
+    ID_SearchBox = 6
 };
 
 #endif //LOLLO_FRAME_H
