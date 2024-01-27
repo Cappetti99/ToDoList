@@ -14,20 +14,12 @@ add_executable(ToDoList main.cpp
         ToDoApp.h
         Model/ToDoItem.cpp
         Model/ToDoItem.h
-        Model/ToDoList.cpp
-        Model/ToDoList.h
         Control/Control.cpp
         Control/Control.h
-        View/View.cpp
-        View/View.h
         View/Frame.cpp
         View/Frame.h
-        Model/Model.cpp
-        Model/Model.h
         Control/ItemController.cpp
         Control/ItemController.h
-        Control/ListController.cpp
-        Control/ListController.h
         View/DateSelection.cpp
         View/DateSelection.h
         View/PrioritySelection.cpp

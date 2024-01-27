@@ -16,29 +16,31 @@ class Frame : public wxFrame {
 public:
     Frame(const wxString &title, const wxPoint &pos, const wxSize &size, ItemControllerObserver *observer);
 
-
-    ItemControllerObserver *observer;
-
-    void showTaskFrame(wxString name, wxDateTime date, Priority priority ,bool completed, int index);
+    void showTaskFrame(wxString name, wxDateTime date, Priority priority, bool completed, int index);
 
     void showSearchFrame(std::vector<wxString> namesSearch, std::vector<wxDateTime> datesSearch,
-                         std::vector<Priority> prioritiesSearch, std::vector<bool> completedSearch, std::vector<wxString> allNames,
-                         std::vector<wxDateTime> allDates, std::vector<Priority> allPriorities, std::vector<bool> allCompleted);
-
+                         std::vector<Priority> prioritiesSearch, std::vector<bool> completedSearch,
+                         std::vector<wxString> allNames,
+                         std::vector<wxDateTime> allDates, std::vector<Priority> allPriorities,
+                         std::vector<bool> allCompleted);
 
     void ClearFrame();
 
-    void CloseRefresh(wxCloseEvent& event);
+    void CloseRefresh(wxCloseEvent &event);
+
 
     const wxString &getNome() const;
+
     const wxDateTime &getData() const;
+
     Priority getPriorità() const;
+
+    ItemControllerObserver *observer;
 
 wxDECLARE_EVENT_TABLE();
 
 private:
     //gestione bottoni
-    //devono essere private?
     void addTaskButton(wxCommandEvent &event);
 
     void removeTaskButton(wxCommandEvent &event);
@@ -47,7 +49,10 @@ private:
 
     void checkTaskButton(wxCommandEvent &event);
 
-    void checkSearch(wxCommandEvent &event);
+    void removeSearchButton(wxCommandEvent &event);
+
+    void searchShow(    std::vector<wxString> namesSearch, std::vector<wxDateTime> datesSearch,
+                        std::vector<Priority> prioritiesSearch, std::vector<bool> completedSearch);
 
 
     wxTextCtrl *taskTextCtrl;
@@ -62,6 +67,7 @@ private:
     wxCheckListBox *taskListBox;
     wxTextCtrl *searchInput;
     wxWindow *frame;
+    wxFrame *searchResultFrame;
 
     std::vector<wxString> namesSearch;
     std::vector<wxDateTime> datesSearch;
@@ -72,8 +78,6 @@ private:
 
     wxCheckListBox *searchBox;
 
-    int count = 0;
-
 };
 
 
@@ -81,9 +85,8 @@ enum {
     ID_AddTaskButton = 1,
     ID_RemoveTaskButton = 2,
     ID_SearchTaskButton = 3,
-    ID_SortTaskButton = 4,
-    ID_Check = 5,
-    ID_SearchBox = 6
+    ID_RemoveSearch = 4,
+    ID_Check = 5
 };
 
 #endif //LOLLO_FRAME_H

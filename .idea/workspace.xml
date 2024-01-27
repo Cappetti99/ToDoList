@@ -21,11 +21,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9b41efa-221c-4013-a5f1-1cb88893e44b" name="Changes" comment="fixato la view della finestra esterna">
-    <list default="true" id="e9b41efa-221c-4013-a5f1-1cb88893e44b" name="Changes" comment="prova push">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CustomWindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskListController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/TaskListController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskListController.h" beforeDir="false" afterPath="$PROJECT_DIR$/TaskListController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/Control.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Control.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/Control.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Control.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/ListController.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/ListController.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Model.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Model.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/ToDoList.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/ToDoList.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Frame.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Frame.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Frame.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Frame.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/View.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/View.h" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,9 +76,11 @@
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;CMake Application.ToDoList.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
@@ -83,10 +94,15 @@
   }
 }</component>
   <component name="RunManager" selected="CMake Application.ToDoList">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ToDoList" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory" temporary="true">
       <method v="2" />
     </configuration>
-    <configuration name="ToDoList" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ToDoList" TARGET_NAME="ToDoList" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ToDoList" RUN_TARGET_NAME="ToDoList">
+    <configuration name="ToDoList" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ToDoList" TARGET_NAME="ToDoList" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ToDoList" RUN_TARGET_NAME="ToDoList">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -129,6 +145,11 @@
       <workItem from="1696839311644" duration="13839000" />
       <workItem from="1696920214669" duration="8370000" />
       <workItem from="1696940040297" duration="2863000" />
+      <workItem from="1706288824558" duration="698000" />
+      <workItem from="1706306116982" duration="1813000" />
+      <workItem from="1706348515078" duration="6052000" />
+      <workItem from="1706371957464" duration="598000" />
+      <workItem from="1706374834844" duration="3450000" />
     </task>
     <task id="LOCAL-00001" summary="add things">
       <option name="closed" value="true" />
@@ -241,10 +262,9 @@
     <option name="version" value="3" />
   </component>
   <component name="VCPKGProject">
-    <isAutomaticEditVcpkgJson value="false" />
     <isAutomaticCheckingOnLaunch value="false" />
     <isAutomaticFoundErrors value="true" />
-    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
