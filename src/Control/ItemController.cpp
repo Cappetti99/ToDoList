@@ -16,16 +16,13 @@ ItemController::ItemController() {
 
 void ItemController::onAddTaskButtonClicked() {
 
-    //std::cout << "ItemController::onAddTaskButtonClicked()" << std::endl;
-
     addItem(frame->getNome(), frame->getData(), frame->getPriorità());
-    //probabilmente potremmo fare tutto qui, senza passare da un'altra funzione
 
 }
 
 void ItemController::addItem(wxString name, wxDateTime date, Priority priority) {
 
-    //std::cout << "ItemController::addItem()" << std::endl;
+
     item->addTask(name, date, priority);
     std::vector<Task> temp =item->getVector();
     std::sort(temp.begin(), temp.end(),
@@ -52,15 +49,12 @@ void ItemController::showTask(std::vector<Task> vettore) {
 
 void ItemController::onRemoveTaskButtonClicked(int index) {
 
-    //std::cout << "ItemController::onRemoveTaskButtonClicked()" << std::endl;
-
     removeItem(index);
 
 }
 
 void ItemController::removeItem(int index) {
 
-    //std::cout << "ItemController::removeItem()" << std::endl;
     //wxString name = item->getName(index);
     item->removeTask(index); //todo da cambiare perchè elimina per indice e non per nome
     showTask(item->getVector());
@@ -68,14 +62,8 @@ void ItemController::removeItem(int index) {
     //removeFrame(index);
 }
 
-void ItemController::removeFrame(int index) {
-
-    // showTask(item->getVector());
-}
 
 void ItemController::onSearchTaskButtonClicked(wxString searchKeyword) {
-
-//    std::cout << "ItemController::onSearchTaskButtonClicked()" << std::endl;
 
     searchItem(searchKeyword);
 
@@ -87,14 +75,11 @@ void ItemController::markItemAsCompleted() {
 
 void ItemController::searchItem(wxString searchKeyword) {
 
-//    frame->ClearFrame();
     std::vector<Task*> tasks;
     std::vector<wxString> namesSearch;
     std::vector<wxDateTime> datesSearch;
     std::vector<Priority> prioritiesSearch;
     std::vector<bool> compleatedSearch;
-
-    //è brutto quello che sto per fare
 
     std::vector<wxString> allNames;
     std::vector<wxDateTime> allDates;
@@ -118,32 +103,13 @@ void ItemController::searchItem(wxString searchKeyword) {
     if (tasks.size() > 0) {
         frame->showSearchFrame(namesSearch, datesSearch, prioritiesSearch, compleatedSearch, allNames, allDates,
                                allPriorities, allCompleated);
-    } //gestire il caso in cui non ci siano task che contengono la keyword
+    }
 
 }
 
 void ItemController::onCheckTaskButtonClicked(int index) {
 
-    //con un set si mette a true se era false e viceversa
-
-    std::cout << "ItemController::onCheckTaskButtonClicked()" << std::endl;
-
     item->setTaskAsCompleted(index);
-
-    std::cout << "ItemController::onCheckTaskButtonClicked() - item->tasks[index].isCompleted() = " << item->tasks[index].isCompleted() << std::endl;
 
     showTask(item->getVector());
 }
-//
-////search
-//
-//void ItemController::onCheckSearchButtonClicked(int index) {
-//
-//    std::cout << "ItemController::onCheckSearchButtonClicked()" << std::endl;
-//
-//    item->setTaskAsCompleted(index);
-//
-//    std::cout << "ItemController::onCheckSearchButtonClicked() - item->tasks[index].isCompleted() = " << item->tasks[index].isCompleted() << std::endl;
-//
-////    searchItem(frame->getSearchKeyword());
-//}

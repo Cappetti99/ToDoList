@@ -36,9 +36,6 @@ public:
 
     void showTask(std::vector<Task> vettore );
 
-    void removeFrame(int index);
-
-//    void onCheckSearchButtonClicked(int index) override;
 
 private:
     Frame *frame;
