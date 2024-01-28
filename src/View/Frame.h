@@ -51,6 +51,10 @@ private:
 
     void removeSearchButton(wxCommandEvent &event);
 
+    void onTextChange(wxCommandEvent &event);
+    void onTextClick(wxCommandEvent &event);
+    void onSearchTextChange(wxCommandEvent &event);
+
     void searchShow(    std::vector<wxString> namesSearch, std::vector<wxDateTime> datesSearch,
                         std::vector<Priority> prioritiesSearch, std::vector<bool> completedSearch);
 
@@ -86,7 +90,9 @@ enum {
     ID_RemoveTaskButton = 2,
     ID_SearchTaskButton = 3,
     ID_RemoveSearch = 4,
-    ID_Check = 5
+    ID_Check = 5,
+    ID_TextCtrl=6,
+    ID_SearchText=7
 };
 
 #endif //LOLLO_FRAME_H

@@ -11,6 +11,11 @@ wxBEGIN_EVENT_TABLE(Frame, wxFrame)
                 EVT_BUTTON(ID_SearchTaskButton, Frame::searchTaskButton)
                 EVT_CHECKLISTBOX(ID_Check, Frame::checkTaskButton)
                 EVT_BUTTON(ID_RemoveSearch, Frame::removeSearchButton)
+                EVT_TEXT(ID_TextCtrl,Frame::onTextChange)
+                EVT_TEXT_ENTER(ID_TextCtrl,Frame::addTaskButton)
+                EVT_TEXT(ID_SearchText,Frame::onSearchTextChange)
+                EVT_TEXT_ENTER(ID_SearchText,Frame::searchTaskButton)
+
 wxEND_EVENT_TABLE()
 
 
@@ -22,7 +27,9 @@ Frame::Frame(const wxString &title, const wxPoint &pos, const wxSize &size, Item
 
     auto buttonsSizer = new wxBoxSizer(wxHORIZONTAL);
 
-    taskTextCtrl = new wxTextCtrl(this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_PROCESS_ENTER);
+    taskTextCtrl = new wxTextCtrl(this, ID_TextCtrl, "Enter New Task Name", wxDefaultPosition, wxDefaultSize, wxTE_PROCESS_ENTER);
+    taskTextCtrl->SetDefaultStyle(wxTextAttr(*wxLIGHT_GREY));
+
 
     taskListBox = new wxCheckListBox(this, ID_Check, wxDefaultPosition, wxDefaultSize, 0, nullptr, wxLB_SINGLE);
 
@@ -32,7 +39,8 @@ Frame::Frame(const wxString &title, const wxPoint &pos, const wxSize &size, Item
     auto removeButton = new wxButton(this, ID_RemoveTaskButton, "Remove Task");
     auto searchButton = new wxButton(this, ID_SearchTaskButton, "Search Tasks");
 
-    searchInput = new wxTextCtrl(this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_PROCESS_ENTER);
+    searchInput = new wxTextCtrl(this, ID_SearchText, "Enter Task name", wxDefaultPosition, wxDefaultSize, wxTE_PROCESS_ENTER);
+    searchInput->SetDefaultStyle(wxTextAttr(*wxLIGHT_GREY));
 
     buttonsSizer->Add(addButton, 5, wxALL, 10);
     buttonsSizer->Add(removeButton, 5, wxALL, 10);
@@ -47,6 +55,40 @@ Frame::Frame(const wxString &title, const wxPoint &pos, const wxSize &size, Item
     SetSizerAndFit(mainSizer);
 
     SetSize(wxSize(800, 600));
+}
+
+void Frame::onTextClick(wxCommandEvent &event) {
+    taskTextCtrl->SetInsertionPointEnd();
+}
+
+void Frame::onTextChange(wxCommandEvent &event){
+    if (taskTextCtrl->GetLineLength(0)>=1) {
+        wxString b = taskTextCtrl->GetValue();
+        long pos = taskTextCtrl->GetInsertionPoint();
+
+        wxString a = taskTextCtrl->GetRange(pos - 1, pos);
+        b = b.Remove(pos - 1, 1);
+        if (b.IsSameAs("Enter New Task Name", true)) {
+            taskTextCtrl->ChangeValue(a);
+            taskTextCtrl->SetDefaultStyle(wxTextAttr(*wxBLACK));
+            taskTextCtrl->SetInsertionPointEnd();
+        }
+    }
+}
+
+
+void Frame::onSearchTextChange(wxCommandEvent &event){
+    if(searchInput->GetLineLength(0)>=1){
+        wxString b=searchInput->GetValue();
+        long pos=searchInput->GetInsertionPoint();
+        wxString a= searchInput->GetRange(pos - 1,pos);
+        b = b.Remove(pos - 1,1);
+        if(b.IsSameAs("Enter Task name", true)){
+            searchInput->ChangeValue(a);
+            searchInput->SetDefaultStyle(wxTextAttr(*wxBLACK));
+            searchInput->SetInsertionPointEnd();
+        }
+    }
 }
 
 void Frame::addTaskButton(wxCommandEvent &event) { //fixme c'è da sistemare delle casistiche
@@ -147,7 +189,7 @@ void Frame::showTaskFrame(wxString name, wxDateTime date, Priority priority, boo
         taskListBox->Check(index, true);
 
     }
-
+    taskTextCtrl->ChangeValue("Enter New Task Name");
 }
 
 
