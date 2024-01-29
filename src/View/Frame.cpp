@@ -100,6 +100,11 @@ void Frame::addTaskButton(wxCommandEvent &event) { //fixme c'è da sistemare del
     }
 
     wxString name = taskTextCtrl->GetValue();
+    if(name.IsSameAs("Enter New Task Name", true)){
+        wxMessageBox("Inserisci un task!");
+        return;
+    }
+    else{
     DateSelection dateSelection(this, "Select expiration date:");
     if (!name.IsEmpty()) {
         if (dateSelection.ShowModal() == wxID_OK) {
@@ -131,6 +136,7 @@ void Frame::addTaskButton(wxCommandEvent &event) { //fixme c'è da sistemare del
 
             }
         }
+    }
     }
 }
 
