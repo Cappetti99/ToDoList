@@ -58,6 +58,9 @@ private:
     void searchShow(    std::vector<wxString> namesSearch, std::vector<wxDateTime> datesSearch,
                         std::vector<Priority> prioritiesSearch, std::vector<bool> completedSearch);
 
+    void updateVector(std::vector<wxString> names, std::vector<wxDateTime> dates,
+                      std::vector<Priority> priorities, std::vector<bool> completed);
+
 
     wxTextCtrl *taskTextCtrl;
     wxString Nome;

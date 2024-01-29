@@ -19,20 +19,14 @@ void ToDoItem::addTask(wxString name, wxDateTime date, Priority priority) {
 
     tasks.push_back(*task);
 
-    std::cout << "item created" << std::endl;
 }
 
 void ToDoItem::removeTask(int index) {
 
-    std::cout << "tasks.size =" << tasks.size()<< std::endl;
-    std::cout << "index =" << index << std::endl;
+
     if (tasks.size() >= index + 1) {
         tasks.erase(tasks.begin() + index);
-    } else {
-        std::cout << "gay" << std::endl; //ci entra quando è vuota
     }
-
-    std::cout << "ToDoItem::removeTask() - tasks.size() = " << tasks.size() << std::endl;
 }
 
 std::vector<Task> ToDoItem::getVector() {

@@ -5,12 +5,19 @@
 #include "Frame.h"
 
 
-wxBEGIN_EVENT_TABLE(Frame, wxFrame)
-                EVT_BUTTON(ID_AddTaskButton, Frame::addTaskButton)
-                EVT_BUTTON(ID_RemoveTaskButton, Frame::removeTaskButton)
-                EVT_BUTTON(ID_SearchTaskButton, Frame::searchTaskButton)
-                EVT_CHECKLISTBOX(ID_Check, Frame::checkTaskButton)
-                EVT_BUTTON(ID_RemoveSearch, Frame::removeSearchButton)
+wxBEGIN_EVENT_TABLE(Frame, wxFrame
+)
+EVT_BUTTON(ID_AddTaskButton, Frame::addTaskButton
+)
+EVT_BUTTON(ID_RemoveTaskButton, Frame::removeTaskButton
+)
+EVT_BUTTON(ID_SearchTaskButton, Frame::searchTaskButton
+)
+EVT_CHECKLISTBOX(ID_Check, Frame::checkTaskButton
+)
+EVT_BUTTON(ID_RemoveSearch, Frame::removeSearchButton
+)
+
                 EVT_TEXT(ID_TextCtrl,Frame::onTextChange)
                 EVT_TEXT_ENTER(ID_TextCtrl,Frame::addTaskButton)
                 EVT_TEXT(ID_SearchText,Frame::onSearchTextChange)
@@ -114,7 +121,7 @@ void Frame::addTaskButton(wxCommandEvent &event) { //fixme c'è da sistemare del
                 //tolgo un giorno perche' sennò da problemi con oggi
                 wxMessageBox("Hai inserito una data passata!");
                 return;
-            } //gestire il cancel
+            }
 
             PrioritySelection prioritySelection(this, "Select priority:");
             if (prioritySelection.ShowModal() == wxID_OK) {
@@ -203,10 +210,13 @@ void Frame::ClearFrame() {
     taskListBox->Clear();
 }
 
-void Frame::showSearchFrame(std::vector<wxString> namesSearch, std::vector<wxDateTime> datesSearch,
-                            std::vector<Priority> prioritiesSearch, std::vector<bool> completedSearch,
-                            std::vector<wxString> allNames, std::vector<wxDateTime> allDates,
-                            std::vector<Priority> allPriorities, std::vector<bool> allCompleted) {
+
+
+
+void Frame::showSearchFrame(std::vector <wxString> namesSearch, std::vector <wxDateTime> datesSearch,
+                            std::vector <Priority> prioritiesSearch, std::vector<bool> completedSearch,
+                            std::vector <wxString> allNames, std::vector <wxDateTime> allDates,
+                            std::vector <Priority> allPriorities, std::vector<bool> allCompleted) {
 
     this->namesSearch = namesSearch;
     this->datesSearch = datesSearch;
@@ -244,15 +254,15 @@ void Frame::showSearchFrame(std::vector<wxString> namesSearch, std::vector<wxDat
 
 }
 
-void Frame::searchShow(std::vector<wxString> namesSearch, std::vector<wxDateTime> datesSearch,
-                       std::vector<Priority> prioritiesSearch, std::vector<bool> completedSearch) {
+void Frame::searchShow(std::vector <wxString> namesSearch, std::vector <wxDateTime> datesSearch,
+                       std::vector <Priority> prioritiesSearch, std::vector<bool> completedSearch) {
 
     this->namesSearch = namesSearch;
     this->datesSearch = datesSearch;
     this->prioritiesSearch = prioritiesSearch;
     this->completedSearch = completedSearch;
 
-searchBox->Clear();
+    searchBox->Clear();
     for (int j = 0; j < namesSearch.size(); j++) {
         wxString priorityString;
 
@@ -343,10 +353,10 @@ void Frame::removeSearchButton(wxCommandEvent &event) {
 
     int selectedIndex = searchBox->GetSelection();
     int c = 0;
-    while (namesSearch[selectedIndex] != names[c] ){
+    while (namesSearch[selectedIndex] != names[c]) {
         c++;
     }
-    if (namesSearch[selectedIndex] == names[c] ) {
+    if (namesSearch[selectedIndex] == names[c]) {
         if (selectedIndex != wxNOT_FOUND) {
             wxMessageDialog confirmDialog(searchResultFrame,
                                           "Sei sicuro di volerla eliminare?", "Conferma eliminazione",
@@ -360,7 +370,13 @@ void Frame::removeSearchButton(wxCommandEvent &event) {
                 prioritiesSearch.erase(prioritiesSearch.begin() + selectedIndex);
                 completedSearch.erase(completedSearch.begin() + selectedIndex); //tolgo dalle liste di ricerca
                 searchBox->Delete(selectedIndex); //tolgo dalla lista di ricerca
-                searchShow(namesSearch, datesSearch, prioritiesSearch, completedSearch); //aggiorno la lista di ricerca
+                taskListBox->Delete(c); //tolgo dalla lista principale
+                searchShow(namesSearch, datesSearch, prioritiesSearch, completedSearch);//aggiorno la lista di ricerca
+                names.erase(names.begin() + c);
+                dates.erase(dates.begin() + c);
+                priorities.erase(priorities.begin() + c);
+                completed.erase(completed.begin() + c);
+                updateVector(names, dates, priorities, completed); //aggiorno la lista principale
                 if (observer) {
                     observer->onRemoveTaskButtonClicked(c);
                 }
@@ -368,5 +384,14 @@ void Frame::removeSearchButton(wxCommandEvent &event) {
         }
 
     }
-    c=0;
+}
+
+void Frame::updateVector(std::vector <wxString> names, std::vector <wxDateTime> dates,
+                         std::vector <Priority> priorities, std::vector<bool> completed) {
+
+    this->names = names;
+    this->dates = dates;
+    this->priorities = priorities;
+    this->completed = completed;
+
 }
