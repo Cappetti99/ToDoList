@@ -5,23 +5,17 @@
 #include "Frame.h"
 
 
-wxBEGIN_EVENT_TABLE(Frame, wxFrame
-)
-EVT_BUTTON(ID_AddTaskButton, Frame::addTaskButton
-)
-EVT_BUTTON(ID_RemoveTaskButton, Frame::removeTaskButton
-)
-EVT_BUTTON(ID_SearchTaskButton, Frame::searchTaskButton
-)
-EVT_CHECKLISTBOX(ID_Check, Frame::checkTaskButton
-)
-EVT_BUTTON(ID_RemoveSearch, Frame::removeSearchButton
-)
+wxBEGIN_EVENT_TABLE(Frame, wxFrame)
+                EVT_BUTTON(ID_AddTaskButton, Frame::addTaskButton)
+                EVT_BUTTON(ID_RemoveTaskButton, Frame::removeTaskButton)
+                EVT_BUTTON(ID_SearchTaskButton, Frame::searchTaskButton)
+                EVT_CHECKLISTBOX(ID_Check, Frame::checkTaskButton)
+                EVT_BUTTON(ID_RemoveSearch, Frame::removeSearchButton)
 
-                EVT_TEXT(ID_TextCtrl,Frame::onTextChange)
-                EVT_TEXT_ENTER(ID_TextCtrl,Frame::addTaskButton)
-                EVT_TEXT(ID_SearchText,Frame::onSearchTextChange)
-                EVT_TEXT_ENTER(ID_SearchText,Frame::searchTaskButton)
+                EVT_TEXT(ID_TextCtrl, Frame::onTextChange)
+                EVT_TEXT_ENTER(ID_TextCtrl, Frame::addTaskButton)
+                EVT_TEXT(ID_SearchText, Frame::onSearchTextChange)
+                EVT_TEXT_ENTER(ID_SearchText, Frame::searchTaskButton)
 
 wxEND_EVENT_TABLE()
 
@@ -29,24 +23,23 @@ wxEND_EVENT_TABLE()
 Frame::Frame(const wxString &title, const wxPoint &pos, const wxSize &size, ItemControllerObserver *observer)
         : wxFrame(NULL, wxID_ANY, title, pos, size), observer(observer) {
 
-    std::cout << "Frame created" << std::endl;
     frame = this;
 
     auto buttonsSizer = new wxBoxSizer(wxHORIZONTAL);
 
-    taskTextCtrl = new wxTextCtrl(this, ID_TextCtrl, "Enter New Task Name", wxDefaultPosition, wxDefaultSize, wxTE_PROCESS_ENTER);
+    taskTextCtrl = new wxTextCtrl(this, ID_TextCtrl, "Enter New Task Name", wxDefaultPosition, wxDefaultSize,
+                                  wxTE_PROCESS_ENTER);
     taskTextCtrl->SetDefaultStyle(wxTextAttr(*wxLIGHT_GREY));
 
-
     taskListBox = new wxCheckListBox(this, ID_Check, wxDefaultPosition, wxDefaultSize, 0, nullptr, wxLB_SINGLE);
-
 
     //bottoni
     auto addButton = new wxButton(this, ID_AddTaskButton, "Add Task");
     auto removeButton = new wxButton(this, ID_RemoveTaskButton, "Remove Task");
     auto searchButton = new wxButton(this, ID_SearchTaskButton, "Search Tasks");
 
-    searchInput = new wxTextCtrl(this, ID_SearchText, "Enter Task name", wxDefaultPosition, wxDefaultSize, wxTE_PROCESS_ENTER);
+    searchInput = new wxTextCtrl(this, ID_SearchText, "Task Name", wxDefaultPosition, wxDefaultSize,
+                                 wxTE_PROCESS_ENTER);
     searchInput->SetDefaultStyle(wxTextAttr(*wxLIGHT_GREY));
 
     buttonsSizer->Add(addButton, 5, wxALL, 10);
@@ -68,8 +61,8 @@ void Frame::onTextClick(wxCommandEvent &event) {
     taskTextCtrl->SetInsertionPointEnd();
 }
 
-void Frame::onTextChange(wxCommandEvent &event){
-    if (taskTextCtrl->GetLineLength(0)>=1) {
+void Frame::onTextChange(wxCommandEvent &event) {
+    if (taskTextCtrl->GetLineLength(0) >= 1) {
         wxString b = taskTextCtrl->GetValue();
         long pos = taskTextCtrl->GetInsertionPoint();
 
@@ -84,13 +77,13 @@ void Frame::onTextChange(wxCommandEvent &event){
 }
 
 
-void Frame::onSearchTextChange(wxCommandEvent &event){
-    if(searchInput->GetLineLength(0)>=1){
-        wxString b=searchInput->GetValue();
-        long pos=searchInput->GetInsertionPoint();
-        wxString a= searchInput->GetRange(pos - 1,pos);
-        b = b.Remove(pos - 1,1);
-        if(b.IsSameAs("Enter Task name", true)){
+void Frame::onSearchTextChange(wxCommandEvent &event) {
+    if (searchInput->GetLineLength(0) >= 1) {
+        wxString b = searchInput->GetValue();
+        long pos = searchInput->GetInsertionPoint();
+        wxString a = searchInput->GetRange(pos - 1, pos);
+        b = b.Remove(pos - 1, 1);
+        if (b.IsSameAs("Task Name", true)) {
             searchInput->ChangeValue(a);
             searchInput->SetDefaultStyle(wxTextAttr(*wxBLACK));
             searchInput->SetInsertionPointEnd();
@@ -98,7 +91,7 @@ void Frame::onSearchTextChange(wxCommandEvent &event){
     }
 }
 
-void Frame::addTaskButton(wxCommandEvent &event) { //fixme c'è da sistemare delle casistiche
+void Frame::addTaskButton(wxCommandEvent &event) {
 
     //controllo che non sia vuoto
     if (taskTextCtrl->IsEmpty()) {
@@ -107,35 +100,41 @@ void Frame::addTaskButton(wxCommandEvent &event) { //fixme c'è da sistemare del
     }
 
     wxString name = taskTextCtrl->GetValue();
-    DateSelection dateSelection(this, "Select expiration date:");
-    if (!name.IsEmpty()) {
-        if (dateSelection.ShowModal() == wxID_OK) {
-            wxDateTime dateTime = dateSelection.getDatePicker()->GetValue();
-            //fai un controllo in modo che non abbia una data passata
-            if (dateTime.IsEarlierThan(wxDateTime::Now() - wxTimeSpan::Days(1))) {
-                //tolgo un giorno perche' sennò da problemi con oggi
-                wxMessageBox("Hai inserito una data passata!");
-                return;
-            }
 
-            PrioritySelection prioritySelection(this, "Select priority:");
-            if (prioritySelection.ShowModal() == wxID_OK) {
-                Priority priority = prioritySelection.getSelectedPriority();
-                if (priority != Priority::Low and priority != Priority::Medium and priority != Priority::High) {
-                    wxMessageBox("Inserisci una priorità!");
+    if (name.IsSameAs("Enter New Task Name", true)) {
+        wxMessageBox("Inserisci un task!");
+        return;
+    } else {
+        DateSelection dateSelection(this, "Select expiration date:");
+        if (!name.IsEmpty()) {
+            if (dateSelection.ShowModal() == wxID_OK) {
+                wxDateTime dateTime = dateSelection.getDatePicker()->GetValue();
+                //fai un controllo in modo che non abbia una data passata
+                if (dateTime.IsEarlierThan(wxDateTime::Now() - wxTimeSpan::Days(1))) {
+                    //tolgo un giorno perche' sennò da problemi con oggi
+                    wxMessageBox("Hai inserito una data passata!");
                     return;
                 }
 
-                Nome = name;
-                Data = dateTime;
-                Priorità = priority;
+                PrioritySelection prioritySelection(this, "Select priority:");
+                if (prioritySelection.ShowModal() == wxID_OK) {
+                    Priority priority = prioritySelection.getSelectedPriority();
+                    if (priority != Priority::Low and priority != Priority::Medium and priority != Priority::High) {
+                        wxMessageBox("Inserisci una priorità!");
+                        return;
+                    }
 
-                taskTextCtrl->Clear();
+                    Nome = name;
+                    Data = dateTime;
+                    Priorità = priority;
 
-                if (observer) {
-                    observer->onAddTaskButtonClicked();
+                    taskTextCtrl->Clear();
+
+                    if (observer) {
+                        observer->onAddTaskButtonClicked();
+                    }
+
                 }
-
             }
         }
     }
@@ -145,7 +144,10 @@ void Frame::addTaskButton(wxCommandEvent &event) { //fixme c'è da sistemare del
 void Frame::removeTaskButton(wxCommandEvent &event) {
 
     int selectedIndex = taskListBox->GetSelection();
-    if (selectedIndex != wxNOT_FOUND) {
+    if (selectedIndex == wxNOT_FOUND) {
+        wxMessageBox("Seleziona un task da eliminare!");
+        return;
+    } else if (selectedIndex != wxNOT_FOUND) {
         wxMessageDialog confirmDialog(this,
                                       "Sei sicuro di volerla eliminare?", "Conferma eliminazione",
                                       wxYES_NO | wxICON_QUESTION);
@@ -163,6 +165,11 @@ void Frame::removeTaskButton(wxCommandEvent &event) {
 void Frame::searchTaskButton(wxCommandEvent &event) {
 
     wxString searchKeyword = searchInput->GetValue();
+
+    if(searchKeyword.IsSameAs("Task Name", true) || searchKeyword.IsEmpty()){
+        wxMessageBox("Inserisci un nome da cercare!");
+        return;
+    }
 
     namesSearch.clear();
     datesSearch.clear();
@@ -205,12 +212,10 @@ void Frame::ClearFrame() {
 }
 
 
-
-
-void Frame::showSearchFrame(std::vector <wxString> namesSearch, std::vector <wxDateTime> datesSearch,
-                            std::vector <Priority> prioritiesSearch, std::vector<bool> completedSearch,
-                            std::vector <wxString> allNames, std::vector <wxDateTime> allDates,
-                            std::vector <Priority> allPriorities, std::vector<bool> allCompleted) {
+void Frame::showSearchFrame(std::vector<wxString> namesSearch, std::vector<wxDateTime> datesSearch,
+                            std::vector<Priority> prioritiesSearch, std::vector<bool> completedSearch,
+                            std::vector<wxString> allNames, std::vector<wxDateTime> allDates,
+                            std::vector<Priority> allPriorities, std::vector<bool> allCompleted) {
 
     this->namesSearch = namesSearch;
     this->datesSearch = datesSearch;
@@ -248,8 +253,8 @@ void Frame::showSearchFrame(std::vector <wxString> namesSearch, std::vector <wxD
 
 }
 
-void Frame::searchShow(std::vector <wxString> namesSearch, std::vector <wxDateTime> datesSearch,
-                       std::vector <Priority> prioritiesSearch, std::vector<bool> completedSearch) {
+void Frame::searchShow(std::vector<wxString> namesSearch, std::vector<wxDateTime> datesSearch,
+                       std::vector<Priority> prioritiesSearch, std::vector<bool> completedSearch) {
 
     this->namesSearch = namesSearch;
     this->datesSearch = datesSearch;
@@ -281,6 +286,7 @@ void Frame::searchShow(std::vector <wxString> namesSearch, std::vector <wxDateTi
 
 
 void Frame::CloseRefresh(wxCloseEvent &event) {
+
     for (int i = 0; i < namesSearch.size(); i++) {
         if (searchBox->IsChecked(i) == true) {
             completedSearch[i] = true;
@@ -340,13 +346,22 @@ void Frame::checkTaskButton(wxCommandEvent &event) {
             observer->onCheckTaskButtonClicked(selectedIndex);
         }
     }
-
+    searchShow(namesSearch, datesSearch, prioritiesSearch, completedSearch);
 }
 
 void Frame::removeSearchButton(wxCommandEvent &event) {
 
     int selectedIndex = searchBox->GetSelection();
     int c = 0;
+
+    for (int i = 0; i < namesSearch.size(); i++) {
+        if (searchBox->IsChecked(i) == true) {
+            completedSearch[i] = true;
+        } else if (searchBox->IsChecked(i) == false) {
+            completedSearch[i] = false;
+        }
+    }
+
     while (namesSearch[selectedIndex] != names[c]) {
         c++;
     }
@@ -380,8 +395,8 @@ void Frame::removeSearchButton(wxCommandEvent &event) {
     }
 }
 
-void Frame::updateVector(std::vector <wxString> names, std::vector <wxDateTime> dates,
-                         std::vector <Priority> priorities, std::vector<bool> completed) {
+void Frame::updateVector(std::vector<wxString> names, std::vector<wxDateTime> dates,
+                         std::vector<Priority> priorities, std::vector<bool> completed) {
 
     this->names = names;
     this->dates = dates;

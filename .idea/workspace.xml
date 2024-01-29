@@ -20,14 +20,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9b41efa-221c-4013-a5f1-1cb88893e44b" name="Changes" comment="aggiunto il remove nel search">
+    <list default="true" id="e9b41efa-221c-4013-a5f1-1cb88893e44b" name="Changes" comment="corretto il remove">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Control/ItemController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/ItemController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/ItemController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/ItemController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Task.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Task.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/ToDoItem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ToDoItem.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/ToDoItem.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ToDoItem.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/DateSelection.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/DateSelection.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Frame.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Frame.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Frame.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Frame.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/PrioritySelection.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrioritySelection.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +144,10 @@
       <workItem from="1706441442619" duration="7000" />
       <workItem from="1706441622186" duration="2168000" />
       <workItem from="1706461718116" duration="383000" />
-      <workItem from="1706462145467" duration="2139000" />
+      <workItem from="1706462145467" duration="2463000" />
+      <workItem from="1706517453828" duration="4282000" />
+      <workItem from="1706521985943" duration="112000" />
+      <workItem from="1706522147465" duration="3732000" />
     </task>
     <task id="LOCAL-00001" summary="add things">
       <option name="closed" value="true" />
@@ -258,7 +261,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706378645260</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="corretto il remove">
+      <option name="closed" value="true" />
+      <created>1706464775639</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1706464775639</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,6 +305,7 @@
     <MESSAGE value="." />
     <MESSAGE value="prova push" />
     <MESSAGE value="aggiunto il remove nel search" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunto il remove nel search" />
+    <MESSAGE value="corretto il remove" />
+    <option name="LAST_COMMIT_MESSAGE" value="corretto il remove" />
   </component>
 </project>

@@ -56,7 +56,7 @@ void ItemController::onRemoveTaskButtonClicked(int index) {
 void ItemController::removeItem(int index) {
 
     //wxString name = item->getName(index);
-    item->removeTask(index); //todo da cambiare perchè elimina per indice e non per nome
+    item->removeTask(index);
     showTask(item->getVector());
 
     //removeFrame(index);

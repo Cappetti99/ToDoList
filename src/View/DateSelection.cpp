@@ -18,9 +18,6 @@ DateSelection::DateSelection(wxWindow *parent, const wxString &title)
 
     mainSizer->Add(buttonSizer, 0, wxALIGN_RIGHT | wxALL, 10);
 
-
-    //fixme quando annullo inserisce comunque la task, non a schermo perchè le due cose non sono collegate
-
 }
 
 wxDatePickerCtrl *DateSelection::getDatePicker() const {

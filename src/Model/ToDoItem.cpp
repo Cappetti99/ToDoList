@@ -4,7 +4,6 @@
 
 #include "ToDoItem.h"
 
-//todo da pensare come collegare la task qui con quella che facciamo vedere nel frame
 
 ToDoItem::ToDoItem() {
 
