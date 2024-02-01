@@ -20,14 +20,34 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9b41efa-221c-4013-a5f1-1cb88893e44b" name="Changes" comment="corretto il remove">
+    <list default="true" id="e9b41efa-221c-4013-a5f1-1cb88893e44b" name="Changes" comment="corretto alcune cose">
+      <change afterPath="$PROJECT_DIR$/src/Model/Model.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Model.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Observer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Observer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Subject.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Subject.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/View.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/View.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/Control.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Control.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/Control.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Control.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Control/ItemController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/ItemController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/ItemController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/ItemController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/ItemControllerObserver.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/ItemControllerObserver.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Task.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Task.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/ToDoItem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ToDoItem.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/ToDoItem.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ToDoItem.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/DateSelection.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/DateSelection.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoApp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoApp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoApp.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoApp.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/DateSelection.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/DateSelectionDialog.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/DateSelection.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/DateSelectionDialog.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Frame.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Frame.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/PrioritySelection.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrioritySelection.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Frame.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Frame.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/PrioritySelection.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrioritySelectionDialog.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/PrioritySelection.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrioritySelectionDialog.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +106,17 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Model" />
+    </key>
+  </component>
   <component name="RunManager" selected="CMake Application.ToDoList">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ToDoList" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory" temporary="true">
       <method v="2" />
     </configuration>
@@ -147,7 +177,16 @@
       <workItem from="1706462145467" duration="2463000" />
       <workItem from="1706517453828" duration="4282000" />
       <workItem from="1706521985943" duration="112000" />
-      <workItem from="1706522147465" duration="3732000" />
+      <workItem from="1706522147465" duration="7145000" />
+      <workItem from="1706543952811" duration="2906000" />
+      <workItem from="1706614362899" duration="32000" />
+      <workItem from="1706626012397" duration="1983000" />
+      <workItem from="1706633755553" duration="702000" />
+      <workItem from="1706695506764" duration="2228000" />
+      <workItem from="1706714006932" duration="982000" />
+      <workItem from="1706724848632" duration="1402000" />
+      <workItem from="1706780637416" duration="2386000" />
+      <workItem from="1706793368893" duration="8973000" />
     </task>
     <task id="LOCAL-00001" summary="add things">
       <option name="closed" value="true" />
@@ -269,7 +308,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706464775639</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="corretto alcune cose">
+      <option name="closed" value="true" />
+      <created>1706527166033</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1706527166033</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,6 +353,7 @@
     <MESSAGE value="prova push" />
     <MESSAGE value="aggiunto il remove nel search" />
     <MESSAGE value="corretto il remove" />
-    <option name="LAST_COMMIT_MESSAGE" value="corretto il remove" />
+    <MESSAGE value="corretto alcune cose" />
+    <option name="LAST_COMMIT_MESSAGE" value="corretto alcune cose" />
   </component>
 </project>

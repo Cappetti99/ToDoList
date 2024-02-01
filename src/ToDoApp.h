@@ -8,18 +8,14 @@
 #include <wx/wx.h>
 
 #include "Control/Control.h"
-
+#include "View/View.h"
 
 class ToDoApp : public wxApp {
 
 public:
     ToDoApp();
 
-    virtual bool OnInit();
-
-private:
-//    Model model;
-//    View view;
+    virtual bool OnInit(Model *m, Control *c);
 
 };
 

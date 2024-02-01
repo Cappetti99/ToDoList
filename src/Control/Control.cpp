@@ -4,11 +4,8 @@
 
 #include "Control.h"
 
-Control::Control() {
+Control::Control(Model *m) : model(m) {
 
-    std::cout << "Control created" << std::endl;
-
-    auto itemController = new ItemController();
 }
 
 void Control::addTask(wxString name, wxDateTime date, Priority priority) {
@@ -17,12 +14,14 @@ void Control::addTask(wxString name, wxDateTime date, Priority priority) {
     ItemController itemController;
     itemController.addItem(name, date, priority);
 
-
 }
 
 void Control::removeTask() {
 
     std::cout << "Control::removeTask()" << std::endl;
+    ItemController itemController;
+//        itemController->removeItem();
+
 
 }
 
@@ -36,7 +35,7 @@ void Control::markAsCompleted() {
     std::cout << "Control::markAsCompleted()" << std::endl;
 }
 
-void Control::updateView() {
-
-    std::cout << "Control::updateView()" << std::endl;
-}
+//void Control::updateView() {
+//
+//    std::cout << "Control::updateView()" << std::endl;
+//}

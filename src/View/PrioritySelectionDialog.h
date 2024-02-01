@@ -10,10 +10,10 @@
 #include "Priority.h"
 
 
-class PrioritySelection : public wxDialog {
+class PrioritySelectionDialog : public wxDialog {
 
 public:
-    PrioritySelection(wxWindow* parent, const wxString& title);
+    PrioritySelectionDialog(wxWindow* parent, const wxString& title);
 
     Priority getSelectedPriority() const;
 

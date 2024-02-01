@@ -34,7 +34,7 @@ public:
 
     virtual void onCheckTaskButtonClicked(int index) override;
 
-    void showTask(std::vector<Task> vettore );
+    void showTask(std::vector<Task> vettore ); //const da riguardare
 
 
 private:

@@ -2,14 +2,14 @@
 // Created by cappe on 22/12/23.
 //
 
-#include "PrioritySelection.h"
+#include "PrioritySelectionDialog.h"
 
-wxBEGIN_EVENT_TABLE(PrioritySelection, wxDialog)
-                EVT_BUTTON(wxID_OK, PrioritySelection::OnOK)
-                EVT_BUTTON(wxID_CANCEL, PrioritySelection::OnCancel)
+wxBEGIN_EVENT_TABLE(PrioritySelectionDialog, wxDialog)
+                EVT_BUTTON(wxID_OK, PrioritySelectionDialog::OnOK)
+                EVT_BUTTON(wxID_CANCEL, PrioritySelectionDialog::OnCancel)
 wxEND_EVENT_TABLE()
 
-PrioritySelection::PrioritySelection(wxWindow* parent, const wxString& title)
+PrioritySelectionDialog::PrioritySelectionDialog(wxWindow* parent, const wxString& title)
         : wxDialog(parent, wxID_ANY, title, wxDefaultPosition, wxDefaultSize) {
 
     wxBoxSizer* mainSizer = new wxBoxSizer(wxVERTICAL);
@@ -33,7 +33,7 @@ PrioritySelection::PrioritySelection(wxWindow* parent, const wxString& title)
     SetSizerAndFit(mainSizer);
 }
 
-void PrioritySelection::OnOK(wxCommandEvent& event) {
+void PrioritySelectionDialog::OnOK(wxCommandEvent& event) {
     if (lowButton->GetValue()) {
         selectedPriority = Priority::Low;
     } else if (mediumButton->GetValue()) {
@@ -45,12 +45,12 @@ void PrioritySelection::OnOK(wxCommandEvent& event) {
     EndModal(wxID_OK);
 }
 
-void PrioritySelection::OnCancel(wxCommandEvent& event) {
+void PrioritySelectionDialog::OnCancel(wxCommandEvent& event) {
     EndModal(wxID_CANCEL);
     selectedPriority = Priority::None;
 }
 
-Priority PrioritySelection::getSelectedPriority() const {
+Priority PrioritySelectionDialog::getSelectedPriority() const {
     return selectedPriority;
 }
 

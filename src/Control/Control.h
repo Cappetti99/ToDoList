@@ -7,18 +7,14 @@
 
 #include <wx/wx.h>
 
-
 #include "ItemController.h"
+#include "../Model/Model.h"
 
 
 class Control {
 
-private:
-//    Model model;
-//    View view; //così facendo entra prima nel costruttore della view e poi nel costruttore del controller, idem con model
-
 public:
-    Control();
+    Control(Model *m);
 
     static void addTask(wxString name, wxDateTime date, Priority priority);
 
@@ -28,9 +24,11 @@ public:
 
     void markAsCompleted();
 
-    void updateView();
+//    void updateView();
 
-
+private:
+    Model *model;
+    ItemController *itemController;
 };
 
 

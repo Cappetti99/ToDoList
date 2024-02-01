@@ -11,6 +11,7 @@ wxBEGIN_EVENT_TABLE(Frame, wxFrame)
                 EVT_BUTTON(ID_SearchTaskButton, Frame::searchTaskButton)
                 EVT_CHECKLISTBOX(ID_Check, Frame::checkTaskButton)
                 EVT_BUTTON(ID_RemoveSearch, Frame::removeSearchButton)
+                EVT_BUTTON(ID_EditTaskButton, Frame::editTaskButton)
 
                 EVT_TEXT(ID_TextCtrl, Frame::onTextChange)
                 EVT_TEXT_ENTER(ID_TextCtrl, Frame::addTaskButton)
@@ -20,8 +21,8 @@ wxBEGIN_EVENT_TABLE(Frame, wxFrame)
 wxEND_EVENT_TABLE()
 
 
-Frame::Frame(const wxString &title, const wxPoint &pos, const wxSize &size, ItemControllerObserver *observer)
-        : wxFrame(NULL, wxID_ANY, title, pos, size), observer(observer) {
+Frame::Frame(const wxString &title, const wxPoint &pos, const wxSize &size)
+        : wxFrame(NULL, wxID_ANY, title, pos, size) { //tolgo l'observer
 
     frame = this;
 
@@ -37,6 +38,7 @@ Frame::Frame(const wxString &title, const wxPoint &pos, const wxSize &size, Item
     auto addButton = new wxButton(this, ID_AddTaskButton, "Add Task");
     auto removeButton = new wxButton(this, ID_RemoveTaskButton, "Remove Task");
     auto searchButton = new wxButton(this, ID_SearchTaskButton, "Search Tasks");
+    auto editButton = new wxButton(this, ID_EditTaskButton, "Edit Task");
 
     searchInput = new wxTextCtrl(this, ID_SearchText, "Task Name", wxDefaultPosition, wxDefaultSize,
                                  wxTE_PROCESS_ENTER);
@@ -44,6 +46,7 @@ Frame::Frame(const wxString &title, const wxPoint &pos, const wxSize &size, Item
 
     buttonsSizer->Add(addButton, 5, wxALL, 10);
     buttonsSizer->Add(removeButton, 5, wxALL, 10);
+    buttonsSizer->Add(editButton, 5, wxALL, 10);
     buttonsSizer->Add(searchButton, 5, wxALL, 10);
     buttonsSizer->Add(searchInput, 5, wxALL, 10);
 
@@ -105,18 +108,18 @@ void Frame::addTaskButton(wxCommandEvent &event) {
         wxMessageBox("Inserisci un task!");
         return;
     } else {
-        DateSelection dateSelection(this, "Select expiration date:");
+        DateSelectionDialog dateSelection(this, "Select expiration date:");
         if (!name.IsEmpty()) {
             if (dateSelection.ShowModal() == wxID_OK) {
                 wxDateTime dateTime = dateSelection.getDatePicker()->GetValue();
-                //fai un controllo in modo che non abbia una data passata
+                //controllo in modo che non abbia una data passata
                 if (dateTime.IsEarlierThan(wxDateTime::Now() - wxTimeSpan::Days(1))) {
                     //tolgo un giorno perche' sennò da problemi con oggi
                     wxMessageBox("Hai inserito una data passata!");
                     return;
                 }
 
-                PrioritySelection prioritySelection(this, "Select priority:");
+                PrioritySelectionDialog prioritySelection(this, "Select priority:");
                 if (prioritySelection.ShowModal() == wxID_OK) {
                     Priority priority = prioritySelection.getSelectedPriority();
                     if (priority != Priority::Low and priority != Priority::Medium and priority != Priority::High) {
@@ -126,14 +129,16 @@ void Frame::addTaskButton(wxCommandEvent &event) {
 
                     Nome = name;
                     Data = dateTime;
-                    Priorità = priority;
+                    Priorità = priority; //servono?
 
                     taskTextCtrl->Clear();
 
-                    if (observer) {
-                        observer->onAddTaskButtonClicked();
-                    }
+                    control->addTask(name, dateTime, priority);
 
+
+//                    if (observer) {
+//                        observer->onAddTaskButtonClicked();
+//                    }
                 }
             }
         }
@@ -180,6 +185,11 @@ void Frame::searchTaskButton(wxCommandEvent &event) {
         observer->onSearchTaskButtonClicked(searchKeyword);
     }
 
+}
+
+void Frame::editTaskButton(wxCommandEvent &event) {
+    std::cout << "editTaskButton" << std::endl;
+    //todo da implementare
 }
 
 void Frame::showTaskFrame(wxString name, wxDateTime date, Priority priority, bool completed, int index) {

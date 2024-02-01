@@ -7,7 +7,7 @@
 
 ItemController::ItemController() {
 
-    frame = new Frame("ToDoList", wxDefaultPosition, wxSize(450, 340), this);
+    frame = new Frame("ToDoList", wxDefaultPosition, wxSize(450, 340));
     frame->Show(true);
 
     item = new ToDoItem();
@@ -17,24 +17,26 @@ ItemController::ItemController() {
 void ItemController::onAddTaskButtonClicked() {
 
     addItem(frame->getNome(), frame->getData(), frame->getPriorità());
-
 }
 
 void ItemController::addItem(wxString name, wxDateTime date, Priority priority) {
 
+//va ripensato il sort
+//    item->addTask(name, date, priority);
+//    std::vector<Task> temp =item->getVector();
+//    std::sort(temp.begin(), temp.end(),
+//              [](const Task &a, const Task &b) {
+//                  return a.getExpirationDate() < b.getExpirationDate();
+//              });
+//    std::sort(temp.begin(), temp.end(),
+//              [](const Task &a, const Task &b) {
+//                  return a.getPriority() > b.getPriority();
+//              });
+//    item->tasks=temp;
+//    showTask(temp);
 
     item->addTask(name, date, priority);
-    std::vector<Task> temp =item->getVector();
-    std::sort(temp.begin(), temp.end(),
-              [](const Task &a, const Task &b) {
-                  return a.getExpirationDate() < b.getExpirationDate();
-              });
-    std::sort(temp.begin(), temp.end(),
-              [](const Task &a, const Task &b) {
-                  return a.getPriority() > b.getPriority();
-              });
-    item->tasks=temp;
-    showTask(temp);
+
 
 }
 

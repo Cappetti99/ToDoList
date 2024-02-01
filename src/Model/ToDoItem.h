@@ -13,8 +13,6 @@
 
 class ToDoItem {
 
-private:
-
 
 public:
     ToDoItem();
@@ -23,7 +21,7 @@ public:
 
     void removeTask(int index);
 
-    std::vector<Task> getVector();
+    std::vector<Task> getVector();  //todo togliere getVector
 
     wxString getName(int index);
 
@@ -34,6 +32,8 @@ public:
     void setTaskAsCompleted(int index);
 
     bool getCompleted(int index);
+
+private:
 
     std::vector<Task> tasks;
 };

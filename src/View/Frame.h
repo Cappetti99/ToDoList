@@ -7,14 +7,16 @@
 
 #include <wx/wx.h>
 
-#include "DateSelection.h"
-#include "PrioritySelection.h"
+#include "DateSelectionDialog.h"
+#include "PrioritySelectionDialog.h"
 #include "../Control/ItemControllerObserver.h"
+#include "../Model/Model.h"
+#include "../Control/Control.h"
 
 class Frame : public wxFrame {
 
 public:
-    Frame(const wxString &title, const wxPoint &pos, const wxSize &size, ItemControllerObserver *observer);
+    Frame(const wxString &title, const wxPoint &pos, const wxSize &size);
 
     void showTaskFrame(wxString name, wxDateTime date, Priority priority, bool completed, int index);
 
@@ -49,14 +51,18 @@ private:
 
     void checkTaskButton(wxCommandEvent &event);
 
+    void editTaskButton(wxCommandEvent &event);
+
     void removeSearchButton(wxCommandEvent &event);
 
     void onTextChange(wxCommandEvent &event);
+
     void onTextClick(wxCommandEvent &event);
+
     void onSearchTextChange(wxCommandEvent &event);
 
-    void searchShow(    std::vector<wxString> namesSearch, std::vector<wxDateTime> datesSearch,
-                        std::vector<Priority> prioritiesSearch, std::vector<bool> completedSearch);
+    void searchShow(std::vector<wxString> namesSearch, std::vector<wxDateTime> datesSearch,
+                    std::vector<Priority> prioritiesSearch, std::vector<bool> completedSearch);
 
     void updateVector(std::vector<wxString> names, std::vector<wxDateTime> dates,
                       std::vector<Priority> priorities, std::vector<bool> completed);
@@ -85,6 +91,10 @@ private:
 
     wxCheckListBox *searchBox;
 
+//importante
+    Model *model;
+    Control *control;
+
 };
 
 
@@ -94,8 +104,9 @@ enum {
     ID_SearchTaskButton = 3,
     ID_RemoveSearch = 4,
     ID_Check = 5,
-    ID_TextCtrl=6,
-    ID_SearchText=7
+    ID_TextCtrl = 6,
+    ID_SearchText = 7,
+    ID_EditTaskButton = 8
 };
 
 #endif //LOLLO_FRAME_H

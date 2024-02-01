@@ -14,9 +14,10 @@ void ToDoItem::addTask(wxString name, wxDateTime date, Priority priority) {
 
     bool isCompleted = false;
 
-    auto task = new Task(name, priority, isCompleted, date) ;
+    auto task = new Task(name, priority, isCompleted, date);
 
-    tasks.push_back(*task);
+    tasks.push_back(*task); //ho creato una task e ora la metto nel vettore di task
+
 
 }
 

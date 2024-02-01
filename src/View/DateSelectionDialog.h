@@ -10,10 +10,10 @@
 #include <wx/dateevt.h>
 
 
-class DateSelection : public wxDialog {
+class DateSelectionDialog : public wxDialog {
 
 public:
-    DateSelection(wxWindow* parent, const wxString& title);
+    DateSelectionDialog(wxWindow* parent, const wxString& title);
     wxDatePickerCtrl* getDatePicker() const;
     void setDatePicker(wxDatePickerCtrl *datePicker);
 

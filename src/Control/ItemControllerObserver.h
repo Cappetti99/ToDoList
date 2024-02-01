@@ -12,7 +12,7 @@ public:
     virtual void onAddTaskButtonClicked() = 0;
     virtual void onRemoveTaskButtonClicked(int index) = 0;
     virtual void onSearchTaskButtonClicked(wxString searchKeyword) = 0;
-    virtual void onCheckTaskButtonClicked(int index) = 0;
+    virtual void onCheckTaskButtonClicked(int index) = 0; //distruttore virtuale
 //    virtual void onCheckSearchButtonClicked(int index) = 0;
     //virtual void onEditTaskButtonClicked() = 0;
 

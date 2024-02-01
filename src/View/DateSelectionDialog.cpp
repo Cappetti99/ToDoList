@@ -2,9 +2,9 @@
 // Created by cappe on 22/12/23.
 //
 
-#include "DateSelection.h"
+#include "DateSelectionDialog.h"
 
-DateSelection::DateSelection(wxWindow *parent, const wxString &title)
+DateSelectionDialog::DateSelectionDialog(wxWindow *parent, const wxString &title)
         : wxDialog(parent, wxID_ANY, title, wxDefaultPosition, wxDefaultSize) {
 
     auto mainSizer = new wxBoxSizer(wxVERTICAL);
@@ -20,10 +20,10 @@ DateSelection::DateSelection(wxWindow *parent, const wxString &title)
 
 }
 
-wxDatePickerCtrl *DateSelection::getDatePicker() const {
+wxDatePickerCtrl *DateSelectionDialog::getDatePicker() const {
     return datePicker;
 }
 
-void DateSelection::setDatePicker(wxDatePickerCtrl *datePicker) {
+void DateSelectionDialog::setDatePicker(wxDatePickerCtrl *datePicker) {
     this->datePicker = datePicker;
 }

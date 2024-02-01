@@ -20,14 +20,22 @@ add_executable(ToDoList main.cpp
         View/Frame.h
         Control/ItemController.cpp
         Control/ItemController.h
-        View/DateSelection.cpp
-        View/DateSelection.h
-        View/PrioritySelection.cpp
-        View/PrioritySelection.h
+        View/DateSelectionDialog.cpp
+        View/DateSelectionDialog.h
+        View/PrioritySelectionDialog.cpp
+        View/PrioritySelectionDialog.h
         View/Priority.h
         Model/Task.cpp
         Model/Task.h
         Control/ItemControllerObserver.h
+        View/View.cpp
+        View/View.h
+        Model/Model.cpp
+        Model/Model.h
+        Observer.cpp
+        Observer.h
+        Subject.cpp
+        Subject.h
 )
 
 # Include wxWidgets headers
