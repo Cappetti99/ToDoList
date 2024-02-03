@@ -4,31 +4,43 @@
 
 #include "Model.h"
 
-void Model::addObserver(Observer *o) {
-
-    observers.push_back(o);
-
+Model::Model() {
+    std::cout << "Model created" << std::endl;
 }
 
-void Model::removeObserver(Observer *o) {
 
-    observers.remove(o);
 
-}
+//todo tutto da cancellare
 
-void Model::notify() {
 
-    for (auto &observer: observers) {
-        observer->update();
-    }
 
-}
-
-void Model::addTask(wxString title, wxDateTime date, Priority priority) {
-
-    ToDoItem *item = new ToDoItem();
-    item->addTask(title, date, priority);
-
-    notify();
-}
-
+//void Model::addTask(wxString title, wxDateTime date, Priority priority) {
+//
+//    std::cout << "" << observers.size() << std::endl;
+//
+//    std::cout << "Model::addTask()" << std::endl;
+//    item->addTask(title, date, priority);
+//
+//    notify();
+//}
+//
+//std::vector<Task> Model::getVector() {
+//    return item->getVector();
+//}
+//
+//wxString Model::getTaskName(int index) {
+//    return item->getName(index);
+//}
+//
+//Priority Model::getTaskPriority(int index) {
+//    return item->getPriority(index);
+//}
+//
+//wxDateTime Model::getTaskDate(int index) {
+//    return item->getDate(index);
+//}
+//
+//bool Model::isTaskCompleted(int index) {
+//    return item->getCompleted(index);
+//}
+//

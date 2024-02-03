@@ -2,34 +2,31 @@
 // Created by cappe on 13/12/23.
 //
 
-#ifndef LOLLO_CONTROLL_H
-#define LOLLO_CONTROLL_H
+#ifndef TODOLIST_CONTROLL_H
+#define TODOLIST_CONTROLL_H
 
 #include <wx/wx.h>
 
-#include "ItemController.h"
 #include "../Model/Model.h"
 
 
 class Control {
 
 public:
-    Control(Model *m);
 
-    static void addTask(wxString name, wxDateTime date, Priority priority);
+    virtual ~Control();
 
-    static void removeTask();
+    virtual void addTask(wxString name, wxDateTime date, Priority priority) = 0;
 
-    static void searchTask();
+    virtual void removeTask() = 0;
 
-    void markAsCompleted();
+    virtual void searchTask() = 0;
 
-//    void updateView();
+    virtual void markAsCompleted(int index) = 0;
 
-private:
+protected:
     Model *model;
-    ItemController *itemController;
 };
 
 
-#endif //LOLLO_CONTROLL_H
+#endif //TODOLIST_CONTROLL_H

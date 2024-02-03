@@ -2,8 +2,8 @@
 // Created by cappe on 22/12/23.
 //
 
-#ifndef LOLLO_DATESELECTION_H
-#define LOLLO_DATESELECTION_H
+#ifndef TODOLIST_DATESELECTION_H
+#define TODOLIST_DATESELECTION_H
 
 #include <wx/wx.h>
 #include <wx/datectrl.h>
@@ -25,4 +25,4 @@ public:
 };
 
 
-#endif //LOLLO_DATESELECTION_H
+#endif //TODOLIST_DATESELECTION_H

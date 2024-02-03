@@ -5,26 +5,34 @@
 #ifndef TODOLIST_MODEL_H
 #define TODOLIST_MODEL_H
 
+#include <wx/wx.h>
 #include <list>
 
+#include "../View/Priority.h"
 #include "../Subject.h"
-#include "ToDoItem.h"
+
 
 class Model : public Subject {
 
 public:
-    virtual void addObserver(Observer *o);
+    Model();
 
-    virtual void removeObserver(Observer *o);
+    virtual void addTask(wxString title, wxDateTime date, Priority priority) = 0;
 
-    virtual void notify();
+    virtual void removeTask(int index) = 0;
 
-    void addTask(wxString title, wxDateTime date, Priority priority);
+//    std::vector<Task> getVector();
+//
+//    wxString getTaskName(int index);
+//
+//    Priority getTaskPriority(int index);
+//
+//    wxDateTime getTaskDate(int index);
+//
+//    bool isTaskCompleted(int index); //todo da mettere su ToDoItem
 
-private:
+protected:
     std::list<Observer *> observers;
-
-
 
 };
 

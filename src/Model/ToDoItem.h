@@ -2,24 +2,34 @@
 // Created by cappe on 13/12/23.
 //
 
-#ifndef LOLLO_TODOITEM_H
-#define LOLLO_TODOITEM_H
+#ifndef TODOLIST_TODOITEM_H
+#define TODOLIST_TODOITEM_H
 
 #include <wx/wx.h>
-#include <memory>
 
 #include "Task.h"
+#include "Model.h"
 
+//eredita model e subject
 
-class ToDoItem {
-
+class ToDoItem : public Model{
 
 public:
     ToDoItem();
 
-    void addTask(wxString name, wxDateTime date, Priority priority);
+    ~ToDoItem() override;
 
-    void removeTask(int index);
+    //metodi di model
+    void addTask(wxString name, wxDateTime date, Priority priority) override;
+
+    void removeTask(int index) override;
+
+    //metodi di subject
+    void notify() override;
+
+    void addObserver(Observer *o) override;
+
+    void removeObserver(Observer *o) override;
 
     std::vector<Task> getVector();  //todo togliere getVector
 
@@ -31,7 +41,7 @@ public:
 
     void setTaskAsCompleted(int index);
 
-    bool getCompleted(int index);
+    bool isCompleted(int index);
 
 private:
 
@@ -39,4 +49,4 @@ private:
 };
 
 
-#endif //LOLLO_TODOITEM_H
+#endif //TODOLIST_TODOITEM_H

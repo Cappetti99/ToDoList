@@ -14,19 +14,19 @@ Task::Task(const wxString &title, Priority priority, bool completed, const wxDat
 
 }
 
-const wxString Task::getTitle() const {
+wxString Task::getTitle() {
     return title;
 }
 
-const Priority Task::getPriority() const {
+Priority Task::getPriority() {
     return priority;
 }
 
-const wxDateTime Task::getExpirationDate() const {
+wxDateTime Task::getExpirationDate() {
     return expirationDate;
 }
 
-const bool Task::isCompleted() const {
+bool Task::isCompleted() {
     return completed;
 }
 

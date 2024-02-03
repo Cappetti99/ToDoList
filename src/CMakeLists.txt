@@ -27,7 +27,6 @@ add_executable(ToDoList main.cpp
         View/Priority.h
         Model/Task.cpp
         Model/Task.h
-        Control/ItemControllerObserver.h
         View/View.cpp
         View/View.h
         Model/Model.cpp

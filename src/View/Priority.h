@@ -2,8 +2,8 @@
 // Created by cappe on 22/12/23.
 //
 
-#ifndef LOLLO_PRIORITY_H
-#define LOLLO_PRIORITY_H
+#ifndef TODOLIST_PRIORITY_H
+#define TODOLIST_PRIORITY_H
 
 enum class Priority{
     Low,
@@ -12,5 +12,5 @@ enum class Priority{
     None
 };
 
-#endif //LOLLO_PRIORITY_H
+#endif //TODOLIST_PRIORITY_H
 

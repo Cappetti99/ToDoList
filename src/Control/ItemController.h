@@ -2,46 +2,37 @@
 // Created by cappe on 18/12/23.
 //
 
-#ifndef LOLLO_ITEMCONTROLLER_H
-#define LOLLO_ITEMCONTROLLER_H
+#ifndef TODOLIST_ITEMCONTROLLER_H
+#define TODOLIST_ITEMCONTROLLER_H
 
 #include <wx/wx.h>
 #include <iostream>
 
+#include "Control.h"
 #include "../Model/ToDoItem.h"
-#include "../View/Frame.h"
-#include "ItemControllerObserver.h"
 
 
-class ItemController : public ItemControllerObserver {
+class ItemController : public Control {
 
 public:
-    ItemController();
+    explicit ItemController(ToDoItem *m);
 
-    void addItem(wxString name, wxDateTime date, Priority priority);
+    ~ItemController() override;
 
-    void removeItem(int index);
+    //metodi di control
+    void addTask(wxString name, wxDateTime date, Priority priority) override;
 
-    void markItemAsCompleted();
+    void removeTask() override;
 
-    void searchItem(wxString searchKeyword);
+    void searchTask() override;
 
-    virtual void onAddTaskButtonClicked() override;
-
-    virtual void onRemoveTaskButtonClicked(int index) override;
-
-    virtual void onSearchTaskButtonClicked(wxString searchKeyword) override;
-
-    virtual void onCheckTaskButtonClicked(int index) override;
-
-    void showTask(std::vector<Task> vettore ); //const da riguardare
+    void markAsCompleted(int index) override;
 
 
 private:
-    Frame *frame;
-    ToDoItem *item;
+    ToDoItem *toDoItem;
 
 };
 
 
-#endif //LOLLO_ITEMCONTROLLER_H
+#endif //TODOLIST_ITEMCONTROLLER_H

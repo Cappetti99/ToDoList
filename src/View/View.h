@@ -10,21 +10,15 @@
 #include "../Control/Control.h"
 #include "../Observer.h"
 
-class View : public Observer{
+class View : public Observer {
 
 public:
-    View(Model *m, Control *c);
 
-    virtual ~View();
+    virtual void show() = 0;
 
-    void show();
-
-    void update() override;
-
-private:
-
-
-    Frame *frame;
+//protected:
+//    Model *model;
+//    Control *control;
 
 };
 

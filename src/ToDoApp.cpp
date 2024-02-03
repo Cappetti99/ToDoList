@@ -3,22 +3,16 @@
 //
 
 #include "ToDoApp.h"
-#include "View/View.h"
 
-ToDoApp::ToDoApp() {
+bool ToDoApp::OnInit() {
 
-    std::cout << "App created" << std::endl;
-
-}
-
-
-bool ToDoApp::OnInit(Model *model, Control *control) {
-
-    auto view = new View(model, control);
-    view->show();
+    auto toDoItem = new ToDoItem();
+    auto itemController = new ItemController(toDoItem);
+    auto frame = new Frame(toDoItem, itemController, "ToDoList", wxPoint(50, 50), wxSize(450, 340));
+    frame->show();
     return true;
 
 }
 
-//wxIMPLEMENT_APP(ToDoApp);
+wxIMPLEMENT_APP(ToDoApp);
 

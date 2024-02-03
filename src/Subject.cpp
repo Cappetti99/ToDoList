@@ -4,7 +4,5 @@
 
 #include "Subject.h"
 
-Subject::~Subject() {
-
-}
+Subject::~Subject() = default;
 

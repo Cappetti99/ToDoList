@@ -4,22 +4,32 @@
 
 #include "ItemController.h"
 
-
-ItemController::ItemController() {
-
-    frame = new Frame("ToDoList", wxDefaultPosition, wxSize(450, 340));
-    frame->Show(true);
-
-    item = new ToDoItem();
-
+ItemController::ItemController(ToDoItem *m) {
+    this->toDoItem = m;
 }
 
-void ItemController::onAddTaskButtonClicked() {
+ItemController::~ItemController() = default;
 
-    addItem(frame->getNome(), frame->getData(), frame->getPriorità());
+void ItemController::addTask(wxString name, wxDateTime date, Priority priority) {
+    toDoItem->addTask(name, date, priority);
 }
 
-void ItemController::addItem(wxString name, wxDateTime date, Priority priority) {
+void ItemController::removeTask() {
+    std::cout << "removeTask" << std::endl;
+//    model->removeTask();
+}
+
+void ItemController::searchTask() {
+    std::cout << "searchTask" << std::endl;
+}
+
+void ItemController::markAsCompleted(int index) {
+
+    toDoItem->setTaskAsCompleted(index);
+}
+
+
+//void ItemController::addItem(wxString name, wxDateTime date, Priority priority) {
 
 //va ripensato il sort
 //    item->addTask(name, date, priority);
@@ -35,83 +45,88 @@ void ItemController::addItem(wxString name, wxDateTime date, Priority priority) 
 //    item->tasks=temp;
 //    showTask(temp);
 
-    item->addTask(name, date, priority);
+//    model->addTask(name, date, priority);
 
+//}
 
-}
-
-void ItemController::showTask(std::vector<Task> vettore) {
-    frame->ClearFrame();
-    for (int i=0; i<vettore.size(); i++){
-
-        frame->showTaskFrame(item->getName(i), item->getDate(i), item->getPriority(i),item->getCompleted(i),i);
-    }
-
-}
-
-void ItemController::onRemoveTaskButtonClicked(int index) {
-
-    removeItem(index);
-
-}
-
-void ItemController::removeItem(int index) {
-
-    //wxString name = item->getName(index);
-    item->removeTask(index);
-    showTask(item->getVector());
-
-    //removeFrame(index);
-}
-
-
-void ItemController::onSearchTaskButtonClicked(wxString searchKeyword) {
-
-    searchItem(searchKeyword);
-
-}
-
-void ItemController::markItemAsCompleted() {
-
-}
-
-void ItemController::searchItem(wxString searchKeyword) {
-
-    std::vector<Task*> tasks;
-    std::vector<wxString> namesSearch;
-    std::vector<wxDateTime> datesSearch;
-    std::vector<Priority> prioritiesSearch;
-    std::vector<bool> compleatedSearch;
-
-    std::vector<wxString> allNames;
-    std::vector<wxDateTime> allDates;
-    std::vector<Priority> allPriorities;
-    std::vector<bool> allCompleated;
-
-    for (int i = 0; i < item->getVector().size(); i++) {
-        allNames.push_back(item->getName(i));
-        allDates.push_back(item->getDate(i));
-        allPriorities.push_back(item->getPriority(i));
-        allCompleated.push_back(item->getCompleted(i));
-        wxString taskName = item->getName(i);
-        if (taskName.Find(searchKeyword) != wxNOT_FOUND) {
-            tasks.push_back(&item->tasks[i]);
-            namesSearch.push_back(item->getName(i));
-            datesSearch.push_back(item->getDate(i));
-            prioritiesSearch.push_back(item->getPriority(i));
-            compleatedSearch.push_back(item->getCompleted(i));
-        }
-    }
-    if (tasks.size() > 0) {
-        frame->showSearchFrame(namesSearch, datesSearch, prioritiesSearch, compleatedSearch, allNames, allDates,
-                               allPriorities, allCompleated);
-    }
-
-}
-
-void ItemController::onCheckTaskButtonClicked(int index) {
-
-    item->setTaskAsCompleted(index);
-
-    showTask(item->getVector());
-}
+//void ItemController::onAddTaskButtonClicked() {
+//
+//    addItem(frame->getNome(), frame->getData(), frame->getPriorità());
+//}
+//
+//
+//void ItemController::showTask(std::vector<Task> vettore) {
+//    frame->ClearFrame();
+//    for (int i = 0; i < vettore.size(); i++) {
+//
+//        frame->showTaskFrame(item->getName(i), item->getDate(i), item->getPriority(i), item->getCompleted(i), i);
+//    }
+//
+//}
+//
+//void ItemController::onRemoveTaskButtonClicked(int index) {
+//
+//    removeItem(index);
+//
+//}
+//
+//void ItemController::removeItem(int index) {
+//
+//    //wxString name = item->getName(index);
+//    item->removeTask(index);
+//    showTask(item->getVector());
+//
+//    //removeFrame(index);
+//}
+//
+//
+//void ItemController::onSearchTaskButtonClicked(wxString searchKeyword) {
+//
+//    searchItem(searchKeyword);
+//
+//}
+//
+//void ItemController::markItemAsCompleted() {
+//
+//}
+//
+//void ItemController::searchItem(wxString searchKeyword) {
+//
+//    std::vector<Task *> tasks;
+//    std::vector<wxString> namesSearch;
+//    std::vector<wxDateTime> datesSearch;
+//    std::vector<Priority> prioritiesSearch;
+//    std::vector<bool> compleatedSearch;
+//
+//    std::vector<wxString> allNames;
+//    std::vector<wxDateTime> allDates;
+//    std::vector<Priority> allPriorities;
+//    std::vector<bool> allCompleated;
+//
+//    for (int i = 0; i < item->getVector().size(); i++) {
+//        allNames.push_back(item->getName(i));
+//        allDates.push_back(item->getDate(i));
+//        allPriorities.push_back(item->getPriority(i));
+//        allCompleated.push_back(item->getCompleted(i));
+//        wxString taskName = item->getName(i);
+//        if (taskName.Find(searchKeyword) != wxNOT_FOUND) {
+//            tasks.push_back(&item->tasks[i]);
+//            namesSearch.push_back(item->getName(i));
+//            datesSearch.push_back(item->getDate(i));
+//            prioritiesSearch.push_back(item->getPriority(i));
+//            compleatedSearch.push_back(item->getCompleted(i));
+//        }
+//    }
+//    if (tasks.size() > 0) {
+//        frame->showSearchFrame(namesSearch, datesSearch, prioritiesSearch, compleatedSearch, allNames, allDates,
+//                               allPriorities, allCompleated);
+//    }
+//
+//}
+//
+//void ItemController::onCheckTaskButtonClicked(int index) {
+//
+//    item->setTaskAsCompleted(index);
+//
+//    showTask(item->getVector());
+//}

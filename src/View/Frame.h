@@ -2,70 +2,90 @@
 // Created by cappe on 14/12/23.
 //
 
-#ifndef LOLLO_FRAME_H
-#define LOLLO_FRAME_H
+#ifndef TODOLIST_FRAME_H
+#define TODOLIST_FRAME_H
 
 #include <wx/wx.h>
 
 #include "DateSelectionDialog.h"
 #include "PrioritySelectionDialog.h"
-#include "../Control/ItemControllerObserver.h"
-#include "../Model/Model.h"
-#include "../Control/Control.h"
+#include "View.h"
+#include "../Control/ItemController.h"
 
-class Frame : public wxFrame {
+class Frame : public View, public wxFrame {
 
 public:
-    Frame(const wxString &title, const wxPoint &pos, const wxSize &size);
+    Frame(ToDoItem *toDoItem, ItemController *itemController, const wxString &title, const wxPoint &pos, const wxSize &size);
 
-    void showTaskFrame(wxString name, wxDateTime date, Priority priority, bool completed, int index);
+    ~Frame() override;
 
-    void showSearchFrame(std::vector<wxString> namesSearch, std::vector<wxDateTime> datesSearch,
-                         std::vector<Priority> prioritiesSearch, std::vector<bool> completedSearch,
-                         std::vector<wxString> allNames,
-                         std::vector<wxDateTime> allDates, std::vector<Priority> allPriorities,
-                         std::vector<bool> allCompleted);
+    //metodi di Observer
+    void update() override;
 
-    void ClearFrame();
+    //metodi di View
+    void show() override;
 
-    void CloseRefresh(wxCloseEvent &event);
+    void addTaskButton(wxCommandEvent &event);
+
+    void checkTaskButton(wxCommandEvent &event);
 
 
-    const wxString &getNome() const;
 
-    const wxDateTime &getData() const;
+private:
+    ToDoItem *toDoItem;
+    ItemController *itemController;
 
-    Priority getPriorità() const;
 
-    ItemControllerObserver *observer;
+//    void showTaskFrame(wxString name, wxDateTime date, Priority priority, bool completed, int index);
+//
+//    void showSearchFrame(std::vector<wxString> namesSearch, std::vector<wxDateTime> datesSearch,
+//                         std::vector<Priority> prioritiesSearch, std::vector<bool> completedSearch,
+//                         std::vector<wxString> allNames,
+//                         std::vector<wxDateTime> allDates, std::vector<Priority> allPriorities,
+//                         std::vector<bool> allCompleted);
+//
+//    void ClearFrame();
+//
+//    void CloseRefresh(wxCloseEvent &event);
+
+
+//    const wxString &getNome() const;
+//
+//    const wxDateTime &getData() const;
+
+//    Priority getPriorità() const;
+
+
+//    ItemControllerObserver *observer; //dovrebbe diventare inutile
+
 
 wxDECLARE_EVENT_TABLE();
 
 private:
     //gestione bottoni
-    void addTaskButton(wxCommandEvent &event);
 
-    void removeTaskButton(wxCommandEvent &event);
-
-    void searchTaskButton(wxCommandEvent &event);
-
-    void checkTaskButton(wxCommandEvent &event);
-
-    void editTaskButton(wxCommandEvent &event);
-
-    void removeSearchButton(wxCommandEvent &event);
-
-    void onTextChange(wxCommandEvent &event);
-
-    void onTextClick(wxCommandEvent &event);
-
-    void onSearchTextChange(wxCommandEvent &event);
-
-    void searchShow(std::vector<wxString> namesSearch, std::vector<wxDateTime> datesSearch,
-                    std::vector<Priority> prioritiesSearch, std::vector<bool> completedSearch);
-
-    void updateVector(std::vector<wxString> names, std::vector<wxDateTime> dates,
-                      std::vector<Priority> priorities, std::vector<bool> completed);
+//    void removeTaskButton(wxCommandEvent &event);
+//
+//    void searchTaskButton(wxCommandEvent &event);
+//
+//    void checkTaskButton(wxCommandEvent &event);
+//
+//    void editTaskButton(wxCommandEvent &event);
+//
+//    void removeSearchButton(wxCommandEvent &event);
+//
+//    void onTextChange(wxCommandEvent &event);
+//
+//    void onTextClick(wxCommandEvent &event);
+//
+//    void onSearchTextChange(wxCommandEvent &event);
+//
+//    void searchShow(std::vector<wxString> namesSearch, std::vector<wxDateTime> datesSearch,
+//                    std::vector<Priority> prioritiesSearch, std::vector<bool> completedSearch);
+//
+//    void updateVector(std::vector<wxString> names, std::vector<wxDateTime> dates,
+//                      std::vector<Priority> priorities, std::vector<bool> completed);
+//
 
 
     wxTextCtrl *taskTextCtrl;
@@ -109,4 +129,4 @@ enum {
     ID_EditTaskButton = 8
 };
 
-#endif //LOLLO_FRAME_H
+#endif //TODOLIST_FRAME_H
