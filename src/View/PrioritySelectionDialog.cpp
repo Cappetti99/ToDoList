@@ -12,7 +12,7 @@ wxEND_EVENT_TABLE()
 PrioritySelectionDialog::PrioritySelectionDialog(wxWindow* parent, const wxString& title)
         : wxDialog(parent, wxID_ANY, title, wxDefaultPosition, wxDefaultSize) {
 
-    selectedPriority = Priority::None;
+    selectedPriority = Priority::Low;
 
     auto mainSizer = new wxBoxSizer(wxVERTICAL);
 
@@ -49,7 +49,7 @@ void PrioritySelectionDialog::OnOK(wxCommandEvent& event) {
 
 void PrioritySelectionDialog::OnCancel(wxCommandEvent& event) {
     EndModal(wxID_CANCEL);
-    selectedPriority = Priority::None;
+    selectedPriority = Priority::Low;
 }
 
 Priority PrioritySelectionDialog::getSelectedPriority() const {

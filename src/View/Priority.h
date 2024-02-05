@@ -6,10 +6,9 @@
 #define TODOLIST_PRIORITY_H
 
 enum class Priority{
-    Low,
-    Medium,
-    High,
-    None
+    Low = 0,
+    Medium = 1,
+    High = 2
 };
 
 #endif //TODOLIST_PRIORITY_H

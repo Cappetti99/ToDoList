@@ -9,28 +9,30 @@
 #include <iostream>
 
 #include "Control.h"
-#include "../Model/ToDoItem.h"
+#include "../Model/TaskList.h"
 
 
 class ItemController : public Control {
 
 public:
-    explicit ItemController(ToDoItem *m);
+    explicit ItemController(TaskList *m);
 
     ~ItemController() override;
 
     //metodi di control
     void addTask(wxString name, wxDateTime date, Priority priority) override;
 
-    void removeTask() override;
+    void removeTask(int index) override;
 
     void searchTask() override;
 
     void markAsCompleted(int index) override;
 
+    void editTask(int index, wxString name, wxDateTime date, Priority priority) override;
+
 
 private:
-    ToDoItem *toDoItem;
+    TaskList* model;
 
 };
 

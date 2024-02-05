@@ -17,9 +17,11 @@ class Model : public Subject {
 public:
     Model();
 
-    virtual void addTask(wxString title, wxDateTime date, Priority priority) = 0;
+    virtual void addTask(wxString title, wxDateTime date, Priority priority, bool completed) = 0;
 
     virtual void removeTask(int index) = 0;
+
+    virtual void editTask(int index, wxString name, wxDateTime date, Priority priority) = 0;
 
 //    std::vector<Task> getVector();
 //

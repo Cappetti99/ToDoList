@@ -4,19 +4,20 @@
 
 #include "ItemController.h"
 
-ItemController::ItemController(ToDoItem *m) {
-    this->toDoItem = m;
+ItemController::ItemController(TaskList *m) {
+    this->model = m;
 }
 
 ItemController::~ItemController() = default;
 
 void ItemController::addTask(wxString name, wxDateTime date, Priority priority) {
-    toDoItem->addTask(name, date, priority);
+    bool completed = false;
+    model->addTask(name, date, priority, completed);
 }
 
-void ItemController::removeTask() {
-    std::cout << "removeTask" << std::endl;
-//    model->removeTask();
+void ItemController::removeTask(int index) {
+
+    model->removeTask(index);
 }
 
 void ItemController::searchTask() {
@@ -25,7 +26,12 @@ void ItemController::searchTask() {
 
 void ItemController::markAsCompleted(int index) {
 
-    toDoItem->setTaskAsCompleted(index);
+    model->setTaskAsCompleted(index);
+}
+
+void ItemController::editTask(int index, wxString name, wxDateTime date, Priority priority) {
+
+    model->editTask(index, name, date, priority);
 }
 
 

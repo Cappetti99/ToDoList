@@ -25,6 +25,14 @@ public:
 
     void setCompleted(bool completed);
 
+    void setTitle(const wxString &title);
+
+    void setPriority(Priority priority);
+
+    void setExpirationDate(const wxDateTime &expirationDate);
+
+
+
 
 private:
     wxString title;

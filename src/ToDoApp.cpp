@@ -6,9 +6,9 @@
 
 bool ToDoApp::OnInit() {
 
-    auto toDoItem = new ToDoItem();
-    auto itemController = new ItemController(toDoItem);
-    auto frame = new Frame(toDoItem, itemController, "ToDoList", wxPoint(50, 50), wxSize(450, 340));
+    TaskList* taskList = new TaskList();
+    ItemController* itemController = new ItemController(taskList);
+    Frame* frame = new Frame(taskList, itemController, "ToDoList", wxPoint(50, 50), wxSize(450, 340));
     frame->show();
     return true;
 

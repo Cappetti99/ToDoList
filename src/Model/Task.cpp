@@ -10,8 +10,6 @@ Task::Task(const wxString &title, Priority priority, bool completed, const wxDat
     this->priority = priority;
     this->completed = completed;
     this->expirationDate = expirationDate;
-
-
 }
 
 wxString Task::getTitle() {
@@ -32,6 +30,18 @@ bool Task::isCompleted() {
 
 void Task::setCompleted(bool completed) {
     this->completed = completed;
+}
+
+void Task::setTitle(const wxString &title) {
+    this->title = title;
+}
+
+void Task::setPriority(Priority priority) {
+    this->priority = priority;
+}
+
+void Task::setExpirationDate(const wxDateTime &expirationDate) {
+    this->expirationDate = expirationDate;
 }
 
 
