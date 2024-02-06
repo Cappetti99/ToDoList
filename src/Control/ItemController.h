@@ -24,7 +24,7 @@ public:
 
     void removeTask(int index) override;
 
-    void searchTask() override;
+    std::vector<Task> searchTask(wxString word);
 
     void markAsCompleted(int index) override;
 

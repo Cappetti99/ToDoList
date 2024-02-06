@@ -20,8 +20,16 @@ void ItemController::removeTask(int index) {
     model->removeTask(index);
 }
 
-void ItemController::searchTask() {
-    std::cout << "searchTask" << std::endl;
+std::vector<Task> ItemController::searchTask(wxString word) {
+
+    std::vector<Task> temp;
+    for (int i = 0; i < model->getVector().size(); i++) {
+        wxString taskName = model->getVector()[i].getTitle();
+        if (taskName.Contains(word)) {
+            temp.push_back(model->getVector()[i]);
+        }
+    }
+    return temp;
 }
 
 void ItemController::markAsCompleted(int index) {

@@ -16,7 +16,8 @@
 class Frame : public View, public wxFrame {
 
 public:
-    Frame(TaskList *taskList, ItemController *itemController, const wxString &title, const wxPoint &pos, const wxSize &size);
+    Frame(TaskList *taskList, ItemController *itemController, const wxString &title, const wxPoint &pos,
+          const wxSize &size);
 
     ~Frame() override;
 
@@ -36,17 +37,24 @@ public:
 
     void onTextChange(wxCommandEvent &event);
 
+    void searchTaskButton(wxCommandEvent &event);
+
+    void searchFrame(std::vector<Task> tasks);
+
+    void CloseRefresh(wxCloseEvent &event);
+
+    void onSearchTextChange(wxCommandEvent &event);
+
+    void showSearch(std::vector<Task> tasks);
+
+    void removeOfSearch(wxCommandEvent &event);
+
+    void editOfSearch(wxCommandEvent &event);
+
+    void checkSearch(wxCommandEvent &event);
+
     void editMouse(wxMouseEvent &event);
 
-//    void showTaskFrame(wxString name, wxDateTime date, Priority priority, bool completed, int index);
-//
-//    void showSearchFrame(std::vector<wxString> namesSearch, std::vector<wxDateTime> datesSearch,
-//                         std::vector<Priority> prioritiesSearch, std::vector<bool> completedSearch,
-//                         std::vector<wxString> allNames,
-//                         std::vector<wxDateTime> allDates, std::vector<Priority> allPriorities,
-//                         std::vector<bool> allCompleted);
-//
-//    void CloseRefresh(wxCloseEvent &event);
 
 wxDECLARE_EVENT_TABLE();
 
@@ -61,8 +69,6 @@ private:
     wxCheckListBox *searchBox;
 
 //importante
-    Model *model;
-    Control *control;
     TaskList *taskList;
     ItemController *itemController;
 };
@@ -76,7 +82,9 @@ enum {
     ID_TextCtrl = 6,
     ID_SearchText = 7,
     ID_EditTaskButton = 8,
-    ID_Mouse = 9
+    ID_EditSearch = 9,
+    ID_Mouse = 10,
+    ID_CheckSearch = 11
 };
 
 #endif //TODOLIST_FRAME_H
