@@ -14,14 +14,13 @@ public:
     Task(const wxString &title = "", Priority priority = Priority::Low,
          bool completed = false, const wxDateTime &expirationDate = wxDateTime::Now());
 
+    wxString getTitle();
 
-     wxString getTitle();
+    Priority getPriority();
 
-     Priority getPriority();
+    wxDateTime getExpirationDate();
 
-     wxDateTime getExpirationDate();
-
-     bool isCompleted();  //togliere const
+    bool isCompleted();
 
     void setCompleted(bool completed);
 
@@ -31,15 +30,11 @@ public:
 
     void setExpirationDate(const wxDateTime &expirationDate);
 
-
-
-
 private:
     wxString title;
     Priority priority;
     bool completed;
     wxDateTime expirationDate;
-
 
 };
 

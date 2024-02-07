@@ -65,9 +65,7 @@ private:
     wxTextCtrl *searchInput;
     wxWindow *frame;
     wxFrame *searchResultFrame;
-
     wxCheckListBox *searchBox;
-
 //importante
     TaskList *taskList;
     ItemController *itemController;

@@ -16,7 +16,6 @@ wxBEGIN_EVENT_TABLE(Frame, wxFrame)
                 EVT_BUTTON(ID_EditSearch, Frame::editOfSearch)
                 EVT_CHECKLISTBOX(ID_CheckSearch, Frame::checkSearch)
 
-//                EVT_LEFT_DCLICK(Frame::editMouse)
                 EVT_TEXT(ID_TextCtrl, Frame::onTextChange)
                 EVT_TEXT_ENTER(ID_TextCtrl, Frame::addTaskButton)
 
@@ -32,20 +31,15 @@ Frame::Frame(TaskList *taskList, ItemController *itemController, const wxString 
 
     this->taskList = taskList;
     this->itemController = itemController;
-
     taskList->addObserver(this);
-
     frame = this;
 
     auto buttonsSizer = new wxBoxSizer(wxHORIZONTAL);
-
     taskTextCtrl = new wxTextCtrl(this, ID_TextCtrl, "Enter New Task Name", wxDefaultPosition, wxDefaultSize,
                                   wxTE_PROCESS_ENTER);
     taskTextCtrl->SetDefaultStyle(wxTextAttr(*wxLIGHT_GREY));
-
     taskListBox = new wxCheckListBox(this, ID_Check, wxDefaultPosition, wxDefaultSize, 0, nullptr, wxLB_SINGLE);
-
-//    taskListBox->Connect(wxEVT_LEFT_DCLICK, wxMouseEventHandler(Frame::editMouse));
+    taskListBox->Bind(wxEVT_LEFT_DCLICK, &Frame::editMouse, this);
 
     //bottoni
     auto addButton = new wxButton(this, ID_AddTaskButton, "Add Task");
@@ -68,49 +62,47 @@ Frame::Frame(TaskList *taskList, ItemController *itemController, const wxString 
     mainSizer->Add(taskTextCtrl, 0, wxALL | wxEXPAND, 5);
     mainSizer->Add(taskListBox, 1, wxEXPAND | wxALL, 10);
 
-
     SetSizerAndFit(mainSizer);
 
     SetSize(wxSize(800, 600));
 }
 
+
 Frame::~Frame() {
     taskList->removeObserver(this);
 }
 
+void Frame::editMouse(wxMouseEvent &event) {
+    std::cout << "editMouse" << std::endl;
+    int selectedIndex = taskListBox->GetSelection();
+    std::cout << selectedIndex << std::endl;
+    if (selectedIndex != wxNOT_FOUND) {
+        TaskEditDialog editDialog(this, "Edit: ", taskList->getVector()[selectedIndex].getTitle(),
+                                  taskList->getVector()[selectedIndex].getExpirationDate(),
+                                  taskList->getVector()[selectedIndex].getPriority());
 
-//guardare coordinate mouse
-//void Frame::editMouse(wxMouseEvent &event) {
-//    std::cout << "editMouse" << std::endl;
-//    int selectedIndex = taskListBox->GetSelection();
-//    std::cout << selectedIndex << std::endl;
-//    if (selectedIndex != wxNOT_FOUND) {
-//        TaskEditDialog editDialog(this, "Edit: ", taskList->getVector()[selectedIndex].getTitle(),
-//                                  taskList->getVector()[selectedIndex].getExpirationDate(),
-//                                  taskList->getVector()[selectedIndex].getPriority());
-//
-//        if (editDialog.ShowModal() == wxID_OK) {
-//            wxString taskName = editDialog.getTaskTitle();
-//            wxDateTime dateTime = editDialog.getExpirationDate();
-//            Priority newPriority = editDialog.getPriority();
-//
-//            if (taskName.IsEmpty()) {
-//                wxMessageBox("Inserisci un task!");
-//                return;
-//            } else if (dateTime.IsEarlierThan(wxDateTime::Now() - wxTimeSpan::Days(1))) {
-//                wxMessageBox("Hai inserito una data passata!");
-//                return;
-//            } else if (newPriority != Priority::Low and newPriority != Priority::Medium and
-//                       newPriority != Priority::High) {
-//                wxMessageBox("Inserisci una priorità!");
-//                return;
-//            }
-//
-//            itemController->editTask(selectedIndex, taskName, dateTime, newPriority);
-//
-//        }
-//    }
-//}
+        if (editDialog.ShowModal() == wxID_OK) {
+            wxString taskName = editDialog.getTaskTitle();
+            wxDateTime dateTime = editDialog.getExpirationDate();
+            Priority newPriority = editDialog.getPriority();
+
+            if (taskName.IsEmpty()) {
+                wxMessageBox("Inserisci un task!");
+                return;
+            } else if (dateTime.IsEarlierThan(wxDateTime::Now() - wxTimeSpan::Days(1))) {
+                wxMessageBox("Hai inserito una data passata!");
+                return;
+            } else if (newPriority != Priority::Low and newPriority != Priority::Medium and
+                       newPriority != Priority::High) {
+                wxMessageBox("Inserisci una priorità!");
+                return;
+            }
+
+            itemController->editTask(selectedIndex, taskName, dateTime, newPriority);
+
+        }
+    }
+}
 
 
 void Frame::show() {
@@ -312,9 +304,7 @@ void Frame::searchFrame(std::vector<Task> tasks) {
     searchResultSizer->Add(searchBox, 1, wxEXPAND | wxALL, 10);
 
     auto removeSearchButton = new wxButton(searchResultFrame, ID_RemoveSearch, "Remove Task");
-//    removeSearchButton->Bind(wxEVT_BUTTON, &Frame::removeOfSearch, this);
     auto editSearchButton = new wxButton(searchResultFrame, ID_EditSearch, "Edit Task");
-//    editSearchButton->Bind(wxEVT_BUTTON, &Frame::editOfSearch, this);
     auto buttonSizer = new wxBoxSizer(wxHORIZONTAL);
 
     searchResultSizer->Add(removeSearchButton, 0, wxALL, 5);
@@ -426,8 +416,8 @@ void Frame::checkSearch(wxCommandEvent &event) {
     int i = 0;
     std::vector<Task> tasks = itemController->searchTask(searchKeyword);
     int selectedIndex = event.GetSelection();
-        while (taskList->getVector()[i].getTitle() != tasks[selectedIndex].getTitle())
-            i++;
+    while (taskList->getVector()[i].getTitle() != tasks[selectedIndex].getTitle())
+        i++;
 
     if (searchBox->IsChecked(selectedIndex)) {
 
@@ -438,27 +428,3 @@ void Frame::checkSearch(wxCommandEvent &event) {
         itemController->markAsCompleted(i);
     }
 }
-
-//
-//void Frame::checkTaskButton(wxCommandEvent &event) {
-//
-//
-//    int selectedIndex = event.GetSelection();
-//
-//    if (taskListBox->IsChecked(selectedIndex)) {
-//
-//        if (observer) {
-//            observer->onCheckTaskButtonClicked(selectedIndex);
-//        }
-//
-//    } else if (!taskListBox->IsChecked(selectedIndex)) {
-//
-//        if (observer) {
-//            observer->onCheckTaskButtonClicked(selectedIndex);
-//        }
-//    }
-//    searchShow(namesSearch, datesSearch, prioritiesSearch, completedSearch);
-//}
-//
-
-

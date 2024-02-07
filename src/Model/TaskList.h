@@ -40,7 +40,6 @@ public:
     void setTaskAsCompleted(int index);
 
 private:
-
     std::vector<Task> tasks;
 };
 

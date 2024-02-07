@@ -14,11 +14,9 @@ class View : public Observer {
 
 public:
 
-    virtual void show() = 0;
+    virtual ~View() ;
 
-//protected:
-//    Model *model;
-//    Control *control;
+    virtual void show() = 0;
 
 };
 

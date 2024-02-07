@@ -1,7 +1,7 @@
-# CMakeLists.txt for YourProjectName
+# CMakeLists.txt for ToDoList
 
 cmake_minimum_required(VERSION 3.27)
-project(Lollo CXX)
+project(ToDoListApp CXX)
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 17)
@@ -23,45 +23,32 @@ set(SOURCES
         # Add your other source files here
 )
 
-# Your header files
-#set(HEADERS
-#        include/Lollo/ToDoItem.h
-#        include/Lollo/ToDoList.h
-#        # Add your other header files here
-#)
-
 # Your test files
 set(TEST_SOURCES
         tests/test_main.cpp
-        tests/test_ToDoItem.cpp
-        tests/test_ToDoList.cpp
+        tests/test_TaskList.cpp
+        tests/test_Frame.cpp
         # Add your other test files here
 )
 
 # Create the main executable
-add_executable(Lollo ${SOURCES} ${HEADERS})
+add_executable(ToDoListApp ${SOURCES})
 
 # Link the main executable with wxWidgets
-target_link_libraries(YourProjectName ${wxWidgets_LIBRARIES})
+target_link_libraries(ToDoListApp ${wxWidgets_LIBRARIES})
 
 # Link the main executable with Google Test
-target_link_libraries(Lollo gtest_main)
-
-# Link the test executable with Google Test and wxWidgets
-target_link_libraries(YourProjectNameTests gtest gtest_main ${wxWidgets_LIBRARIES})
+target_link_libraries(ToDoListApp gtest_main)
 
 # Create the test executable
-add_executable(LolloTests ${TEST_SOURCES} ${HEADERS})
+add_executable(ToDoListAppTests ${TEST_SOURCES})
 
-# Link the test executable with Google Test
-target_link_libraries(LolloTests gtest gtest_main)
+# Link the test executable with Google Test and wxWidgets
+target_link_libraries(ToDoListAppTests gtest gtest_main ${wxWidgets_LIBRARIES})
 
 # Optionally, you can add a custom target to run the tests
-add_custom_target(run_tests COMMAND LolloTests DEPENDS LolloTests)
+add_custom_target(run_tests COMMAND ToDoListAppTests DEPENDS ToDoListAppTests)
 
 # If you want to use 'make test' to run your tests, uncomment the following lines
 # include(CTest)
-# add_test(NAME YourProjectNameTests COMMAND YourProjectNameTests)
-
-
-#da riguardare perchè non so se fa
+# add_test(NAME ToDoListAppTests COMMAND ToDoListAppTests)

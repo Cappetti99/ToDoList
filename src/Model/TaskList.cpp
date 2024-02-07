@@ -7,13 +7,18 @@
 
 TaskList::TaskList() = default;
 
-TaskList::~TaskList() = default;
+TaskList::~TaskList() {
+    for (auto &task: tasks) {
+        delete &task;
+    }
+}
 
 void TaskList::addTask(wxString name, wxDateTime date, Priority priority, bool completed) {
 
     auto task = new Task(name, priority, completed, date);
     tasks.push_back(*task); //ho creato una task e ora la metto nel vettore di task
     std::sort(tasks.begin(), tasks.end(), compareTasks);
+
     notify();
 }
 
@@ -45,11 +50,12 @@ std::vector<Task> TaskList::getVector() {
 }
 
 void TaskList::setTaskAsCompleted(int index) {
-    if(tasks[index].isCompleted() == false) {
+    if (!tasks[index].isCompleted()) {
         tasks[index].setCompleted(true);
     } else {
         tasks[index].setCompleted(false);
     }
+
     notify();
 }
 

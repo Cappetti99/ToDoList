@@ -20,14 +20,26 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9b41efa-221c-4013-a5f1-1cb88893e44b" name="Changes" comment="ordinate le task per priorità;&#10;aggiunto edit e la classe per l'editDialog;&#10;tolte le scritte a comparsa sull'add;">
+    <list default="true" id="e9b41efa-221c-4013-a5f1-1cb88893e44b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ToDoListDefinitivo.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test_Frame.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fixme" beforeDir="false" afterPath="$PROJECT_DIR$/Fixme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/Control.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Control.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/Control.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Control.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Control/ItemController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/ItemController.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Control/ItemController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/ItemController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Model.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Model.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Model.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Model.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Task.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Task.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/TaskList.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TaskList.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/TaskList.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TaskList.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Frame.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Frame.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Frame.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Frame.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/View.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/View.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/View.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/View.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_ToDoItem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_TaskList.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_ToDoList.cpp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,14 +107,20 @@
     <configuration name="ToDoList" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory" temporary="true">
       <method v="2" />
     </configuration>
+    <configuration name="Test" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ToDoList" TARGET_NAME="ToDoList" CONFIG_NAME="Debug" RUN_PATH="$PROJECT_DIR$/../Lollo/test/CMakeLists.txt">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ToDoList" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ToDoList" TARGET_NAME="ToDoList" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ToDoList" RUN_TARGET_NAME="ToDoList">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake Application.ToDoList" />
       <item itemvalue="CMake Debug.ToDoList" />
+      <item itemvalue="CMake Application.Test" />
+      <item itemvalue="CMake Application.ToDoList" />
     </list>
     <recent_temporary>
       <list>
@@ -168,7 +186,9 @@
       <workItem from="1706949331993" duration="4377000" />
       <workItem from="1706974079123" duration="8849000" />
       <workItem from="1707122501263" duration="19391000" />
-      <workItem from="1707210100170" duration="13479000" />
+      <workItem from="1707210100170" duration="16594000" />
+      <workItem from="1707300573911" duration="13220000" />
+      <workItem from="1707321446926" duration="12000" />
     </task>
     <task id="LOCAL-00001" summary="add things">
       <option name="closed" value="true" />
@@ -322,7 +342,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707150761307</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="tolte le scritte sul search;&#10;implementato il search e tutte le funzioni collegate;">
+      <option name="closed" value="true" />
+      <created>1707233890508</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1707233890509</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,6 +392,7 @@
     <MESSAGE value="Riscritto tutto l'MVC con anche l'implementazione corretta dell'observer" />
     <MESSAGE value="Riscritto tutto l'MVC con anche l'implementazione corretta dell'observer, implementato l'add e il check" />
     <MESSAGE value="ordinate le task per priorità;&#10;aggiunto edit e la classe per l'editDialog;&#10;tolte le scritte a comparsa sull'add;" />
-    <option name="LAST_COMMIT_MESSAGE" value="ordinate le task per priorità;&#10;aggiunto edit e la classe per l'editDialog;&#10;tolte le scritte a comparsa sull'add;" />
+    <MESSAGE value="tolte le scritte sul search;&#10;implementato il search e tutte le funzioni collegate;" />
+    <option name="LAST_COMMIT_MESSAGE" value="tolte le scritte sul search;&#10;implementato il search e tutte le funzioni collegate;" />
   </component>
 </project>

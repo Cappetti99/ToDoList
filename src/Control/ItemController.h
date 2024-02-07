@@ -15,7 +15,7 @@
 class ItemController : public Control {
 
 public:
-    explicit ItemController(TaskList *m);
+    ItemController(TaskList *m);
 
     ~ItemController() override;
 
@@ -24,15 +24,14 @@ public:
 
     void removeTask(int index) override;
 
-    std::vector<Task> searchTask(wxString word);
-
     void markAsCompleted(int index) override;
 
     void editTask(int index, wxString name, wxDateTime date, Priority priority) override;
 
+    std::vector<Task> searchTask(wxString word);
 
 private:
-    TaskList* model;
+    TaskList *model;
 
 };
 
