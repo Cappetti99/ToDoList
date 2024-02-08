@@ -33,11 +33,21 @@ public:
 
     void editTask(int index, wxString name, wxDateTime date, Priority priority) override;
 
-    static bool compareTasks(Task a, Task b);
-
     std::vector<Task> getVector();
 
     void setTaskAsCompleted(int index);
+
+    void sortByPriority();
+
+    static bool comparePriority(Task a, Task b);
+
+    void sortByDate();
+
+    static bool compareDate(Task a, Task b);
+
+    void sortByAlphabet();
+
+    static bool compareAlphabet(Task a, Task b);
 
 private:
     std::vector<Task> tasks;

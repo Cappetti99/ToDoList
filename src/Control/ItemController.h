@@ -30,6 +30,12 @@ public:
 
     std::vector<Task> searchTask(wxString word);
 
+    void sortByPriority();
+
+    void sortByDate();
+
+    void sortByAlphabet();
+
 private:
     TaskList *model;
 

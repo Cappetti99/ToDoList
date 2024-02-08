@@ -6,21 +6,26 @@
 
 
 wxBEGIN_EVENT_TABLE(Frame, wxFrame)
+            //normali funzioni
                 EVT_BUTTON(ID_AddTaskButton, Frame::addTaskButton)
                 EVT_BUTTON(ID_RemoveTaskButton, Frame::removeTaskButton)
                 EVT_CHECKLISTBOX(ID_Check, Frame::checkTaskButton)
                 EVT_BUTTON(ID_EditTaskButton, Frame::editTaskButton)
-
+            //funzioni del search
                 EVT_BUTTON(ID_SearchTaskButton, Frame::searchTaskButton)
                 EVT_BUTTON(ID_RemoveSearch, Frame::removeOfSearch)
                 EVT_BUTTON(ID_EditSearch, Frame::editOfSearch)
                 EVT_CHECKLISTBOX(ID_CheckSearch, Frame::checkSearch)
-
+            //comandi da tastiera
                 EVT_TEXT(ID_TextCtrl, Frame::onTextChange)
                 EVT_TEXT_ENTER(ID_TextCtrl, Frame::addTaskButton)
-
                 EVT_TEXT(ID_SearchText, Frame::onSearchTextChange)
                 EVT_TEXT_ENTER(ID_SearchText, Frame::searchTaskButton)
+
+                //menù
+                EVT_MENU(ID_SBPriority, Frame::sortByPriority)
+                EVT_MENU(ID_SBDate, Frame::sortByDate)
+                EVT_MENU(ID_SBAlphabet, Frame::sortByAlphabet)
 
 wxEND_EVENT_TABLE()
 
@@ -41,11 +46,24 @@ Frame::Frame(TaskList *taskList, ItemController *itemController, const wxString 
     taskListBox = new wxCheckListBox(this, ID_Check, wxDefaultPosition, wxDefaultSize, 0, nullptr, wxLB_SINGLE);
     taskListBox->Bind(wxEVT_LEFT_DCLICK, &Frame::editMouse, this);
 
+    wxMenuBar* menuBar = new wxMenuBar;
+
     //bottoni
     auto addButton = new wxButton(this, ID_AddTaskButton, "Add Task");
     auto removeButton = new wxButton(this, ID_RemoveTaskButton, "Remove Task");
     auto searchButton = new wxButton(this, ID_SearchTaskButton, "Search Tasks");
     auto editButton = new wxButton(this, ID_EditTaskButton, "Edit Task");
+
+    wxMenu* fileMenu = new wxMenu;
+
+    fileMenu->Append(ID_SBPriority, "&Sort by Priority", "Piorità");
+    fileMenu->Append(ID_SBDate, "&Sort by Date", "Data");
+    fileMenu->Append(ID_SBAlphabet, "&Sort by alphabetical order", "Alfabetico");
+
+    menuBar->Append(fileMenu, "&Sort");
+
+    SetMenuBar(menuBar);
+
 
     searchInput = new wxTextCtrl(this, ID_SearchText, "Task Name", wxDefaultPosition, wxDefaultSize,
                                  wxTE_PROCESS_ENTER);
@@ -56,6 +74,7 @@ Frame::Frame(TaskList *taskList, ItemController *itemController, const wxString 
     buttonsSizer->Add(editButton, 5, wxALL, 10);
     buttonsSizer->Add(searchButton, 5, wxALL, 10);
     buttonsSizer->Add(searchInput, 5, wxALL, 10);
+
 
     auto mainSizer = new wxBoxSizer(wxVERTICAL);
     mainSizer->Add(buttonsSizer, 0, wxALIGN_CENTER | wxTOP, 20);
@@ -428,3 +447,16 @@ void Frame::checkSearch(wxCommandEvent &event) {
         itemController->markAsCompleted(i);
     }
 }
+
+void Frame::sortByPriority(wxCommandEvent &event) {
+    itemController->sortByPriority();
+}
+
+void Frame::sortByDate(wxCommandEvent &event) {
+    itemController->sortByDate();
+}
+
+void Frame::sortByAlphabet(wxCommandEvent &event) {
+    itemController->sortByAlphabet();
+}
+

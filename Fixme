@@ -1,12 +1,10 @@
-[] doppio click per la modifica capire come aggirare il problema del puntatore getSelection
-[]
+[] test
 []
 []
 []
 []
 
 
-l'idea è che il controller gestisca view e model e che quindi per chiamare tutto si passi da lui
 
 
 

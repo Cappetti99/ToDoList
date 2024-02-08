@@ -55,6 +55,11 @@ public:
 
     void editMouse(wxMouseEvent &event);
 
+    void sortByPriority(wxCommandEvent &event);
+
+    void sortByDate(wxCommandEvent &event);
+
+    void sortByAlphabet(wxCommandEvent &event);
 
 wxDECLARE_EVENT_TABLE();
 
@@ -66,7 +71,7 @@ private:
     wxWindow *frame;
     wxFrame *searchResultFrame;
     wxCheckListBox *searchBox;
-//importante
+    //importante
     TaskList *taskList;
     ItemController *itemController;
 };
@@ -82,7 +87,10 @@ enum {
     ID_EditTaskButton = 8,
     ID_EditSearch = 9,
     ID_Mouse = 10,
-    ID_CheckSearch = 11
+    ID_CheckSearch = 11,
+    ID_SBPriority = 12,
+    ID_SBDate = 13,
+    ID_SBAlphabet = 14
 };
 
 #endif //TODOLIST_FRAME_H

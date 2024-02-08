@@ -43,3 +43,15 @@ void ItemController::editTask(int index, wxString name, wxDateTime date, Priorit
 
     model->editTask(index, name, date, priority);
 }
+
+void ItemController::sortByPriority() {
+    model->sortByPriority();
+}
+
+void ItemController::sortByDate() {
+    model->sortByDate();
+}
+
+void ItemController::sortByAlphabet() {
+    model->sortByAlphabet();
+}

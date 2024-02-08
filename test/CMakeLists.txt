@@ -1,54 +1,45 @@
-# CMakeLists.txt for ToDoList
+cmake_minimum_required(VERSION 3.10)
 
-cmake_minimum_required(VERSION 3.27)
-project(ToDoListApp CXX)
+project(ToDoList)
 
 # Set C++ standard
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Add the path to Google Test headers
-include_directories(${CMAKE_SOURCE_DIR}/path/to/googletest/googletest/include)
+add_subdirectory(./lib/googletest)
 
-# Add subdirectory containing the Google Test source code
-add_subdirectory(path/to/googletest/googletest)
+set(gtest_SOURCE_DIR, ./lib/googletest)
 
-# Find wxWidgets package
-find_package(wxWidgets REQUIRED COMPONENTS core base)
-include(${wxWidgets_USE_FILE})
+include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
-# Your source files
-set(SOURCES
-        src/main.cpp
-        # Add your other source files here
-)
+set(TEST_SOURCE_FILES runAllTests.cpp test_TaskList.cpp test_Frame.cpp)
 
-# Your test files
-set(TEST_SOURCES
-        tests/test_main.cpp
-        tests/test_TaskList.cpp
-        tests/test_Frame.cpp
-        # Add your other test files here
-)
+add_executable(runAllTests ${TEST_SOURCE_FILES})
 
-# Create the main executable
-add_executable(ToDoListApp ${SOURCES})
+target_link_libraries(runAllTests gtest gtest_main core)
 
-# Link the main executable with wxWidgets
-target_link_libraries(ToDoListApp ${wxWidgets_LIBRARIES})
-
-# Link the main executable with Google Test
-target_link_libraries(ToDoListApp gtest_main)
-
-# Create the test executable
-add_executable(ToDoListAppTests ${TEST_SOURCES})
-
-# Link the test executable with Google Test and wxWidgets
-target_link_libraries(ToDoListAppTests gtest gtest_main ${wxWidgets_LIBRARIES})
-
-# Optionally, you can add a custom target to run the tests
-add_custom_target(run_tests COMMAND ToDoListAppTests DEPENDS ToDoListAppTests)
-
-# If you want to use 'make test' to run your tests, uncomment the following lines
-# include(CTest)
-# add_test(NAME ToDoListAppTests COMMAND ToDoListAppTests)
+# Add the path to Google Test
+#add_subdirectory(path/to/googletest)
+#
+## Add your source files
+#add_executable(YourExecutableName
+#        src/ToDoApp.cpp
+#        # Add other source files here
+#)
+#
+## Add your test files
+#add_executable(YourTests
+#        test_main.cpp
+#        test_Frame.cpp
+#        test_TaskList.cpp
+#)
+#
+## Link Google Test to your test executable
+#target_link_libraries(YourTests gtest gtest_main)
+#
+## Optionally, link your main executable to Google Test for testing private functions
+#target_link_libraries(YourExecutableName gtest gtest_main)
+#
+## Optionally, enable testing with CTest
+#include(GoogleTest)
+#gtest_discover_tests(YourTests)

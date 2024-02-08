@@ -17,7 +17,7 @@ void TaskList::addTask(wxString name, wxDateTime date, Priority priority, bool c
 
     auto task = new Task(name, priority, completed, date);
     tasks.push_back(*task); //ho creato una task e ora la metto nel vettore di task
-    std::sort(tasks.begin(), tasks.end(), compareTasks);
+    std::sort(tasks.begin(), tasks.end(), comparePriority);
 
     notify();
 }
@@ -59,19 +59,41 @@ void TaskList::setTaskAsCompleted(int index) {
     notify();
 }
 
-bool TaskList::compareTasks(Task a, Task b) {
-    return a.getPriority() > b.getPriority();
-}
-
 void TaskList::editTask(int index, wxString name, wxDateTime date, Priority priority) {
 
     tasks[index].setTitle(name);
     tasks[index].setExpirationDate(date);
     tasks[index].setPriority(priority);
 
-    std::sort(tasks.begin(), tasks.end(), compareTasks);
+    std::sort(tasks.begin(), tasks.end(), comparePriority);
 
     notify();
 
 }
 
+void TaskList::sortByPriority() {
+    std::sort(tasks.begin(), tasks.end(), comparePriority);
+    notify();
+}
+
+bool TaskList::comparePriority(Task a, Task b) {
+    return a.getPriority() > b.getPriority();
+}
+
+void TaskList::sortByDate() {
+    std::sort(tasks.begin(), tasks.end(), compareDate);
+    notify();
+}
+
+bool TaskList::compareDate(Task a, Task b) {
+    return a.getExpirationDate() < b.getExpirationDate();
+}
+
+void TaskList::sortByAlphabet() {
+    std::sort(tasks.begin(), tasks.end(), compareAlphabet);
+    notify();
+}
+
+bool TaskList::compareAlphabet(Task a, Task b) {
+    return a.getTitle() < b.getTitle();
+}
