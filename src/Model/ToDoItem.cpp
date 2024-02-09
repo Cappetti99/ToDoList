@@ -15,7 +15,7 @@ void ToDoItem::addTask(wxString name, wxDateTime date, Priority priority) {
 
     bool isCompleted = false;
 
-    auto task = new Task(name, priority, isCompleted, date) ;
+    auto task = new Task(name, priority, isCompleted, date);
 
     tasks.push_back(*task);
 
@@ -46,7 +46,7 @@ Priority ToDoItem::getPriority(int index) {
 }
 
 void ToDoItem::setTaskAsCompleted(int index) {
-    if(tasks[index].isCompleted() == false) {
+    if (tasks[index].isCompleted() == false) {
         tasks[index].setCompleted(true);
     } else {
         tasks[index].setCompleted(false);
@@ -57,3 +57,24 @@ void ToDoItem::setTaskAsCompleted(int index) {
 bool ToDoItem::getCompleted(int index) {
     return tasks[index].isCompleted();
 }
+
+std::vector<Task> ToDoItem::getImportantTask() {
+    std::vector<Task> important;
+    for (int i = 0; i < tasks.size(); i++) {
+        if (tasks[i].getPriority() == Priority::High) {
+            important.push_back(tasks[i]);
+        }
+    }
+    return important;
+}
+std::vector<Task> ToDoItem::getExpiringTask(){
+    std::vector<Task> expiring;
+    wxDateTime data = data.Today();
+    std::vector<Task> b= tasks;
+    for(int i =0; i<tasks.size();i++){
+        if(tasks[i].getExpirationDate().GetDay()== data.GetDay()){
+            expiring.push_back(tasks[i]);
+        }
+    }
+    return expiring;
+};

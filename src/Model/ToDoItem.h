@@ -37,6 +37,9 @@ public:
     std::vector<Task> tasks;
 
     bool getCompleted(int index);
+
+    std::vector<Task> getImportantTask();
+    std::vector<Task> getExpiringTask();
 };
 
 
