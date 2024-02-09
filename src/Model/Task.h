@@ -2,8 +2,8 @@
 // Created by cappe on 29/12/23.
 //
 
-#ifndef LOLLO_TASK_H
-#define LOLLO_TASK_H
+#ifndef TODOLIST_TASK_H
+#define TODOLIST_TASK_H
 
 #include <wx/wx.h>
 #include "../View/Priority.h"
@@ -14,21 +14,21 @@ public:
     Task(const wxString &title = "", Priority priority = Priority::Low,
          bool completed = false, const wxDateTime &expirationDate = wxDateTime::Now());
 
+    wxString getTitle();
 
-    const wxString getTitle() const;
+    Priority getPriority();
 
-    const Priority getPriority() const;
+    wxDateTime getExpirationDate();
 
-    const wxDateTime getExpirationDate() const;
-
-    const bool isCompleted() const;
+    bool isCompleted();
 
     void setCompleted(bool completed);
 
+    void setTitle(const wxString &title);
 
+    void setPriority(Priority priority);
 
-
-
+    void setExpirationDate(const wxDateTime &expirationDate);
 
 private:
     wxString title;
@@ -36,8 +36,7 @@ private:
     bool completed;
     wxDateTime expirationDate;
 
-
 };
 
 
-#endif //LOLLO_TASK_H
+#endif //TODOLIST_TASK_H

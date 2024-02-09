@@ -4,112 +4,54 @@
 
 #include "ItemController.h"
 
-
-ItemController::ItemController() {
-
-    frame = new Frame("ToDoList", wxDefaultPosition, wxSize(450, 340), this);
-    frame->Show(true);
-
-    item = new ToDoItem();
-
+ItemController::ItemController(TaskList *m) {
+    this->model = m;
 }
 
-void ItemController::onAddTaskButtonClicked() {
-
-    addItem(frame->getNome(), frame->getData(), frame->getPriorità());
-
+ItemController::~ItemController() {
+    delete model;
 }
 
-void ItemController::addItem(wxString name, wxDateTime date, Priority priority) {
-
-
-    item->addTask(name, date, priority);
-    std::vector<Task> temp =item->getVector();
-    std::sort(temp.begin(), temp.end(),
-              [](const Task &a, const Task &b) {
-                  return a.getExpirationDate() < b.getExpirationDate();
-              });
-    std::sort(temp.begin(), temp.end(),
-              [](const Task &a, const Task &b) {
-                  return a.getPriority() > b.getPriority();
-              });
-    item->tasks=temp;
-    showTask(temp);
-
+void ItemController::addTask(wxString name, wxDateTime date, Priority priority) {
+    bool completed = false;
+    model->addTask(name, date, priority, completed);
 }
 
-void ItemController::showTask(std::vector<Task> vettore) {
-    frame->ClearFrame();
-    for (int i=0; i<vettore.size(); i++){
+void ItemController::removeTask(int index) {
 
-        frame->showTaskFrame(item->getName(i), item->getDate(i), item->getPriority(i),item->getCompleted(i),i);
-    }
-
+    model->removeTask(index);
 }
 
-void ItemController::onRemoveTaskButtonClicked(int index) {
+std::vector<Task> ItemController::searchTask(wxString word) {
 
-    removeItem(index);
-
-}
-
-void ItemController::removeItem(int index) {
-
-    //wxString name = item->getName(index);
-    item->removeTask(index); //todo da cambiare perchè elimina per indice e non per nome
-    showTask(item->getVector());
-
-    //removeFrame(index);
-}
-
-
-void ItemController::onSearchTaskButtonClicked(wxString searchKeyword) {
-
-    searchItem(searchKeyword);
-
-}
-
-void ItemController::markItemAsCompleted() {
-
-}
-
-void ItemController::searchItem(wxString searchKeyword) {
-
-    std::vector<Task*> tasks;
-    std::vector<wxString> namesSearch;
-    std::vector<wxDateTime> datesSearch;
-    std::vector<Priority> prioritiesSearch;
-    std::vector<bool> compleatedSearch;
-
-    std::vector<wxString> allNames;
-    std::vector<wxDateTime> allDates;
-    std::vector<Priority> allPriorities;
-    std::vector<bool> allCompleated;
-
-    for (int i = 0; i < item->getVector().size(); i++) {
-        allNames.push_back(item->getName(i));
-        allDates.push_back(item->getDate(i));
-        allPriorities.push_back(item->getPriority(i));
-        allCompleated.push_back(item->getCompleted(i));
-        wxString taskName = item->getName(i);
-        if (taskName.Find(searchKeyword) != wxNOT_FOUND) {
-            tasks.push_back(&item->tasks[i]);
-            namesSearch.push_back(item->getName(i));
-            datesSearch.push_back(item->getDate(i));
-            prioritiesSearch.push_back(item->getPriority(i));
-            compleatedSearch.push_back(item->getCompleted(i));
+    std::vector<Task> temp;
+    for (int i = 0; i < model->getVector().size(); i++) {
+        wxString taskName = model->getVector()[i].getTitle();
+        if (taskName.Contains(word)) {
+            temp.push_back(model->getVector()[i]);
         }
     }
-    if (tasks.size() > 0) {
-        frame->showSearchFrame(namesSearch, datesSearch, prioritiesSearch, compleatedSearch, allNames, allDates,
-                               allPriorities, allCompleated);
-    }
-
+    return temp;
 }
 
-void ItemController::onCheckTaskButtonClicked(int index) {
+void ItemController::markAsCompleted(int index) {
 
-    item->setTaskAsCompleted(index);
+    model->setTaskAsCompleted(index);
+}
 
-    showTask(item->getVector());
+void ItemController::editTask(int index, wxString name, wxDateTime date, Priority priority) {
+
+    model->editTask(index, name, date, priority);
+}
+
+void ItemController::sortByPriority() {
+    model->sortByPriority();
+}
+
+void ItemController::sortByDate() {
+    model->sortByDate();
+}
+
+void ItemController::sortByAlphabet() {
+    model->sortByAlphabet();
 }

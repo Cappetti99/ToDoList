@@ -4,20 +4,15 @@
 
 #include "ToDoApp.h"
 
-ToDoApp::ToDoApp() {
-
-    std::cout<<"App created"<<std::endl;
-
-}
-
-
 bool ToDoApp::OnInit() {
-//    auto model = new Model();
-//    auto view = new View();
-    new Control();
+
+    TaskList* taskList = new TaskList();
+    ItemController* itemController = new ItemController(taskList);
+    Frame* frame = new Frame(taskList, itemController, "ToDoList", wxPoint(50, 50), wxSize(450, 340));
+    frame->show();
     return true;
 
 }
 
-//wxIMPLEMENT_APP(ToDoApp);
+wxIMPLEMENT_APP(ToDoApp);
 

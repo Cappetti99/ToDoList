@@ -2,15 +2,14 @@
 // Created by cappe on 22/12/23.
 //
 
-#ifndef LOLLO_PRIORITY_H
-#define LOLLO_PRIORITY_H
+#ifndef TODOLIST_PRIORITY_H
+#define TODOLIST_PRIORITY_H
 
 enum class Priority{
-    Low,
-    Medium,
-    High,
-    None
+    Low = 0,
+    Medium = 1,
+    High = 2
 };
 
-#endif //LOLLO_PRIORITY_H
+#endif //TODOLIST_PRIORITY_H
 

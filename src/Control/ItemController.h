@@ -2,46 +2,44 @@
 // Created by cappe on 18/12/23.
 //
 
-#ifndef LOLLO_ITEMCONTROLLER_H
-#define LOLLO_ITEMCONTROLLER_H
+#ifndef TODOLIST_ITEMCONTROLLER_H
+#define TODOLIST_ITEMCONTROLLER_H
 
 #include <wx/wx.h>
 #include <iostream>
 
-#include "../Model/ToDoItem.h"
-#include "../View/Frame.h"
-#include "ItemControllerObserver.h"
+#include "Control.h"
+#include "../Model/TaskList.h"
 
 
-class ItemController : public ItemControllerObserver {
+class ItemController : public Control {
 
 public:
-    ItemController();
+    ItemController(TaskList *m);
 
-    void addItem(wxString name, wxDateTime date, Priority priority);
+    ~ItemController() override;
 
-    void removeItem(int index);
+    //metodi di control
+    void addTask(wxString name, wxDateTime date, Priority priority) override;
 
-    void markItemAsCompleted();
+    void removeTask(int index) override;
 
-    void searchItem(wxString searchKeyword);
+    void markAsCompleted(int index) override;
 
-    virtual void onAddTaskButtonClicked() override;
+    void editTask(int index, wxString name, wxDateTime date, Priority priority) override;
 
-    virtual void onRemoveTaskButtonClicked(int index) override;
+    std::vector<Task> searchTask(wxString word);
 
-    virtual void onSearchTaskButtonClicked(wxString searchKeyword) override;
+    void sortByPriority();
 
-    virtual void onCheckTaskButtonClicked(int index) override;
+    void sortByDate();
 
-    void showTask(std::vector<Task> vettore );
-
+    void sortByAlphabet();
 
 private:
-    Frame *frame;
-    ToDoItem *item;
+    TaskList *model;
 
 };
 
 
-#endif //LOLLO_ITEMCONTROLLER_H
+#endif //TODOLIST_ITEMCONTROLLER_H

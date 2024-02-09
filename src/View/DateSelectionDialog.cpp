@@ -2,9 +2,9 @@
 // Created by cappe on 22/12/23.
 //
 
-#include "DateSelection.h"
+#include "DateSelectionDialog.h"
 
-DateSelection::DateSelection(wxWindow *parent, const wxString &title)
+DateSelectionDialog::DateSelectionDialog(wxWindow *parent, const wxString &title)
         : wxDialog(parent, wxID_ANY, title, wxDefaultPosition, wxDefaultSize) {
 
     auto mainSizer = new wxBoxSizer(wxVERTICAL);
@@ -18,15 +18,12 @@ DateSelection::DateSelection(wxWindow *parent, const wxString &title)
 
     mainSizer->Add(buttonSizer, 0, wxALIGN_RIGHT | wxALL, 10);
 
-
-    //fixme quando annullo inserisce comunque la task, non a schermo perchè le due cose non sono collegate
-
 }
 
-wxDatePickerCtrl *DateSelection::getDatePicker() const {
+wxDatePickerCtrl *DateSelectionDialog::getDatePicker() const {
     return datePicker;
 }
 
-void DateSelection::setDatePicker(wxDatePickerCtrl *datePicker) {
+void DateSelectionDialog::setDatePicker(wxDatePickerCtrl *datePicker) {
     this->datePicker = datePicker;
 }

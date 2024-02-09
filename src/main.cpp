@@ -1,23 +1,25 @@
-#include <iostream>
-#include <wx/wx.h>
-#include "ToDoApp.h"
-
-
-int main(int argc, char *argv[]) {
-    ToDoApp myApp; // Create an instance of your application class
-    wxApp::SetInstance(&myApp); // Set it as the global instance
-
-    wxEntryStart(argc, argv); // Start the wxWidgets entry point
-
-    wxTheApp->OnInit();// Initialize the application
-
-    if (!wxTheApp->OnRun()) {
-        return 0; // Run the application
-    }
-
-    wxTheApp->OnRun(); // Run the application's main event loop
-
-    wxEntryCleanup(); // Clean up wxWidgets resources
-
-    return 0;
-}
+//#include <iostream>
+//#include <wx/wx.h>
+//
+//#include "ToDoApp.h"
+//
+//int main(int argc, char *argv[]) {
+//
+//    Model *model = new Model;
+//    Control *control = new Control(model);
+//    View *view = new View(model, control);
+//
+//    ToDoApp myApp; // Crea un'istanza della tua classe applicazione
+//    wxApp::SetInstance(&myApp); // Imposta l'istanza globale
+//
+//    wxEntryStart(argc, argv); // Inizia il punto di ingresso di wxWidgets
+//
+//    if (!wxTheApp->OnInit()) {
+//        wxEntryCleanup(); // Pulisci le risorse di wxWidgets
+//        return 1; // Errore durante l'inizializzazione dell'applicazione
+//    }
+//    wxTheApp->OnInit()
+//
+//    return wxTheApp->OnRun(); // Esegui il ciclo principale dell'applicazione
+//}
+//

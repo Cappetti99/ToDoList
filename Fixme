@@ -1,18 +1,10 @@
-[] cominciare con i test
-[] ho passato le task e aggiunte al vettore ma devo collegare la cosa alla view
-    per quando le rimuovo e poi le modificherò
-[]
-[]
-[]
-[] rimodificare e togliere il fatto del index
+[] test
 []
 []
 []
 []
-[] Serve un frame anche per le liste?
 
 
-l'idea è che il controller gestisca view e model e che quindi per chiamare tutto si passi da lui
 
 
 
@@ -57,3 +49,28 @@ void Frame::CloseRefresh(wxCloseEvent &event) {
 
     event.Skip();
 }
+
+
+
+
+
+
+
+if (editDialog.ShowModal() == wxID_OK) {
+            DateSelectionDialog dateSelection(this, "Select expiration date:");
+            if (dateSelection.ShowModal() == wxID_OK) {
+                wxDateTime dateTime = dateSelection.getDatePicker()->GetValue();
+                //controllo in modo che non abbia una data passata
+                if (dateTime.IsEarlierThan(wxDateTime::Now() - wxTimeSpan::Days(1))) {
+                    //tolgo un giorno perche' sennò da problemi con oggi
+                    wxMessageBox("Hai inserito una data passata!");
+                    return;
+                }
+
+                PrioritySelectionDialog prioritySelection(this, "Select priority:");
+                if (prioritySelection.ShowModal() == wxID_OK) {
+                    Priority priority = prioritySelection.getSelectedPriority();
+                    if (priority != Priority::Low and priority != Priority::Medium and priority != Priority::High) {
+                        wxMessageBox("Inserisci una priorità!");
+                        return;
+                    }

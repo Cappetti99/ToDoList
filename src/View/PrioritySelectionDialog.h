@@ -2,18 +2,18 @@
 // Created by cappe on 22/12/23.
 //
 
-#ifndef LOLLO_PRIORITYSELECTION_H
-#define LOLLO_PRIORITYSELECTION_H
+#ifndef TODOLIST_PRIORITYSELECTION_H
+#define TODOLIST_PRIORITYSELECTION_H
 
 #include <wx/wx.h>
 
 #include "Priority.h"
 
 
-class PrioritySelection : public wxDialog {
+class PrioritySelectionDialog : public wxDialog {
 
 public:
-    PrioritySelection(wxWindow* parent, const wxString& title);
+    PrioritySelectionDialog(wxWindow* parent, const wxString& title);
 
     Priority getSelectedPriority() const;
 
@@ -35,4 +35,4 @@ wxDECLARE_EVENT_TABLE();
 };
 
 
-#endif //LOLLO_PRIORITYSELECTION_H
+#endif //TODOLIST_PRIORITYSELECTION_H

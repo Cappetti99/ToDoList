@@ -12,22 +12,31 @@ include(${wxWidgets_USE_FILE})
 add_executable(ToDoList main.cpp
         ToDoApp.cpp
         ToDoApp.h
-        Model/ToDoItem.cpp
-        Model/ToDoItem.h
+        Model/TaskList.cpp
+        Model/TaskList.h
         Control/Control.cpp
         Control/Control.h
         View/Frame.cpp
         View/Frame.h
         Control/ItemController.cpp
         Control/ItemController.h
-        View/DateSelection.cpp
-        View/DateSelection.h
-        View/PrioritySelection.cpp
-        View/PrioritySelection.h
+        View/DateSelectionDialog.cpp
+        View/DateSelectionDialog.h
+        View/PrioritySelectionDialog.cpp
+        View/PrioritySelectionDialog.h
         View/Priority.h
         Model/Task.cpp
         Model/Task.h
-        Control/ItemControllerObserver.h
+        View/View.cpp
+        View/View.h
+        Model/Model.cpp
+        Model/Model.h
+        Observer.cpp
+        Observer.h
+        Subject.cpp
+        Subject.h
+        View/TaskEditDialog.cpp
+        View/TaskEditDialog.h
 )
 
 # Include wxWidgets headers
