@@ -48,6 +48,9 @@ public:
     void sortByAlphabet();
 
     static bool compareAlphabet(Task a, Task b);
+    std::vector<Task> getImportantTask();
+    std::vector<Task> getExpiringTask();
+    int completedTask();
 
 private:
     std::vector<Task> tasks;

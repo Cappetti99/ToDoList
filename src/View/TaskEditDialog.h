@@ -7,7 +7,7 @@
 
 #include <wx/wx.h>
 #include <wx/event.h>
-#include <wx/gtk/dialog.h>
+
 #include <wx/datectrl.h>
 #include "Priority.h"
 

@@ -97,3 +97,36 @@ void TaskList::sortByAlphabet() {
 bool TaskList::compareAlphabet(Task a, Task b) {
     return a.getTitle() < b.getTitle();
 }
+
+
+std::vector<Task> TaskList::getImportantTask() {
+    std::vector<Task> important;
+    for (int i = 0; i < tasks.size(); i++) {
+        if (tasks[i].getPriority() == Priority::High) {
+            important.push_back(tasks[i]);
+        }
+    }
+    return important;
+}
+std::vector<Task> TaskList::getExpiringTask(){
+    std::vector<Task> expiring;
+    wxDateTime data = data.Today();
+    std::vector<Task> b= tasks;
+    for(int i =0; i<tasks.size();i++){
+        if(tasks[i].getExpirationDate().GetDay()== data.GetDay()){
+            expiring.push_back(tasks[i]);
+        }
+    }
+    return expiring;
+};
+
+
+ int TaskList::completedTask(){
+     int numero;
+     for(int i =0; i<tasks.size();i++){
+         if(tasks[i].isCompleted() == true){
+             numero++;
+         }
+     }
+     return numero;
+ }
