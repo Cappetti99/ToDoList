@@ -122,7 +122,7 @@ std::vector<Task> TaskList::getExpiringTask(){
 
 
  int TaskList::completedTask(){
-     int numero;
+     int numero = 0 ;
      for(int i =0; i<tasks.size();i++){
          if(tasks[i].isCompleted() == true){
              numero++;

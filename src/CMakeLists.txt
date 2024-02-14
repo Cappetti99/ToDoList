@@ -9,7 +9,7 @@ find_package(wxWidgets REQUIRED COMPONENTS core base)
 include(${wxWidgets_USE_FILE})
 
 # Add executable target
-add_executable(ToDoList main.cpp
+add_executable(ToDoList
         ToDoApp.cpp
         ToDoApp.h
         Model/TaskList.cpp

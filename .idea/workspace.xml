@@ -21,17 +21,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9b41efa-221c-4013-a5f1-1cb88893e44b" name="Changes" comment="aggiunta un menù a tendina per ordinare le task">
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/.cmake/api/v1/reply/cache-v2-9b5ba49749b5cf070734.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-751da3d01c1c27050fe6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-a7b5a1f246023e71f50f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/.cmake/api/v1/reply/directory-_deps.googletest-build-Debug-fa1b18db30f420365ea4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/.cmake/api/v1/reply/directory-_deps.googletest-build.googlemock-Debug-9f83f751524d932e6d2b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/.cmake/api/v1/reply/directory-_deps.googletest-build.googletest-Debug-93026bde11b76c0fe57f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/.cmake/api/v1/reply/index-2024-02-12T13-32-24-0440.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/.cmake/api/v1/reply/target-gmock-Debug-e75b2adc66c52b93da57.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/.cmake/api/v1/reply/target-gmock_main-Debug-0a868842baf853496359.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/.cmake/api/v1/reply/target-gtest-Debug-2f2e375178f5c8dbd1dd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/.cmake/api/v1/reply/target-gtest_main-Debug-226fb1252ff31ed54a4b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/.cmake/api/v1/reply/target-test_TaskList-Debug-f66f33e670de70ddcf2a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-7096c62e23c342eb06a8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/lib/libgtest.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/lib/libgtest_main.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/test_TaskList" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_e/cmake-build-debug/test_TaskList[1]_tests.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fixme" beforeDir="false" afterPath="$PROJECT_DIR$/Fixme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDoListDefinitivo.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ToDoListDefinitivo.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/ItemController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/ItemController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/ItemController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/ItemController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/TaskList.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TaskList.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/TaskList.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TaskList.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Frame.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Frame.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Frame.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Frame.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_Frame.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_Frame.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_Frame.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tst/test_TaskList.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test_e/test_TaskList.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,8 +93,19 @@
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;C/C++ File.test_TaskList.cpp.executor&quot;: &quot;Run&quot;,
     &quot;CMake Application.Test.executor&quot;: &quot;Run&quot;,
     &quot;CMake Application.ToDoList.executor&quot;: &quot;Run&quot;,
+    &quot;Google Test.TodoListTest.AddTask.executor&quot;: &quot;Run&quot;,
+    &quot;Google Test.TodoListTest.EditTaskDate.executor&quot;: &quot;Run&quot;,
+    &quot;Google Test.TodoListTest.EditTaskName.executor&quot;: &quot;Run&quot;,
+    &quot;Google Test.TodoListTest.EditTaskPriority.executor&quot;: &quot;Run&quot;,
+    &quot;Google Test.TodoListTest.ExpiringTask.executor&quot;: &quot;Run&quot;,
+    &quot;Google Test.TodoListTest.ImportantTask.executor&quot;: &quot;Run&quot;,
+    &quot;Google Test.TodoListTest.MarkTaskCompleted.executor&quot;: &quot;Run&quot;,
+    &quot;Google Test.TodoListTest.RemoveTask.executor&quot;: &quot;Run&quot;,
+    &quot;Google Test.TodoListTest.completedTask.executor&quot;: &quot;Run&quot;,
+    &quot;Google Test.test_TaskList.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
@@ -82,6 +113,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;ctest.advertisement.all.test.configuration.is.created&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -93,12 +125,46 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test_e" />
+      <recent name="$PROJECT_DIR$/tst" />
       <recent name="$PROJECT_DIR$/src/Model" />
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.ToDoList">
-    <configuration name="ToDoList" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory" temporary="true">
-      <method v="2" />
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TodoListTest.EditTaskName" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ToDoList" TARGET_NAME="test_TaskList" RUN_TARGET_PROJECT_NAME="ToDoList" RUN_TARGET_NAME="test_TaskList" TEST_CLASS="TodoListTest" TEST_METHOD="EditTaskName" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TodoListTest.EditTaskPriority" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ToDoList" TARGET_NAME="test_TaskList" RUN_TARGET_PROJECT_NAME="ToDoList" RUN_TARGET_NAME="test_TaskList" TEST_CLASS="TodoListTest" TEST_METHOD="EditTaskPriority" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TodoListTest.ExpiringTask" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ToDoList" TARGET_NAME="test_TaskList" RUN_TARGET_PROJECT_NAME="ToDoList" RUN_TARGET_NAME="test_TaskList" TEST_CLASS="TodoListTest" TEST_METHOD="ExpiringTask" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TodoListTest.ImportantTask" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ToDoList" TARGET_NAME="test_TaskList" RUN_TARGET_PROJECT_NAME="ToDoList" RUN_TARGET_NAME="test_TaskList" TEST_CLASS="TodoListTest" TEST_METHOD="ImportantTask" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TodoListTest.completedTask" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ToDoList" TARGET_NAME="test_TaskList" RUN_TARGET_PROJECT_NAME="ToDoList" RUN_TARGET_NAME="test_TaskList" TEST_CLASS="TodoListTest" TEST_METHOD="completedTask" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
     </configuration>
     <configuration name="Test" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_PATH="$PROJECT_DIR$/../Lollo/test/CMakeLists.txt" EXPLICIT_BUILD_TARGET_NAME="all">
       <method v="2">
@@ -110,14 +176,29 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="All CTest" type="CTestRunConfiguration" factoryName="CTestRun" PROGRAM_PARAMS="--extra-verbose" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" WORKING_DIR="file://$CMakeCurrentLocalGenerationDir$" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_PATH="$CTestCurrentExecutableName$" EXPLICIT_BUILD_TARGET_NAME="all" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="CMake Debug.ToDoList" />
       <item itemvalue="CMake Application.Test" />
       <item itemvalue="CMake Application.ToDoList" />
+      <item itemvalue="CTest Application.All CTest" />
+      <item itemvalue="Google Test.TodoListTest.EditTaskName" />
+      <item itemvalue="Google Test.TodoListTest.EditTaskPriority" />
+      <item itemvalue="Google Test.TodoListTest.ExpiringTask" />
+      <item itemvalue="Google Test.TodoListTest.ImportantTask" />
+      <item itemvalue="Google Test.TodoListTest.completedTask" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="CMake Debug.ToDoList" />
+        <item itemvalue="Google Test.TodoListTest.EditTaskPriority" />
+        <item itemvalue="Google Test.TodoListTest.EditTaskName" />
+        <item itemvalue="Google Test.TodoListTest.completedTask" />
+        <item itemvalue="Google Test.TodoListTest.ImportantTask" />
+        <item itemvalue="Google Test.TodoListTest.ExpiringTask" />
       </list>
     </recent_temporary>
   </component>
@@ -184,6 +265,9 @@
       <workItem from="1707321446926" duration="950000" />
       <workItem from="1707384754644" duration="5591000" />
       <workItem from="1707394065292" duration="21000" />
+      <workItem from="1707743164894" duration="2797000" />
+      <workItem from="1707842131196" duration="366000" />
+      <workItem from="1707918380461" duration="282000" />
     </task>
     <task id="LOCAL-00001" summary="add things">
       <option name="closed" value="true" />
