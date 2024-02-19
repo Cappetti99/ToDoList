@@ -6,6 +6,8 @@ This is a simple TodoList application written in C++ using the wxWidgets library
 ## Features
 - Add, edit, and delete tasks
 - Mark tasks as completed
+- Search
+- Sort for priority, date and alphabet
 
 ## Architecture
 The application is designed using the Model-View-Controller (MVC) architecture, which separates the internal representation of information (Model), the presentation of the user interface (View), and the handling of user input (Controller). This design promotes modularity and maintainability.
