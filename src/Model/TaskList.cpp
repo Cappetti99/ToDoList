@@ -45,10 +45,22 @@ void TaskList::removeObserver(Observer *o) {
     observers.remove(o);
 }
 
-std::vector<Task> TaskList::getVector() {
-    return tasks;
+
+int TaskList::CountTask(){
+    return tasks.size();
 }
 
+std::vector<Task>  TaskList::Search(wxString a){
+    std::vector<Task> temp;
+    for (int i = 0; i < tasks.size(); i++) {
+        wxString taskName = tasks[i].getTitle();
+        if (taskName.Contains(a)) {
+            temp.push_back(tasks[i]);
+        }
+    }
+    return temp;
+
+}
 void TaskList::setTaskAsCompleted(int index) {
     if (!tasks[index].isCompleted()) {
         tasks[index].setCompleted(true);

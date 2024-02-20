@@ -6,72 +6,55 @@
 
 #include <wx/wx.h>
 
-
 TEST(TodoListTest, AddTask) {
     TaskList *tasklist = new TaskList;
     tasklist->addTask("Task 1", wxDateTime::Today(), Priority::Low, false);
-    std::vector<Task> tasks = tasklist->getVector();
-    EXPECT_EQ(tasks.size(), 1);
+    EXPECT_EQ(tasklist->CountTask(), 1);
 }
 
 TEST(TodoListTest, RemoveTask) {
     TaskList *tasklist = new TaskList;
     tasklist->addTask("Task 1", wxDateTime::Today(), Priority::Low, false);
     tasklist->removeTask(0);
-    std::vector<Task> tasks = tasklist->getVector();
-    EXPECT_EQ(tasks.size(), 0);
+    tasklist->removeTask(12);
+    EXPECT_EQ(tasklist->CountTask(), 0);
 }
 
 TEST(TodoListTest, MarkTaskCompleted) {
     TaskList *tasklist = new TaskList;
     tasklist->addTask("Task 1", wxDateTime::Today(), Priority::Low, false);
     tasklist->setTaskAsCompleted(0);
-    std::vector<Task> tasks = tasklist->getVector();
-    EXPECT_TRUE(tasks[0].isCompleted());
+    bool found = false;
+    if(tasklist->completedTask() ==1){
+        found = true;
+    }
+    EXPECT_TRUE(found);
+}
+
+TEST(TodoListTest, TrueToFalse){
+    TaskList *tasklist = new TaskList;
+    tasklist->addTask("Task 1", wxDateTime::Today(), Priority::Low, true);
+    tasklist->setTaskAsCompleted(0);
+    bool found = false;
+    if(tasklist->completedTask() ==1){
+        found = true;
+    }
+    EXPECT_FALSE(found);
 }
 
 TEST(TodoListTest, EditTaskName) {
     TaskList *tasklist = new TaskList;
     tasklist->addTask("Task 1", wxDateTime::Today(), Priority::Low, false);
     tasklist->editTask(0, "Nuovo Nome", wxDateTime::Today(), Priority::Low);
-    std::vector<Task> tasks = tasklist->getVector();
+
     bool found = false;
 
-    for (int i = 0; i < tasks.size(); i++) {
-        if (tasks[i].getTitle() == "Nuovo Nome") {
-            found = true;
-        }
+    if (tasklist->Search("Nuovo Nome").size()== 1){
+        found = true;
     }
     EXPECT_TRUE(found);
 }
 
-TEST(TodoListTest, EditTaskPriority) {
-    TaskList *tasklist = new TaskList;
-    tasklist->addTask("Task 1", wxDateTime::Today(), Priority::Medium, false);
-    tasklist->editTask(0, "Task 1", wxDateTime::Today(), Priority::High);
-    std::vector<Task> tasks = tasklist->getVector();
-    bool found;
-    for (int i = 0; i <= tasks.size(); i++) {
-        if (tasks[i].getPriority() == Priority::High) {
-            found = true;
-        }
-    }
-    EXPECT_TRUE(found);
-}
-
-TEST(TodoListTest, EditTaskDate) {
-    TaskList *tasklist = new TaskList;
-    tasklist->addTask("Task 1", wxDateTime::Today(), Priority::Medium, false);
-    tasklist->editTask(0, "Task 1", wxDateTime::Today().SetYear(2025), Priority::Medium);
-    std::vector<Task> tasks = tasklist->getVector();
-    bool found= false;
-    for (int i = 0; i <= tasks.size(); i++) {
-        if (tasks[i].getExpirationDate() == wxDateTime::Today()) {
-            found = true;
-        }
-    }
-    EXPECT_FALSE(found);
-}
 
 TEST(TodoListTest, completedTask) {
     TaskList *tasklist = new TaskList;

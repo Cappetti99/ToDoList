@@ -1,0 +1,11 @@
+TodoListTest.AddTask 2 0.0558427
+TodoListTest.RemoveTask 2 0.0595382
+TodoListTest.MarkTaskCompleted 2 0.0425119
+TodoListTest.EditTaskName 2 0.04751
+TodoListTest.EditTaskPriority 2 0.0586332
+TodoListTest.EditTaskDate 2 0.085166
+TodoListTest.completedTask 2 0.0825174
+TodoListTest.ExpiringTask 2 0.134959
+TodoListTest.ImportantTask 2 0.0612324
+TodoListTest.TrueToFalse 1 0.0981609
+---

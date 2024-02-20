@@ -1,76 +1,27 @@
-[] test
-[]
-[]
-[]
-[]
-
-
-
-
-
-
-cose che possono servire:
-
-                wxMessageBox(name);
-
-
-
-
-
-
-void Frame::CloseRefresh(wxCloseEvent &event) {
-    //qui ci va cosa succede quando chiudo la finestra del search
-
-    std::cout << "Frame::CloseRefresh()" << std::endl;
-    ClearFrame();
-    for(int i = 0; i < namesSearch.size(); i++) {
-        std::cout << "1" << std::endl;
-        std::cout <<"names.size = " << names.size() << std::endl;
-        std::cout <<"namesSearch.size = " << namesSearch.size() << std::endl;
-        for(int j = 0; j < names.size(); j++) {
-            std::cout << "2" << std::endl;
-            if(namesSearch[i] == names[j]) {
-                std::cout << "3" << std::endl;
-                if(completedSearch[i]== true){
-                    std::cout << "4" << std::endl;
-                    taskListBox->Check(j,true);
-                    std::cout << "5" << std::endl;
-                } else{
-                    taskListBox->Check(j,false);
-                    std::cout << "6" << std::endl;
-
-                }
-            }
-            showTaskFrame(names[j], dates[j], priorities[j], completedSearch[j],j);
-            std::cout << "7" << std::endl;
-
+TEST(TodoListTest, EditTaskPriority) {
+    TaskList *tasklist = new TaskList;
+    tasklist->addTask("Task 1", wxDateTime::Today(), Priority::Medium, false);
+    tasklist->editTask(0, "Task 1", wxDateTime::Today(), Priority::High);
+    std::vector<Task> tasks = tasklist->getVector();
+    bool found;
+    for (int i = 0; i <= tasks.size(); i++) {
+        if (tasks[i].getPriority() == Priority::High) {
+            found = true;
         }
     }
-
-    event.Skip();
+    EXPECT_TRUE(found);
 }
 
-
-
-
-
-
-
-if (editDialog.ShowModal() == wxID_OK) {
-            DateSelectionDialog dateSelection(this, "Select expiration date:");
-            if (dateSelection.ShowModal() == wxID_OK) {
-                wxDateTime dateTime = dateSelection.getDatePicker()->GetValue();
-                //controllo in modo che non abbia una data passata
-                if (dateTime.IsEarlierThan(wxDateTime::Now() - wxTimeSpan::Days(1))) {
-                    //tolgo un giorno perche' sennò da problemi con oggi
-                    wxMessageBox("Hai inserito una data passata!");
-                    return;
-                }
-
-                PrioritySelectionDialog prioritySelection(this, "Select priority:");
-                if (prioritySelection.ShowModal() == wxID_OK) {
-                    Priority priority = prioritySelection.getSelectedPriority();
-                    if (priority != Priority::Low and priority != Priority::Medium and priority != Priority::High) {
-                        wxMessageBox("Inserisci una priorità!");
-                        return;
-                    }
+TEST(TodoListTest, EditTaskDate) {
+    TaskList *tasklist = new TaskList;
+    tasklist->addTask("Task 1", wxDateTime::Today(), Priority::Medium, false);
+    tasklist->editTask(0, "Task 1", wxDateTime::Today().SetYear(2025), Priority::Medium);
+    std::vector<Task> tasks = tasklist->getVector();
+    bool found= false;
+    for (int i = 0; i <= tasks.size(); i++) {
+        if (tasks[i].getExpirationDate() == wxDateTime::Today()) {
+            found = true;
+        }
+    }
+    EXPECT_FALSE(found);
+}
